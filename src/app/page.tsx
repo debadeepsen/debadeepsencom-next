@@ -6,6 +6,7 @@ import Main from '@/components/containers/Main'
 export default function Home() {
   return (
     <Main>
+      <h1>Debadeep Sen</h1>
       <Certifications heading='Certifications' />
       <Skills heading='Skills' />
       <ProjectList heading='Featured Projects' />
@@ -103,7 +104,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
+
       {/* ******* */}
       {/* ******* */}
       {/* In loving memoriam */}
