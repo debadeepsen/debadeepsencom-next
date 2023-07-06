@@ -1,14 +1,18 @@
 import { ProjectType } from '@/lib/constants/projectConstants'
+import { getSvg } from '@/lib/constants/skillConstants'
+import Image from 'next/image'
 import React from 'react'
 
 const ProjectCard = ({ project }: { project: ProjectType }) => {
   return (
     <div
-      className='content-box w-full lg:w-[40%] min-h-[300] md:min-h-[400] mr-4 mb-4 p-6 shadow-lg flex flex-nowrap rounded-md'
+      className='content-box w-full lg:w-[40%] min-h-[300] md:min-h-[400] mr-4 mb-4 p-6 shadow-lg flex flex-nowrap rounded-sm relative'
       style={{ background: '#fff' }}
     >
       <div className='flex-none w-[60px] lg:w-[75px] pt-2 flex justify-center'>
-        <i className={`fas ${project.icon} text-2xl lg:text-4xl`}></i>
+        <i
+          className={`fas ${project.icon} text-2xl lg:text-4xl lg:ml-[-8px]`}
+        ></i>
       </div>
       <div>
         <h4 className='block mb-2 mt-0 text-2xl font-semibold'>
@@ -31,6 +35,22 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
             </a>
           </div>
         )}
+        <div className='mt-6'>
+          {project.tech?.map((skill, i) => {
+            const src = getSvg(skill)
+            const size = 24
+            return (
+              <Image
+                key={i}
+                src={src}
+                width={size}
+                height={size}
+                alt=''
+                className='mr-2'
+              />
+            )
+          })}
+        </div>
       </div>
     </div>
   )

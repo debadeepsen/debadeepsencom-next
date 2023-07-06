@@ -11,190 +11,6 @@ export default function Home() {
       <ProjectList heading='Featured Projects' />
 
 
-
-
-      <div className='separator' />
-      <h2>Featured Projects</h2>
-      <div className='projects'>
-        <div className='project-block'>
-          <div className='tech-stack'>
-            <i className='fab fa-vuejs' title='VueJS' aria-hidden='true' />
-            <span className='sr-only'>VueJS</span>{' '}
-            <i className='fab fa-html5' title='HTML5' aria-hidden='true' />
-            <span className='sr-only'>HTML5</span>
-          </div>
-          <i className='p-icon las la-book-open' />{' '}
-          <i className='p-icon-sm las la-book-open' />
-          <div className='project-caption'>Word guessing game</div>
-          <div className='description'>
-            A Hangman-like word game which lets you guess a word, letter by
-            letter.
-          </div>
-          <div>
-            <i className='fa fa-globe' aria-hidden='true' />{' '}
-            <a href='https://wordgame.softwarecradle.com/' target='_blank'>
-              https://wordgame.softwarecradle.com/
-            </a>
-          </div>
-          <div>
-            <i className='las la-code' />{' '}
-            <a
-              href='https://github.com/debadeepsen/vuewordgame/'
-              target='_blank'
-            >
-              https://github.com/debadeepsen/vuewordgame/
-            </a>
-          </div>
-          <div className='highlight'>
-            Listed on the official{' '}
-            <a href='https://github.com/vuejs/awesome-vue' target='_blank'>
-              VueJS Github
-            </a>
-          </div>
-        </div>
-        <div className='project-block'>
-          <div className='tech-stack'>
-            <i className='fab fa-vuejs' title='VueJS' aria-hidden='true' />
-            <span className='sr-only'>VueJS</span>{' '}
-            <i className='fab fa-html5' title='HTML5' aria-hidden='true' />
-            <span className='sr-only'>HTML5</span>{' '}
-            <i className='fab fa-node' title='Node.JS' aria-hidden='true' />
-            <span className='sr-only'>Node.JS</span>{' '}
-            <i className='fab fa-php' title='PHP' aria-hidden='true' />
-            <span className='sr-only'>PHP</span>
-          </div>
-          <i className='p-icon las la-briefcase' />{' '}
-          <i className='p-icon-sm las la-briefcase' />
-          <div className='project-caption'>Demo job portal</div>
-          <div className='description'>
-            A replication of some of the features offered by popular job search
-            websites like Indeed, Monster, and others.
-          </div>
-          <div>
-            <i className='fa fa-globe' aria-hidden='true' />{' '}
-            <a href='https://skillpeek.softwarecradle.com/' target='_blank'>
-              https://skillpeek.softwarecradle.com/
-            </a>
-          </div>
-        </div>
-        <div className='project-block'>
-          <div className='tech-stack'>
-            <i className='fab fa-react' title='React' aria-hidden='true' />
-            <span className='sr-only'>React</span>{' '}
-            <i className='fab fa-html5' title='HTML5' aria-hidden='true' />
-            <span className='sr-only'>HTML5</span>{' '}
-            <i className='fab fa-node' title='Node.JS' aria-hidden='true' />
-            <span className='sr-only'>Node.JS</span>
-          </div>
-          <i className='p-icon las la-utensils' />{' '}
-          <i className='p-icon-sm las la-utensils' />
-          <div className='project-caption'>Personal recipe book</div>
-          <div className='description'>
-            A recipe book that lets you build your own recipe by adding
-            ingredients, and calculates the total Calorie and macronutrient
-            counts for that, using the{' '}
-            <a href='https://www.fatsecret.com/' target='_blank'>
-              FatSecret API
-            </a>
-            .
-          </div>
-          <div>
-            <i className='fa fa-globe' aria-hidden='true' />{' '}
-            <a href='https://mireceta.softwarecradle.com/' target='_blank'>
-              https://mireceta.softwarecradle.com/
-            </a>
-          </div>
-          <div>
-            <i className='las la-code' />{' '}
-            <a
-              href='https://gitlab.com/debadeep.sen/nutrition-react-node/'
-              target='_blank'
-            >
-              https://gitlab.com/debadeep.sen/nutrition-react-node/
-            </a>
-          </div>
-        </div>
-        <div className='project-block'>
-          <div className='tech-stack'>
-            <i
-              className='fab fa-react'
-              title='React Native'
-              aria-hidden='true'
-            />
-            <span className='sr-only'>React Native</span>
-          </div>
-          <i className='p-icon las la-hamburger' />{' '}
-          <i className='p-icon-sm las la-hamburger' />
-          <div className='project-caption'>A food ordering app</div>
-          <div className='description'>
-            A mobile app that imitates features found in popular food delivery
-            apps.
-          </div>
-          <div>
-            <i className='las la-code' />{' '}
-            <a href='https://github.com/debadeepsen/foodorder' target='_blank'>
-              https://github.com/debadeepsen/foodorder
-            </a>
-          </div>
-        </div>
-        <div className='project-block'>
-          <div className='tech-stack'>
-            <i className='fab fa-vuejs' title='VueJS' aria-hidden='true' />
-            <span className='sr-only'>VueJS</span>{' '}
-            <i className='fab fa-html5' title='HTML5' aria-hidden='true' />
-            <span className='sr-only'>HTML5</span>
-          </div>
-          <i className='p-icon fas fa-chess' aria-hidden='true' />{' '}
-          <i className='p-icon-sm fas fa-chess' aria-hidden='true' />
-          <div className='project-caption'>Vue Chess Game</div>
-          <div className='description'>
-            A chess game playable against 3 levels of AI opponent.
-          </div>
-          <div>
-            <i className='fa fa-globe' aria-hidden='true' />{' '}
-            <a href='https://chess.softwarecradle.com/' target='_blank'>
-              https://chess.softwarecradle.com/
-            </a>
-          </div>
-          <div>
-            <i className='las la-code' />{' '}
-            <a href='https://github.com/debadeepsen/vue-chess/' target='_blank'>
-              https://github.com/debadeepsen/vue-chess/
-            </a>
-          </div>
-        </div>
-        <div className='project-block'>
-          <div className='tech-stack'>
-            <i className='fab fa-vuejs' title='VueJS' aria-hidden='true' />
-            <span className='sr-only'>VueJS</span>{' '}
-            <i
-              className='devicon-nuxtjs-plain'
-              title='NuxtJS'
-              aria-hidden='true'
-            />{' '}
-            <i className='fab fa-html5' title='HTML5' aria-hidden='true' />
-            <span className='sr-only'>HTML5</span>
-          </div>
-          <i className='p-icon fas fa-shopping-cart' aria-hidden='true' />{' '}
-          <i className='p-icon-sm fas fa-shopping-cart' aria-hidden='true' />
-          <div className='project-caption'>
-            Internationalized E-commerce Site
-          </div>
-          <div className='description'>
-            An e-commerce portal that allows the user to switch languages
-            between English and French. Uses the <code>nuxt-i18n</code> package.
-          </div>
-          <div>
-            <i className='las la-code' />{' '}
-            <a
-              href='https://github.com/debadeepsen/nuxt-i18n-ecommerce-demo/'
-              target='_blank'
-            >
-              https://github.com/debadeepsen/nuxt-i18n-ecommerce-demo/
-            </a>
-          </div>
-        </div>
-      </div>
       <div className='separator' />
       <h2>Featured Articles</h2>
       <div className='articles'>
@@ -287,7 +103,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className='separator' />
+      
+      {/* ******* */}
+      {/* ******* */}
+      {/* In loving memoriam */}
+      {/* ******* */}
+      {/* <div className='separator' />
       <h2>Personal Blog</h2>
       <div className='icons'>
         <div>The Messy Geek</div>
@@ -296,7 +117,10 @@ export default function Home() {
             https://messygeek.com
           </a>
         </div>
-      </div>
+      </div> */}
+      {/* ******* */}
+      {/* ******* */}
+
       <div className='separator' />
       <h2>Find Me On</h2>
       <div className='icons'>

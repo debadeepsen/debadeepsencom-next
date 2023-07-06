@@ -22,7 +22,8 @@ export default function RootLayout({
       <Script src='https://code.iconify.design/1/1.0.7/iconify.min.js' />
       <body
         style={{
-          background: '#efefef'
+          background: '#ddd3',
+          color: '#333'
         }}
       >
         {children}

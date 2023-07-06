@@ -8,8 +8,8 @@ const ProjectList = ({ heading }: PageSectionType) => {
   return (
     <PageSection heading={heading}>
       <div className='flex flex-wrap'>
-        {projects.map(p => {
-          return <ProjectCard key={p.id.toString()} project={p} />
+        {projects.map((p, i) => {
+          return <ProjectCard key={i} project={p} />
         })}
       </div>
     </PageSection>

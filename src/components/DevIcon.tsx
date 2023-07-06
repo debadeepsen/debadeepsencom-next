@@ -1,10 +1,10 @@
+import { getSvg } from '@/lib/constants/skillConstants'
 import Image from 'next/image'
 import React from 'react'
 
-const DevIcon = ({ path, alt }: { path: string; alt?: string }) => {
-  const key = path === 'tailwindcss' ? 'plain' : 'original'
-  const src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${path}/${path}-${key}.svg`
-  const tooltip = alt ?? path.split('/')?.[0]?.toUpperCase() ?? ''
+const DevIcon = ({ skill, alt }: { skill: string; alt?: string }) => {
+  const src = getSvg(skill)
+  const tooltip = alt ?? skill.split('/')?.[0]?.toUpperCase() ?? ''
   const size = 60
 
   return (
