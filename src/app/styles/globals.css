@@ -1,3 +1,4 @@
+/*
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,3 +26,14 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url('./common.css');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', system-ui, sans-serif;
+}
+
