@@ -37,3 +37,13 @@ body {
   font-family: 'Rubik', system-ui, sans-serif;
 }
 
+.separator {
+  margin-top: 40px;
+  height: 1px;
+  background-color: #7772;
+  border-top: 1px solid #9992;
+}
+
+.card {
+
+}

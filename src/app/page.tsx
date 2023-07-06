@@ -40,38 +40,28 @@ export default function Home() {
         <h2>Skills</h2>
         <div className='icons'>
           <i className='fab fa-html5' title='HTML5' aria-hidden='true' />
-          <span className='sr-only'>HTML5</span>{' '}
           <i className='fab fa-css3-alt' title='CSS3' aria-hidden='true' />
-          <span className='sr-only'>CSS3</span>{' '}
           <i className='devicon-javascript-plain' />{' '}
-          <i className='devicon-jquery-plain-wordmark' title='jQuery' />{' '}
+          {/* <i className='devicon-jquery-plain-wordmark' title='jQuery' />{' '} */}
           <i className='devicon-visualstudio-plain' title='Visual Studio' />{' '}
           <i className='devicon-csharp-plain' title='C#' />{' '}
           <i className='fab fa-node' title='Node.JS' aria-hidden='true' />
-          <span className='sr-only'>Node.JS</span>{' '}
-          <i className='fab fa-php' title='PHP' aria-hidden='true' />
-          <span className='sr-only'>PHP</span>{' '}
           <i className='fab fa-vuejs' title='VueJS' aria-hidden='true' />
-          <span className='sr-only'>VueJS</span>{' '}
           <i className='fab fa-react' title='React' aria-hidden='true' />
-          <span className='sr-only'>React</span>{' '}
           <i className='fab fa-angular' title='Angular' aria-hidden='true' />
-          <span className='sr-only'>Angular</span>{' '}
+          <i className='fab fa-php' title='PHP' aria-hidden='true' />
           <i className='devicon-mysql-plain' title='MySQL' />{' '}
           <i
             className='fab fa-bootstrap'
             title='Bootstrap'
             aria-hidden='true'
           />
-          <span className='sr-only'>Bootstrap</span>{' '}
           <i className='fab fa-git-alt' title='Git' aria-hidden='true' />
-          <span className='sr-only'>Git</span>{' '}
           <i
             className='fab fa-wordpress'
             title='Wordpress'
             aria-hidden='true'
           />
-          <span className='sr-only'>Wordpress</span>
         </div>
         <div className='separator' />
         <h2>Featured Projects</h2>
