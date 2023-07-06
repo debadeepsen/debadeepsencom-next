@@ -2,48 +2,16 @@ import { PageSectionType } from '@/types/types'
 import React from 'react'
 import PageSection from './containers/PageSection'
 import Image from 'next/image'
-
-const DevIcon = ({ path, alt }: { path: string; alt?: string }) => {
-  const key = path === 'tailwindcss' ? 'plain' : 'original'
-  const src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${path}/${path}-${key}.svg`
-  const tooltip = alt ?? path.split('/')?.[0]?.toUpperCase() ?? ''
-
-  return (
-    <Image
-      src={src}
-      width={60}
-      height={60}
-      alt={tooltip}
-      title={tooltip}
-      style={{ marginRight: 6 }}
-    />
-  )
-}
-
-const DELIMITER = ';'
-const paths = [
-  'html5',
-  'css3',
-  'javascript;JavaScript',
-  'csharp;C#',
-  'nodejs;Node.JS',
-  'vuejs;Vue',
-  'react;React',
-  'angularjs;Angular',
-  'php',
-  'mysql;MySQL',
-  'bootstrap;Bootstrap',
-  'tailwindcss;Tailwind',
-  'git;Git'
-]
+import { DELIMITER, skills } from '@/lib/constants/skillConstants'
+import DevIcon from './DevIcon'
 
 const Skills = ({ heading }: PageSectionType) => {
   return (
     <PageSection heading={heading}>
       <div className='icons'>
-        <div style={{ marginTop: 12 }}>
-          {paths.map((p) => {
-            let [path, alt] = p.split(DELIMITER)
+        <div className='mt-2'>
+          {skills.map(skill => {
+            let [path, alt] = skill.split(DELIMITER)
             if (alt) return <DevIcon key={path} path={path} alt={alt} />
             return <DevIcon key={path} path={path} />
           })}
