@@ -1,6 +1,6 @@
 import { PageSectionType } from '@/types/types'
 import React from 'react'
-import PageSection from './PageSection'
+import PageSection from './containers/PageSection'
 import Image from 'next/image'
 
 const CertBox = ({

@@ -1,15 +1,18 @@
 import Certifications from '@/components/Certifications'
+import ProjectList from '@/components/ProjectList'
 import Skills from '@/components/Skills'
+import Main from '@/components/containers/Main'
 
 export default function Home() {
   return (
-    <main style={{ padding: 50 }}>
+    <Main>
       <Certifications heading='Certifications' />
       <Skills heading='Skills' />
+      <ProjectList heading='Featured Projects' />
 
 
 
-      
+
       <div className='separator' />
       <h2>Featured Projects</h2>
       <div className='projects'>
@@ -308,6 +311,6 @@ export default function Home() {
         </a>
       </div>
       <div style={{ height: 100 }} />
-    </main>
+    </Main>
   )
 }

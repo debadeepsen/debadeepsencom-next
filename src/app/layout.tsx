@@ -20,7 +20,13 @@ export default function RootLayout({
         defer
       />
       <Script src='https://code.iconify.design/1/1.0.7/iconify.min.js' />
-      <body>{children}</body>
+      <body
+        style={{
+          background: '#efefef'
+        }}
+      >
+        {children}
+      </body>
     </html>
   )
 }

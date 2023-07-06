@@ -1,8 +1,9 @@
-/*
-@tailwind base;
+
+/* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
 
+/*
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -35,6 +36,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Rubik', system-ui, sans-serif;
+  font-size: 16px;
+}
+
+@media screen and (min-width:1600px) {
+  body {
+    font-size: 20px;
+  }
 }
 
 .separator {
@@ -54,6 +62,18 @@ body {
   width: 32px;
 }
 
-.card {
+@media screen and (min-width:1024px) {
+  .icons img {
+    width: 48px;
+  }
+}
 
+@media screen and (min-width:1200px) {
+  .icons img {
+    width: 54px;
+  }
+}
+
+.fa-globe-americas, .fa-code {
+  color: slategray;
 }

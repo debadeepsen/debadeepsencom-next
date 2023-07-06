@@ -1,6 +1,6 @@
 import { PageSectionType } from '@/types/types'
 import React from 'react'
-import PageSection from './PageSection'
+import PageSection from './containers/PageSection'
 import Image from 'next/image'
 
 const DevIcon = ({ path, alt }: { path: string; alt?: string }) => {
@@ -11,8 +11,8 @@ const DevIcon = ({ path, alt }: { path: string; alt?: string }) => {
   return (
     <Image
       src={src}
-      width={32}
-      height={32}
+      width={60}
+      height={60}
       alt={tooltip}
       title={tooltip}
       style={{ marginRight: 6 }}
@@ -30,6 +30,7 @@ const paths = [
   'vuejs;Vue',
   'react;React',
   'angularjs;Angular',
+  'php',
   'mysql;MySQL',
   'bootstrap;Bootstrap',
   'tailwindcss;Tailwind',
