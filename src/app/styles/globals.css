@@ -28,7 +28,7 @@ body {
 }
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&display=swap');
 @import url('./common.css');
 
 body {
@@ -40,8 +40,18 @@ body {
 .separator {
   margin-top: 40px;
   height: 1px;
-  background-color: #7772;
-  border-top: 1px solid #9992;
+  /* background-color: #7772; */
+  border-top: 1px solid #9995;
+}
+
+.icons i {
+  display: inline-block;
+  font-size: 32px;
+  margin-right: 6px;
+}
+
+.icons img {
+  width: 32px;
 }
 
 .card {

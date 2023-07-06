@@ -1,29 +1,15 @@
 import Certifications from '@/components/Certifications'
+import Skills from '@/components/Skills'
 
 export default function Home() {
   return (
     <main style={{ padding: 50 }}>
       <Certifications heading='Certifications' />
+      <Skills heading='Skills' />
 
-      <div className='separator' />
-      <h2>Skills</h2>
-      <div className='icons'>
-        <i className='fab fa-html5' title='HTML5' aria-hidden='true' />
-        <i className='fab fa-css3-alt' title='CSS3' aria-hidden='true' />
-        <i className='devicon-javascript-plain' />{' '}
-        {/* <i className='devicon-jquery-plain-wordmark' title='jQuery' />{' '} */}
-        <i className='devicon-visualstudio-plain' title='Visual Studio' />{' '}
-        <i className='devicon-csharp-plain' title='C#' />{' '}
-        <i className='fab fa-node' title='Node.JS' aria-hidden='true' />
-        <i className='fab fa-vuejs' title='VueJS' aria-hidden='true' />
-        <i className='fab fa-react' title='React' aria-hidden='true' />
-        <i className='fab fa-angular' title='Angular' aria-hidden='true' />
-        <i className='fab fa-php' title='PHP' aria-hidden='true' />
-        <i className='devicon-mysql-plain' title='MySQL' />{' '}
-        <i className='fab fa-bootstrap' title='Bootstrap' aria-hidden='true' />
-        <i className='fab fa-git-alt' title='Git' aria-hidden='true' />
-        <i className='fab fa-wordpress' title='Wordpress' aria-hidden='true' />
-      </div>
+
+
+      
       <div className='separator' />
       <h2>Featured Projects</h2>
       <div className='projects'>
