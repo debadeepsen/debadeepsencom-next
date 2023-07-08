@@ -6,7 +6,7 @@ import React from 'react'
 const ProjectCard = ({ project }: { project: ProjectType }) => {
   return (
     <div
-      className='content-box w-full lg:w-[40%] min-h-[300] md:min-h-[400] mr-4 mb-4 p-6 shadow-lg flex flex-nowrap rounded-sm relative'
+      className='content-box w-screen sm:w-full xl:w-[40%] min-h-[300] md:min-h-[400] mr-4 mb-4 p-6 shadow-lg flex flex-nowrap rounded-sm relative'
       style={{ background: '#fff' }}
     >
       <div className='flex-none w-[60px] lg:w-[75px] pt-2 flex justify-center'>
