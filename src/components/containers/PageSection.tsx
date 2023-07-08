@@ -5,7 +5,7 @@ const PageSection = ({ heading, children }: PageSectionType) => {
   return (
     <div>
       <div className='separator'></div>
-      <h2>{heading}</h2>
+      <h2 className='text-3xl sm:text-4xl'>{heading}</h2>
       {children}
     </div>
   )

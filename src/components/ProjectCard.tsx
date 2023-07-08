@@ -15,17 +15,28 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
         ></i>
       </div>
       <div>
-        <h4 className='block mb-2 mt-0 text-2xl font-semibold'>
+        <span className='sm:hidden'>
+          <i className={`fas ${project.icon} text-xl sm:text-2xl mr-2`}></i>
+        </span>
+        <h4 className='inline-block sm:block mb-2 mt-0 text-xl sm:text-2xl font-semibold'>
           {project.title}
         </h4>
         <div className='mb-2'>{project.description}</div>
         {project.website && (
           <div className='mb-0 sm:mb-2 mr-2 sm:mr-0 inline-block sm:block'>
             <i className='fas fa-globe-americas inline-block mr-2'></i>
-            <a target='_blank' href={project.website} className='hidden sm:inline'>
+            <a
+              target='_blank'
+              href={project.website}
+              className='hidden sm:inline'
+            >
               {project.website}
             </a>
-            <a target='_blank' href={project.website} className='inline sm:hidden'>
+            <a
+              target='_blank'
+              href={project.website}
+              className='inline sm:hidden'
+            >
               Demo
             </a>
           </div>
@@ -36,7 +47,11 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
             <a target='_blank' href={project.code} className='hidden sm:inline'>
               {project.code}
             </a>
-            <a target='_blank' href={project.website} className='inline sm:hidden'>
+            <a
+              target='_blank'
+              href={project.website}
+              className='inline sm:hidden'
+            >
               Code
             </a>
           </div>
