@@ -9,9 +9,9 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
       className='content-box w-screen sm:w-full xl:w-[40%] min-h-[300] md:min-h-[400] mr-4 mb-4 p-6 shadow-lg flex flex-nowrap rounded-sm relative'
       style={{ background: '#fff' }}
     >
-      <div className='flex-none w-[60px] lg:w-[75px] pt-2 flex justify-center'>
+      <div className='flex-none w-0 sm:w-[60px] lg:w-[75px] pt-2 flex justify-center'>
         <i
-          className={`fas ${project.icon} text-2xl lg:text-4xl lg:ml-[-8px]`}
+          className={`fas ${project.icon} hidden sm:inline-block text-md sm:text-2xl lg:text-4xl lg:ml-[-8px]`}
         ></i>
       </div>
       <div>
