@@ -3,6 +3,7 @@ import SoftwareEngineerSVG from './SVGs/SoftwareEngineerSVG'
 import ProgrammerSVG from './SVGs/ProgrammerSVG'
 import SubTitle from './SubTitle'
 import Title from './Title'
+import CatSVG from './SVGs/CatSVG'
 
 const Hero = () => {
   return (
@@ -13,6 +14,9 @@ const Hero = () => {
       <div className='p-0 md:pl-12'>
         <Title />
         <SubTitle />
+        {/* <div className='flex justify-end'>
+          <CatSVG />
+        </div> */}
       </div>
     </div>
   )

@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Main>
       <Hero />
-      <Certifications heading='Certifications' />
+      <Certifications heading='Certifications' hr={false} />
       <Skills heading='Skills' />
       <ProjectList heading='Featured Projects' />
 
