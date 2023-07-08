@@ -10,7 +10,7 @@ const Skills = ({ heading }: PageSectionType) => {
       <div className='icons'>
         <div className='mt-2'>
           {skills.map(fullSkill => {
-            let [skill, alt] = fullSkill.split(DELIMITER)
+            const [skill, alt] = fullSkill.split(DELIMITER)
             if (alt) return <DevIcon key={skill} skill={skill} alt={alt} />
             return <DevIcon key={skill} skill={skill} />
           })}
