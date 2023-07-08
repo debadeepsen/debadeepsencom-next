@@ -1,12 +1,14 @@
 import Certifications from '@/components/Certifications'
 import ProjectList from '@/components/ProjectList'
 import Skills from '@/components/Skills'
+import SubTitle from '@/components/SubTitle'
 import Main from '@/components/containers/Main'
 
 export default function Home() {
   return (
     <Main>
-      <h1>Debadeep Sen</h1>
+      <h1 className='font-normal md:font-extralight text-5xl sm:text-6xl md:text-7xl lg:text-8xl'>Debadeep Sen</h1>
+      <SubTitle />
       <Certifications heading='Certifications' />
       <Skills heading='Skills' />
       <ProjectList heading='Featured Projects' />

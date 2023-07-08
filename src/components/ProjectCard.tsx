@@ -6,12 +6,12 @@ import React from 'react'
 const ProjectCard = ({ project }: { project: ProjectType }) => {
   return (
     <div
-      className='content-box w-screen sm:w-full xl:w-[40%] min-h-[300] md:min-h-[400] mr-4 mb-4 p-6 shadow-lg flex flex-nowrap rounded-sm relative'
+      className='content-box w-screen sm:w-full xl:w-[40%] min-h-[300] md:min-h-[400] mr-0 md:mr-4 mb-4 p-6 shadow-lg flex flex-nowrap rounded-sm relative'
       style={{ background: '#fff' }}
     >
-      <div className='flex-none w-0 sm:w-[60px] lg:w-[75px] pt-2 flex justify-center'>
+      <div className='flex-none overflow-hidden w-0 sm:w-[60px] lg:w-[75px] pt-2 flex justify-center'>
         <i
-          className={`fas ${project.icon} hidden sm:inline-block text-md sm:text-2xl lg:text-4xl lg:ml-[-8px]`}
+          className={`fas ${project.icon} text-md sm:text-2xl lg:text-4xl lg:ml-[-8px]`}
         ></i>
       </div>
       <div>
@@ -20,18 +20,24 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
         </h4>
         <div className='mb-2'>{project.description}</div>
         {project.website && (
-          <div className='mb-2'>
+          <div className='mb-0 sm:mb-2 mr-2 sm:mr-0 inline-block sm:block'>
             <i className='fas fa-globe-americas inline-block mr-2'></i>
-            <a target='_blank' href={project.website}>
+            <a target='_blank' href={project.website} className='hidden sm:inline'>
               {project.website}
+            </a>
+            <a target='_blank' href={project.website} className='inline sm:hidden'>
+              Demo
             </a>
           </div>
         )}
         {project.code && (
-          <div>
+          <div className='inline-block sm:block'>
             <i className='fas fa-code inline-block mr-2'></i>
-            <a target='_blank' href={project.code}>
+            <a target='_blank' href={project.code} className='hidden sm:inline'>
               {project.code}
+            </a>
+            <a target='_blank' href={project.website} className='inline sm:hidden'>
+              Code
             </a>
           </div>
         )}
