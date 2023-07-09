@@ -1,18 +1,21 @@
 import Certifications from '@/components/Certifications'
 import ProjectList from '@/components/ProjectList'
 import Skills from '@/components/Skills'
-import SubTitle from '@/components/SubTitle'
-import Title from '@/components/Hero'
 import Main from '@/components/containers/Main'
 import Hero from '@/components/Hero'
+import PageBottom from '@/components/PageBottom'
+import Divider from '@/components/Divider'
 
 export default function Home() {
   return (
     <Main>
       <Hero />
-      <Certifications heading='Certifications' hr={false} />
+      <Certifications heading='Certifications' />
+      <Divider />
       <Skills heading='Skills' />
+      <Divider />
       <ProjectList heading='Featured Projects' />
+      <Divider />
 
 
       <div className='separator' />
@@ -138,7 +141,8 @@ export default function Home() {
           <i className='fab fa-linkedin' aria-hidden='true' />
         </a>
       </div>
-      <div style={{ height: 100 }} />
+      <div style={{ height: 300 }} />
+      <PageBottom />
     </Main>
   )
 }

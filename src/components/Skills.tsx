@@ -3,10 +3,11 @@ import React from 'react'
 import PageSection from './containers/PageSection'
 import { DELIMITER, skills } from '@/lib/constants/skillConstants'
 import DevIcon from './DevIcon'
+import CodeSVG from './SVGs/CodeSVG'
 
 const Skills = ({ heading }: PageSectionType) => {
   return (
-    <PageSection heading={heading}>
+    <PageSection heading={heading} sideGraphic='left' svg={<CodeSVG />}>
       <div className='icons'>
         <div className='mt-2'>
           {skills.map(fullSkill => {

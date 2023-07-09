@@ -30,6 +30,7 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Julee&family=Rubik:wght@300;600&display=swap');
 @import url('./common.css');
+@import url('./page-bottom.css');
 
 body {
   margin: 0;
@@ -88,4 +89,8 @@ h1 {
 .fa-globe-americas,
 .fa-code {
   color: #555;
+}
+
+.svg-icon {
+  height: 60%;
 }

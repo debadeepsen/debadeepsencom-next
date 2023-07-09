@@ -2,6 +2,8 @@ import { PageSectionType } from '@/types/types'
 import React from 'react'
 import PageSection from './containers/PageSection'
 import Image from 'next/image'
+import Card from './containers/Card'
+import CertificationSVG from './SVGs/CertificationSVG'
 
 const CertBox = ({
   href,
@@ -12,26 +14,32 @@ const CertBox = ({
   skill: string
   text: string
 }) => (
-  <a target='_blank' href={href} data-skill={skill}>
-    {text}
-  </a>
+  <Card>
+    <a target='_blank' href={href} data-skill={skill}>
+      {text}
+    </a>
+  </Card>
 )
 
 const Certifications = ({ heading }: PageSectionType) => {
   return (
-    <PageSection heading={heading}>
+    <PageSection
+      heading={heading}
+      sideGraphic='right'
+      svg={<CertificationSVG />}
+    >
       <h3>Scrum Alliance</h3>
-      <a target='_blank' href='https://bcert.me/sofciruoh'>
-        {/* <Image
-          src='img/cspo-badge-7224.png'
-          alt='Certified Scrum Product Owner (CSPO) badge'
-          className='badge'
-          width={128}
-          height={128}
-        /> */}
-        <span>Certified Scrum Product Owner (CSPO)</span>
-      </a>
-      <h3>HackerRank</h3>
+      <div className='block bg-white p-4 my-4 shadow-sm'>
+        <a target='_blank' href='https://bcert.me/sofciruoh'>
+          <img
+            src='https://bcert.me/bc/html/img/badges/generated/badge-7224.png'
+            alt='Certified Scrum Product Owner (CSPO) badge'
+            className='w-[128px]'
+          />
+          <div>Certified Scrum Product Owner (CSPO)</div>
+        </a>
+      </div>
+      <h3 className='mt-8'>HackerRank</h3>
       <div className='hr-row'>
         <CertBox
           href='https://www.hackerrank.com/certificates/59268139df40'
