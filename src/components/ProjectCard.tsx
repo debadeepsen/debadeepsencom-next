@@ -6,7 +6,7 @@ import React from 'react'
 const ProjectCard = ({ project }: { project: ProjectType }) => {
   return (
     <div
-      className='content-box w-screen sm:w-full xl:w-[40%] min-h-[300] md:min-h-[400] mr-0 md:mr-4 mb-4 p-6 shadow-sm flex flex-nowrap rounded-sm relative'
+      className='content-box w-screen sm:w-full min-[1900px]:w-[42%] min-h-[300] md:min-h-[400] mr-0 md:mr-4 mb-4 p-6 shadow-sm flex flex-nowrap rounded-sm relative'
       style={{ background: '#fff' }}
     >
       <div className='flex-none overflow-hidden w-0 sm:w-[60px] lg:w-[75px] pt-2 flex justify-center'>
@@ -28,7 +28,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
             <a
               target='_blank'
               href={project.website}
-              className='hidden sm:inline'
+              className='hidden sm:inline break-all'
             >
               {project.website}
             </a>
@@ -44,7 +44,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
         {project.code && (
           <div className='inline-block sm:block'>
             <i className='fas fa-code inline-block mr-2'></i>
-            <a target='_blank' href={project.code} className='hidden sm:inline'>
+            <a target='_blank' href={project.code} className='hidden sm:inline break-all'>
               {project.code}
             </a>
             <a

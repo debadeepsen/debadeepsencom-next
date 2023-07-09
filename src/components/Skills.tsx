@@ -9,13 +9,11 @@ const Skills = ({ heading }: PageSectionType) => {
   return (
     <PageSection heading={heading} sideGraphic='left' svg={<CodeSVG />}>
       <div className='icons'>
-        <div className='mt-2'>
-          {skills.map(fullSkill => {
-            const [skill, alt] = fullSkill.split(DELIMITER)
-            if (alt) return <DevIcon key={skill} skill={skill} alt={alt} />
-            return <DevIcon key={skill} skill={skill} />
-          })}
-        </div>
+        {skills.map(fullSkill => {
+          const [skill, alt] = fullSkill.split(DELIMITER)
+          if (alt) return <DevIcon key={skill} skill={skill} alt={alt} />
+          return <DevIcon key={skill} skill={skill} />
+        })}
       </div>
     </PageSection>
   )

@@ -18,7 +18,7 @@ const Article = ({ caption, url }: { caption: string; url: string }) => {
 
 const ArticleList = ({ heading }: PageSectionType) => {
   return (
-    <PageSection heading={heading} sideGraphic='left' svg={<ArticlesSVG />}>
+    <PageSection heading={heading} sideGraphic='left' svg={<ArticlesSVG />} svgOffset={10}>
       <Article
         caption='Page scroll progress bars'
         url='https://dev.to/debadeepsen/page-scroll-progress-bars-fjl'

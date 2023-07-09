@@ -36,7 +36,7 @@ export default function Home() {
       {/* ******* */}
       {/* ******* */}
 
-      <div className='separator' />
+      <Divider />
       <h2>Find Me On</h2>
       <div className='icons'>
         <a href='https://dev.to/debadeepsen' target='_blank'>
