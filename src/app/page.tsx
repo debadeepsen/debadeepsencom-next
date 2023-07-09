@@ -5,6 +5,7 @@ import Main from '@/components/containers/Main'
 import Hero from '@/components/Hero'
 import PageBottom from '@/components/PageBottom'
 import Divider from '@/components/Divider'
+import ArticleList from '@/components/ArticleList'
 
 export default function Home() {
   return (
@@ -16,100 +17,7 @@ export default function Home() {
       <Divider />
       <ProjectList heading='Featured Projects' />
       <Divider />
-
-
-      <div className='separator' />
-      <h2>Featured Articles</h2>
-      <div className='articles'>
-        <div className='article'>
-          <div className='article-caption'>Page scroll progress bars</div>
-          <div>
-            <a
-              href='https://dev.to/debadeepsen/page-scroll-progress-bars-fjl'
-              target='_blank'
-            >
-              https://dev.to/debadeepsen/page-scroll-progress-bars-fjl
-            </a>
-          </div>
-        </div>
-        <div className='article'>
-          <div className='article-caption'>
-            Animated underline on hover (pure CSS)
-          </div>
-          <div>
-            <a
-              href='https://dev.to/debadeepsen/animated-underline-on-hover-pure-css-4bm6'
-              target='_blank'
-            >
-              https://dev.to/debadeepsen/animated-underline-on-hover-pure-css-4bm6
-            </a>
-          </div>
-        </div>
-        <div className='article'>
-          <div className='article-caption'>Vintage photo effect with CSS</div>
-          <div>
-            <a
-              href='https://dev.to/debadeepsen/vintage-photo-effect-with-css-16oj'
-              target='_blank'
-            >
-              https://dev.to/debadeepsen/vintage-photo-effect-with-css-16oj
-            </a>
-          </div>
-        </div>
-        <div className='article'>
-          <div className='article-caption'>
-            A table with a fixed (sticky) header
-          </div>
-          <div>
-            <a
-              href='https://dev.to/debadeepsen/a-table-with-a-fixed-sticky-header-54gm'
-              target='_blank'
-            >
-              https://dev.to/debadeepsen/a-table-with-a-fixed-sticky-header-54gm
-            </a>
-          </div>
-        </div>
-        <div className='article'>
-          <div className='article-caption'>
-            Drawer navigation menu using CSS and Vue JS
-          </div>
-          <div>
-            <a
-              href='https://dev.to/debadeepsen/drawer-navigation-menu-using-css-and-vue-js-hho'
-              target='_blank'
-            >
-              https://dev.to/debadeepsen/drawer-navigation-menu-using-css-and-vue-js-hho
-            </a>
-          </div>
-        </div>
-        <div className='article'>
-          <div className='article-caption'>
-            Making a sliding tab in React Native
-          </div>
-          <div>
-            <a
-              href='https://dev.to/debadeepsen/making-a-sliding-tab-bar-in-react-native-1ah0'
-              target='_blank'
-            >
-              https://dev.to/debadeepsen/making-a-sliding-tab-bar-in-react-native-1ah0
-            </a>
-          </div>
-        </div>
-        <div className='article'>
-          <div className='article-caption'>
-            Introduction to React for Vue JS developers series
-          </div>
-          <div>
-            Part 1:{' '}
-            <a
-              href='https://dev.to/debadeepsen/react-jumpstart-for-the-vuejs-developer-part-1-4ihf'
-              target='_blank'
-            >
-              https://dev.to/debadeepsen/react-jumpstart-for-the-vuejs-developer-part-1-4ihf
-            </a>
-          </div>
-        </div>
-      </div>
+      <ArticleList heading='Featured Articles' />
 
       {/* ******* */}
       {/* ******* */}
