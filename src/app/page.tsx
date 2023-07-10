@@ -50,7 +50,7 @@ export default function Home() {
         </a>
       </div>
       <div style={{ height: 300 }} />
-      <PageBottom />
+{/*       <PageBottom /> */}
     </Main>
   )
 }
