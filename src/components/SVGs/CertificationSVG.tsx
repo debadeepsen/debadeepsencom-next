@@ -4,7 +4,7 @@ import React from 'react'
 const CertificationSVG = () => {
   return (
     <svg
-      className='svg-icon'
+      className='h-[300px]'
       xmlns='http://www.w3.org/2000/svg'
       data-name='Layer 1'
       width='571.9401'

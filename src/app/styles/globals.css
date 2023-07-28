@@ -90,13 +90,3 @@ h1 {
 .fa-code {
   color: #555;
 }
-
-.svg-icon {
-  height: 60%;
-}
-
-@media screen and (max-width: 1200px) {
-  .svg-icon {
-    width: 60%;
-  }
-}

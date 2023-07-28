@@ -12,7 +12,7 @@ const PageSection = ({
     'relative pt-10 flex w-full min-[1280px]:w-[480px] max-[1280px]:justify-center'
   return (
     <div
-      className='p-3 bg-gray-100'
+      className='p-3'
     >
       <div className='flex flex-col-reverse min-[1280px]:flex-row justify-between'>
         {sideGraphic === 'left' && (
