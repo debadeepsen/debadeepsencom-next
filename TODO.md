@@ -1,6 +1,7 @@
 # TODO
 
 - [ ] Transparent top SVG
+- [ ] Double overlaid top SVG
 - [ ] Remove mobile height for SVG
 - [ ] Certifications section to be horizontal on `lg+`
 - [ ] Squeeze skills section vertically on `md+`
