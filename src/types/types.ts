@@ -6,5 +6,6 @@ export type PageSectionType = {
   hr?: boolean
   sideGraphic?: 'left' | 'right'
   svg?: React.ReactNode,
-  svgOffset?: number
+  svgOffset?: number,
+  bg?: boolean
 }

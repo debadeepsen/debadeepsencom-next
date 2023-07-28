@@ -12,11 +12,11 @@ export default function Home() {
     <Main>
       <Hero />
       <Certifications heading='Certifications' />
-      <Divider />
+      {/* <Divider /> */}
       <Skills heading='Skills' />
-      <Divider />
+      {/* <Divider /> */}
       <ProjectList heading='Featured Projects' />
-      <Divider />
+      {/* <Divider /> */}
       <ArticleList heading='Featured Articles' />
 
       {/* ******* */}
