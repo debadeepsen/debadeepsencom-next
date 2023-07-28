@@ -10,14 +10,16 @@ const CertBox = ({
   text: string
 }) => (
   <Card>
-    <a target='_blank' href={href} data-skill={skill}>
-      <iframe
-        src='https://www.hackerrank.com/certificates/iframe/59268139df40'
-        width={120}
+    <center>
+      <a target='_blank' href={href} data-skill={skill}>
+        {/* <iframe
+        src={href}
+        width={200}
       />
-      <br />
-      {text}
-    </a>
+      <br /> */}
+        {text}
+      </a>
+    </center>
   </Card>
 )
 

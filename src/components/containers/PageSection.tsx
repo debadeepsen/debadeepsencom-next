@@ -6,15 +6,13 @@ const PageSection = ({
   heading,
   children,
   sideGraphic,
-  svg,
-  bg
+  svg
 }: PageSectionType) => {
   const divClasses =
     'relative pt-10 flex w-full min-[1280px]:w-[480px] max-[1280px]:justify-center'
   return (
     <div
-      className='my-10 p-3'
-      style={bg ? { background: `${THEME_COLOR}11` } : undefined}
+      className='p-3 bg-gray-100'
     >
       <div className='flex flex-col-reverse min-[1280px]:flex-row justify-between'>
         {sideGraphic === 'left' && (
