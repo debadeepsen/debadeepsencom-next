@@ -1,3 +1,4 @@
+import HackerRankSVG from '../SVGs/HackerRankSVG'
 import Card from './Card'
 
 const CertBox = ({
@@ -12,11 +13,9 @@ const CertBox = ({
   <Card>
     <center>
       <a target='_blank' href={href} data-skill={skill}>
-        {/* <iframe
-        src={href}
-        width={200}
-      />
-      <br /> */}
+        {/* TODO: make this a prop */}
+        <HackerRankSVG />
+        <br/>
         {text}
         <i className='fas fa-external-link-alt'></i>
       </a>

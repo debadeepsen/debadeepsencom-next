@@ -22,10 +22,10 @@ const LightMode: ColorModeState = {
 }
 
 const DarkMode: ColorModeState = {
-  bodyBg: '#202022',
+  bodyBg: 'rgb(24, 22, 28)',
   color: '#ffe',
-  sectionBg: '#292931',
-  cardBg: '#363941',
+  sectionBg: 'rgb(32, 28, 38)',
+  cardBg: 'rgb(42, 38, 50)',
   icon: '#ccc'
 }
 

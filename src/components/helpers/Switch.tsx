@@ -6,6 +6,7 @@ export type OptionsProp = {
   initialValue: string
   bgColor?: string
   color?: string
+  location?: number
   options: OptionType[]
   onChange?: (value: string) => void
 }
@@ -17,6 +18,7 @@ const Switch = ({
   bgColor,
   color,
   options,
+  location = 20,
   onChange
 }: OptionsProp) => {
   const [leftOption, rightOption] = options
@@ -40,7 +42,7 @@ const Switch = ({
   }
 
   return (
-    <div className='flex fixed left-[40px] top-[40px]'>
+    <div className='flex fixed' style={{ top: location, left: location }}>
       <button
         aria-label='switch'
         className='flex rounded-[100px] shadow-sm p-2 border-0 z-10 cursor-pointer relative'

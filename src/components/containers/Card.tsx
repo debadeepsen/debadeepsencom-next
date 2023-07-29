@@ -11,7 +11,7 @@ const Card = ({ children }: { children: ReactNode }) => {
 
   return (
     <div
-      className='block p-4 my-4 sm:mx-8 sm:ml-0 shadow-md min-w-[120px] w-fit'
+      className='block p-4 my-4 mt-0 sm:mx-8 sm:ml-0 shadow-md min-w-[120px] w-fit'
       style={{ background: ColorModes[colorModeValue].cardBg }}
     >
       {children}

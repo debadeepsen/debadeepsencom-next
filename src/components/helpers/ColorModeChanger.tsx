@@ -38,6 +38,7 @@ const ColorModeChanger = () => {
   return (
     <div>
       <Switch
+        location={20}
         initialValue={colorModeValue}
         bgColor={ColorModes[colorModeValue].cardBg}
         color={ColorModes[colorModeValue].color}
