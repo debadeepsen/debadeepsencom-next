@@ -10,6 +10,7 @@ import {
   LIGHT
 } from '@/lib/constants/colorModeConstants'
 import { RootState } from '@/store'
+import { colorModeUtil } from '@/lib/commonLib'
 
 const LeftElement = () => (
   <i className='fas fa-sun' style={{ fontSize: 20 }}></i>
@@ -30,8 +31,8 @@ const ColorModeChanger = () => {
   )
 
   const setColorMode = (mode: string) => {
-    console.log({ 'changing to': mode })
     dispatch(updateColorMode({ value: mode as ColorModeValueType }))
+    colorModeUtil.set(mode)
   }
 
   return (

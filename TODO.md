@@ -13,4 +13,5 @@
 - [ ] SVG colors to update with color mode
 - [ ] Persist color mode
 - [ ] New 4k design
+- [ ] Blogs from Dev.to
 - [ ] Blog with PostgreSQL
