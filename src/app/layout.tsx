@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   }, [])
 
   if (!colorModeUtil.manualPreferenceSet) {
-    const mql = window.matchMedia('(prefers-color-scheme: dark)')
+    const mql = globalThis.window?.matchMedia('(prefers-color-scheme: dark)')
     store.dispatch(
       updateColorMode({
         value: (mql.matches ? DARK : LIGHT) as ColorModeValueType
