@@ -53,17 +53,6 @@ h1 {
   color: #777;
 }
 
-/* h1 {
-  font-family: 'Julee';
-} */
-
-.separator {
-  margin-top: 40px;
-  height: 1px;
-  /* background-color: #7772; */
-  border-top: 1px solid #9995;
-}
-
 .icons i {
   display: inline-block;
   font-size: 32px;
@@ -89,4 +78,8 @@ h1 {
 .fa-globe-americas,
 .fa-code {
   color: #555;
+}
+
+section h2::before {
+  transform: translateZ(-3px);
 }
