@@ -6,6 +6,7 @@ import Hero from '@/components/Hero'
 import PageBottom from '@/components/PageBottom'
 import Divider from '@/components/Divider'
 import ArticleList from '@/components/ArticleList'
+import Socials from '@/components/Socials'
 
 export default function Home() {
   return (
@@ -36,20 +37,9 @@ export default function Home() {
       {/* ******* */}
       {/* ******* */}
 
+
       <Divider />
-      <h2>Find Me On</h2>
-      <div className='icons'>
-        <a href='https://dev.to/debadeepsen' target='_blank'>
-          <i className='fab fa-dev' aria-hidden='true' />{' '}
-        </a>
-        <a href='https://github.com/debadeepsen' target='_blank'>
-          <i className='fab fa-github' aria-hidden='true' />{' '}
-        </a>
-        <a href='https://www.linkedin.com/in/debadeep/' target='_blank'>
-          <i className='fab fa-linkedin' aria-hidden='true' />
-        </a>
-      </div>
-      <div style={{ height: 300 }} />
+      <Socials />
       <PageBottom />
     </Main>
   )
