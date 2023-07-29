@@ -32,7 +32,7 @@ const Certifications = ({ heading, bg }: PageSectionType) => {
               <img
                 src='https://bcert.me/bc/html/img/badges/generated/badge-7224.png'
                 alt='Certified Scrum Product Owner (CSPO) badge'
-                className='w-[128px]'
+                className='w-[128px] md:w-[150px]'
               />
               <div>
                 Certified Scrum Product Owner (CSPO)
