@@ -1,17 +1,21 @@
-import Head from 'next/head'
+'use client'
+
 import './styles/globals.css'
 import Script from 'next/script'
+import { ReactNode, useEffect } from 'react'
+import { Provider } from 'react-redux'
+import { store } from '@/store'
 
 export const metadata = {
   title: 'Debadeep Sen',
   description: 'Personal website of Debadeep Sen'
 }
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
+  useEffect(() => {
+    document.title = metadata.title
+  }, [])
+  
   return (
     <html lang='en'>
       <Script
@@ -26,7 +30,7 @@ export default function RootLayout({
           color: '#333'
         }}
       >
-        {children}
+        <Provider store={store}>{children}</Provider>
       </body>
     </html>
   )
