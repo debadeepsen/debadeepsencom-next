@@ -22,13 +22,16 @@ const Certifications = ({ heading, bg }: PageSectionType) => {
                 alt='Certified Scrum Product Owner (CSPO) badge'
                 className='w-[128px]'
               />
-              <div>Certified Scrum Product Owner (CSPO)</div>
+              <div>
+                Certified Scrum Product Owner (CSPO)
+                <i className='fas fa-external-link-alt'></i>
+              </div>
             </a>
           </div>
         </div>
         <div className='ml-0 sm:ml-10 bg-white shadow-xs p-4'>
           <h3 className='mt-8 sm:mt-4'>HackerRank</h3>
-          <div className='hr-row block sm:flex'>
+          <div className='hr-row block sm:flex md:flex-col xl:flex-row'>
             <CertBox
               href='https://www.hackerrank.com/certificates/59268139df40'
               skill='C%23'

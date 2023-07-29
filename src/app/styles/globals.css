@@ -83,3 +83,9 @@ h1 {
 section h2::before {
   transform: translateZ(-3px);
 }
+
+.fa-external-link-alt {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 12px;
+}

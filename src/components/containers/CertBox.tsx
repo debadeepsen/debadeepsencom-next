@@ -18,6 +18,7 @@ const CertBox = ({
       />
       <br /> */}
         {text}
+        <i className='fas fa-external-link-alt'></i>
       </a>
     </center>
   </Card>

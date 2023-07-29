@@ -10,6 +10,7 @@ const Article = ({ caption, url }: { caption: string; url: string }) => {
       <div>
         <a href={url} target='_blank'>
           {url}
+          <i className='fas fa-external-link-alt'></i>
         </a>
       </div>
     </div>
@@ -18,7 +19,12 @@ const Article = ({ caption, url }: { caption: string; url: string }) => {
 
 const ArticleList = ({ heading }: PageSectionType) => {
   return (
-    <PageSection heading={heading} sideGraphic='left' svg={<ArticlesSVG />} svgOffset={10}>
+    <PageSection
+      heading={heading}
+      sideGraphic='left'
+      svg={<ArticlesSVG />}
+      svgOffset={10}
+    >
       <Article
         caption='Page scroll progress bars'
         url='https://dev.to/debadeepsen/page-scroll-progress-bars-fjl'

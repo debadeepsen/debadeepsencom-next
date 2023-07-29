@@ -31,6 +31,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
               className='hidden sm:inline break-all'
             >
               {project.website}
+              <i className='fas fa-external-link-alt'></i>
             </a>
             <a
               target='_blank'
@@ -38,14 +39,20 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
               className='inline sm:hidden'
             >
               Demo
+              <i className='fas fa-external-link-alt'></i>
             </a>
           </div>
         )}
         {project.code && (
           <div className='inline-block sm:block'>
             <i className='fas fa-code inline-block mr-2'></i>
-            <a target='_blank' href={project.code} className='hidden sm:inline break-all'>
+            <a
+              target='_blank'
+              href={project.code}
+              className='hidden sm:inline break-all'
+            >
               {project.code}
+              <i className='fas fa-external-link-alt'></i>
             </a>
             <a
               target='_blank'
@@ -53,6 +60,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
               className='inline sm:hidden'
             >
               Code
+              <i className='fas fa-external-link-alt'></i>
             </a>
           </div>
         )}
