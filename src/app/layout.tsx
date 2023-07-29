@@ -6,7 +6,7 @@ import { ReactNode, useEffect } from 'react'
 import { Provider } from 'react-redux'
 import { store } from '@/store'
 
-export const metadata = {
+const metadata = {
   title: 'Debadeep Sen',
   description: 'Personal website of Debadeep Sen'
 }
