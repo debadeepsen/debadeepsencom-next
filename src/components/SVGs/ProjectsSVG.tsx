@@ -4,6 +4,7 @@ import React from 'react'
 const ProjectsSVG = () => {
   return (
     <svg
+      id='projects_svg'
       xmlns='http://www.w3.org/2000/svg'
       width='801.92126'
       height='597.4574'

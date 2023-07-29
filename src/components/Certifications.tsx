@@ -12,7 +12,7 @@ const Certifications = ({ heading, bg }: PageSectionType) => {
       sideGraphic='right'
       svg={<CertificationSVG />}
     >
-      <div className='flex'>
+      <div className='flex flex-col md:flex-row'>
         <div className='bg-white shadow-xs p-4'>
           <h3>Scrum Alliance</h3>
           <div className='block bg-white p-4 my-4 shadow-md w-fit text-center'>
@@ -29,8 +29,8 @@ const Certifications = ({ heading, bg }: PageSectionType) => {
             </a>
           </div>
         </div>
-        <div className='ml-0 sm:ml-10 bg-white shadow-xs p-4'>
-          <h3 className='mt-8 sm:mt-4'>HackerRank</h3>
+        <div className='ml-0 md:ml-10 bg-white shadow-xs p-4'>
+          <h3 className='mt-8 md:mt-4'>HackerRank</h3>
           <div className='hr-row block sm:flex md:flex-col xl:flex-row'>
             <CertBox
               href='https://www.hackerrank.com/certificates/59268139df40'
