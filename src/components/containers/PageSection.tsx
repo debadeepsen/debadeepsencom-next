@@ -1,4 +1,9 @@
+'use client'
+
+import { ColorModes } from '@/lib/constants/colorModeConstants'
 import { THEME_COLOR } from '@/lib/constants/commonConstants'
+import { RootState } from '@/store'
+import { useAppSelector } from '@/store/hooks'
 import { PageSectionType } from '@/types/types'
 import React from 'react'
 
@@ -14,8 +19,14 @@ const PageSection = ({
   sideGraphic,
   svg
 }: PageSectionType) => {
+  const colorModeValue = useAppSelector(
+    (state: RootState) => state.colorMode.value
+  )
   return (
-    <section className='p-8 pb-6 bg-white relative shadow-sm rounded-sm '>
+    <section
+      className='p-8 pb-6 relative shadow-sm rounded-sm'
+      style={{ background: ColorModes[colorModeValue].sectionBg }}
+    >
       <h2 className={h2Class} style={{ background: THEME_COLOR }}>
         {heading}
       </h2>
