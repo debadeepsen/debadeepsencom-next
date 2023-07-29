@@ -12,6 +12,7 @@
 - [ ] Get system color mode
 - [ ] SVG colors to update with color mode
 - [ ] Persist color mode
+- [ ] Fix Lighthouse warnings
 - [ ] New 4k design
 - [ ] Blogs from Dev.to
 - [ ] Blog with PostgreSQL
