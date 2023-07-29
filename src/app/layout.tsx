@@ -25,6 +25,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           defer
         />
         <Script src='https://code.iconify.design/1/1.0.7/iconify.min.js' />
+        <head>
+          <meta name='title' content={metadata.title}></meta>
+          <meta name='description' content={metadata.description}></meta>
+        </head>
         <body>{children}</body>
       </html>
     </Provider>

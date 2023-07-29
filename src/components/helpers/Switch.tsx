@@ -42,6 +42,7 @@ const Switch = ({
   return (
     <div className='flex fixed left-[40px] top-[40px]'>
       <button
+        aria-label='switch'
         className='flex rounded-[100px] shadow-sm p-2 border-0 z-10 cursor-pointer relative'
         style={{ background: bgColor, color: color }}
         onClick={() => toggleValue()}

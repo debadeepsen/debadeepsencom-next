@@ -12,4 +12,5 @@
 - [ ] Get system color mode
 - [ ] SVG colors to update with color mode
 - [ ] Persist color mode
+- [ ] New 4k design
 - [ ] Blog with PostgreSQL
