@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '..'
-import { ColorModeValueType } from '@/lib/constants/colorModeConstants'
+import { ColorModeValueType, LIGHT } from '@/lib/constants/colorModeConstants'
 
 export type ModeState = {
   value: ColorModeValueType
 }
 
 const initialState: ModeState = {
-  value: 'dark'
+  value: LIGHT
 }
 
 export const colorModeSlice = createSlice({

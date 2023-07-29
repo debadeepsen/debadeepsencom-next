@@ -10,20 +10,23 @@ export type ColorModeState = {
   h2?: string
   sectionBg?: string
   cardBg?: string
+  icon?: string
 }
 
 const LightMode: ColorModeState = {
   bodyBg: '#eee',
   color: '#333',
   sectionBg: '#fff',
-  cardBg: '#fff'
+  cardBg: '#fff',
+  icon: '#333'
 }
 
 const DarkMode: ColorModeState = {
-  bodyBg: '#222522',
+  bodyBg: '#202022',
   color: '#ffe',
-  sectionBg: '#333833',
-  cardBg: '#444844'
+  sectionBg: '#292931',
+  cardBg: '#363941',
+  icon: '#ccc'
 }
 
 export const ColorModes = {

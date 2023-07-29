@@ -1,18 +1,35 @@
+import { ColorModeValueType } from '@/lib/constants/colorModeConstants'
 import React, { ReactNode, useState } from 'react'
 
 export type OptionType = { element?: ReactNode; value: string }
 export type OptionsProp = {
+  initialValue: string
+  bgColor?: string
+  color?: string
   options: OptionType[]
   onChange?: (value: string) => void
 }
 
-const Switch = ({ options, onChange }: OptionsProp) => {
+type SwitcherPositionType = 'left' | 'right'
+
+const Switch = ({
+  initialValue,
+  bgColor,
+  color,
+  options,
+  onChange
+}: OptionsProp) => {
   const [leftOption, rightOption] = options
-  const [switcherPosition, setSwitcherPosition] = useState(-6)
-  const [state, setState] = useState<'left' | 'right'>('left')
+  const intialValueIsLeft = initialValue === leftOption.value
+  const [switcherPosition, setSwitcherPosition] = useState(
+    intialValueIsLeft ? -6 : 30
+  )
+  const [state, setState] = useState<SwitcherPositionType>(
+    (intialValueIsLeft ? 'left' : 'right') as SwitcherPositionType
+  )
 
   const toggleValue = () => {
-    const newPosition = state === 'left' ?  30  : -6
+    const newPosition = state === 'left' ? 30 : -6
     const newValue = state === 'left' ? rightOption.value : leftOption.value
     const newState = state === 'left' ? 'right' : 'left'
 
@@ -25,7 +42,8 @@ const Switch = ({ options, onChange }: OptionsProp) => {
   return (
     <div className='flex fixed left-[40px] top-[40px]'>
       <button
-        className='flex rounded-[100px] shadow-sm p-2 bg-white border-0 z-10 cursor-pointer relative'
+        className='flex rounded-[100px] shadow-sm p-2 border-0 z-10 cursor-pointer relative'
+        style={{ background: bgColor, color: color }}
         onClick={() => toggleValue()}
       >
         <div className='flex justify-center items-center'>
@@ -36,8 +54,11 @@ const Switch = ({ options, onChange }: OptionsProp) => {
           {rightOption.element ?? rightOption.value}
         </div>
         <div
-          className='absolute top-[2px] border-0 rounded-[100px] w-[32px] h-[32px] transition-all'
-          style={{ transform: `translateX(${switcherPosition}px)` , boxShadow: '0px 1px 5px #1117'}}
+          className='absolute top-[2px] border-0 rounded-[100px] w-[32px] h-[32px] bg-[#fff2]'
+          style={{
+            transform: `translateX(${switcherPosition}px)`,
+            boxShadow: '0px 1px 5px #1117'
+          }}
         ></div>
       </button>
     </div>

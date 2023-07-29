@@ -3,7 +3,13 @@
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import Switch from './Switch'
 import { updateColorMode } from '@/store/slices/colorModeSlice'
-import { ColorModeValueType } from '@/lib/constants/colorModeConstants'
+import {
+  ColorModeValueType,
+  ColorModes,
+  DARK,
+  LIGHT
+} from '@/lib/constants/colorModeConstants'
+import { RootState } from '@/store'
 
 const LeftElement = () => (
   <i className='fas fa-sun' style={{ fontSize: 20 }}></i>
@@ -19,21 +25,29 @@ const RightElement = () => (
 const ColorModeChanger = () => {
   const dispatch = useAppDispatch()
 
+  const colorModeValue = useAppSelector(
+    (state: RootState) => state.colorMode.value
+  )
+
   const setColorMode = (mode: string) => {
+    console.log({ 'changing to': mode })
     dispatch(updateColorMode({ value: mode as ColorModeValueType }))
   }
 
   return (
     <div>
       <Switch
+        initialValue={colorModeValue}
+        bgColor={ColorModes[colorModeValue].cardBg}
+        color={ColorModes[colorModeValue].color}
         options={[
           {
             element: <LeftElement />,
-            value: 'Sun'
+            value: LIGHT
           },
           {
             element: <RightElement />,
-            value: 'Moon'
+            value: DARK
           }
         ]}
         onChange={mode => setColorMode(mode)}

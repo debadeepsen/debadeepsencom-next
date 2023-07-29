@@ -8,7 +8,6 @@ import Image from 'next/image'
 import React from 'react'
 
 const ProjectCard = ({ project }: { project: ProjectType }) => {
-  
   const colorModeValue = useAppSelector(
     (state: RootState) => state.colorMode.value
   )
@@ -33,7 +32,10 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
         <div className='mb-2'>{project.description}</div>
         {project.website && (
           <div className='mb-0 sm:mb-2 mr-2 sm:mr-0 inline-block sm:block'>
-            <i className='fas fa-globe-americas inline-block mr-2'></i>
+            <i
+              className='fas fa-globe-americas inline-block mr-2'
+              style={{ color: ColorModes[colorModeValue].icon }}
+            ></i>
             <a
               target='_blank'
               href={project.website}
@@ -54,7 +56,10 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
         )}
         {project.code && (
           <div className='inline-block sm:block'>
-            <i className='fas fa-code inline-block mr-2'></i>
+            <i
+              className='fas fa-code inline-block mr-2'
+              style={{ color: ColorModes[colorModeValue].icon }}
+            ></i>
             <a
               target='_blank'
               href={project.code}
