@@ -7,6 +7,7 @@ import PageBottom from '@/components/PageBottom'
 import Divider from '@/components/Divider'
 import ArticleList from '@/components/ArticleList'
 import Socials from '@/components/Socials'
+import GuitarSVG from '@/components/SVGs/GuitarSVG'
 
 export default function Home() {
   return (
@@ -37,9 +38,11 @@ export default function Home() {
       {/* ******* */}
       {/* ******* */}
 
-
       <Divider />
       <Socials />
+      <section className='flex align-center justify-center mt-[-80px]'>
+        <GuitarSVG />
+      </section>
       <PageBottom />
     </Main>
   )
