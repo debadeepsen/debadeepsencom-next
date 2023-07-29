@@ -6,6 +6,7 @@ const HackerRankSVG = () => (
     width={150}
     height={150}
     viewBox="0 0 1000 1000"
+    className="w-[100px] min-[1600px]:w-[150px]"
     xmlSpace="preserve"
   >
     <rect width="100%" height="100%" fill="#fff" />
