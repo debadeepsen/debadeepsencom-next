@@ -26,9 +26,9 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
         <span className='sm:hidden'>
           <i className={`fas ${project.icon} text-xl sm:text-2xl mr-2`}></i>
         </span>
-        <h4 className='inline-block sm:block mb-2 mt-0 text-xl sm:text-2xl font-semibold'>
+        <h3 className='inline-block sm:block mb-2 mt-0 text-xl sm:text-2xl font-semibold'>
           {project.title}
-        </h4>
+        </h3>
         <div className='mb-2'>{project.description}</div>
         {project.website && (
           <div className='mb-0 sm:mb-2 mr-2 sm:mr-0 inline-block sm:block'>

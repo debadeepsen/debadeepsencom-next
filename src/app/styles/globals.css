@@ -53,7 +53,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: #039be5;
+  color: #1faff7;
 }
 a:hover {
   text-decoration: underline;
@@ -65,6 +65,10 @@ h1 {
 
 h2 {
   font-weight: 400;
+}
+
+h3 {
+  font-weight: 600;
 }
 
 .subtitle {

@@ -13,18 +13,7 @@ const Blog = async () => {
     return res.json()
   }
 
-  //   const [articles, setArticles] = useState<any>([])
-
-  //   useEffect(() => {
-  //     ;(async function () {
-  //       const articles = await fetchDevArticles()
-  //       setArticles(articles)
-  //     })()
-  //   }, [])
-
   const articles = await fetchDevArticles()
-
-  //   console.log({ articles })
 
   return (
     <div className='w-full lg:w-[800px] xl:w-[1024px] mx-auto'>
