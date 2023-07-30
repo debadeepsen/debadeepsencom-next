@@ -5,6 +5,7 @@ import Script from 'next/script'
 import { ReactNode } from 'react'
 import { Provider } from 'react-redux'
 import { store } from '@/store'
+import Main from '@/components/containers/Main'
 
 const metadata = {
   title: 'Debadeep Sen',
@@ -25,7 +26,9 @@ const Html = ({ children }: { children: ReactNode }) => {
         <meta name='description' content={metadata.description}></meta>
         <title>{metadata.title}</title>
       </head>
-      <body>{children}</body>
+      <body>
+        <Main>{children}</Main>
+      </body>
     </html>
   )
 }

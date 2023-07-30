@@ -11,9 +11,8 @@ import GuitarSVG from '@/components/SVGs/GuitarSVG'
 import ColorModeChanger from '@/components/helpers/ColorModeChanger'
 
 export default function Home() {
-
   return (
-    <Main>
+    <>
       <Hero />
       <Certifications heading='Certifications' />
       <Divider />
@@ -27,6 +26,6 @@ export default function Home() {
       <section className='flex align-center justify-center mt-[-80px]'>
         <GuitarSVG />
       </section>
-    </Main>
+    </>
   )
 }
