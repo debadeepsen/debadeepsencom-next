@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import Switch from './Switch'
-import { updateColorMode } from '@/store/slices/colorModeSlice'
+import { setLoadComplete, updateColorMode } from '@/store/slices/colorModeSlice'
 import {
   ColorModeValueType,
   ColorModes,
@@ -11,6 +12,7 @@ import {
 } from '@/lib/constants/colorModeConstants'
 import { RootState } from '@/store'
 import { colorModeUtil } from '@/lib/commonLib'
+import { useEffect } from 'react'
 
 const LeftElement = () => (
   <i className='fas fa-sun' style={{ fontSize: 20 }}></i>
@@ -34,6 +36,28 @@ const ColorModeChanger = () => {
     dispatch(updateColorMode({ value: mode as ColorModeValueType }))
     colorModeUtil.set(mode)
   }
+
+  useEffect(() => {
+    // if an entry is found in localStorage, set it as the current color mode
+    if (colorModeUtil.manualPreferenceSet) {
+      dispatch(
+        updateColorMode({
+          value: colorModeUtil.value
+        })
+      )
+    }
+    else {
+      // find the preferences from the system
+      const mql = window.matchMedia('(prefers-color-scheme: dark)')
+      dispatch(
+        updateColorMode({
+          value: (mql?.matches ? DARK : LIGHT) as ColorModeValueType
+        })
+      )
+    }
+  
+    dispatch(setLoadComplete())
+  }, [])
 
   return (
     <div>
