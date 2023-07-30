@@ -13,7 +13,6 @@ const LoadingSVG = () => {
       width={100}
       height={100}
       viewBox='0 0 100 100'
-      enable-background='new 0 0 0 0'
     >
       <circle fill={THEME_COLOR} stroke='none' cx='6' cy='50' r='6'>
         <animate

@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ColorModeValueType } from '@/lib/constants/colorModeConstants'
-import React, { ReactNode, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 
 export type OptionType = { element?: ReactNode; value: string }
 export type OptionsProp = {
@@ -22,13 +23,15 @@ const Switch = ({
   onChange
 }: OptionsProp) => {
   const [leftOption, rightOption] = options
-  const intialValueIsLeft = initialValue === leftOption.value
-  const [switcherPosition, setSwitcherPosition] = useState(
-    intialValueIsLeft ? -6 : 30
-  )
-  const [state, setState] = useState<SwitcherPositionType>(
-    (intialValueIsLeft ? 'left' : 'right') as SwitcherPositionType
-  )
+
+  const [switcherPosition, setSwitcherPosition] = useState(-6)
+  const [state, setState] = useState<SwitcherPositionType>('left')
+
+  useEffect(() => {
+    const initialValueIsLeft = initialValue === leftOption.value
+    setSwitcherPosition(initialValueIsLeft ? -6 : 30)
+    setState(initialValueIsLeft ? 'left' : 'right')
+  }, [initialValue, options])
 
   const toggleValue = () => {
     const newPosition = state === 'left' ? 30 : -6

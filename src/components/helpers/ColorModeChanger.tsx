@@ -28,10 +28,6 @@ const RightElement = () => (
 const ColorModeChanger = () => {
   const dispatch = useAppDispatch()
 
-  const colorModeValue = useAppSelector(
-    (state: RootState) => state.colorMode.value
-  )
-
   const setColorMode = (mode: string) => {
     dispatch(updateColorMode({ value: mode as ColorModeValueType }))
     colorModeUtil.set(mode)
@@ -45,8 +41,7 @@ const ColorModeChanger = () => {
           value: colorModeUtil.value
         })
       )
-    }
-    else {
+    } else {
       // find the preferences from the system
       const mql = window.matchMedia('(prefers-color-scheme: dark)')
       dispatch(
@@ -55,9 +50,14 @@ const ColorModeChanger = () => {
         })
       )
     }
-  
+
     dispatch(setLoadComplete())
   }, [])
+
+  const colorModeValue = useAppSelector(
+    (state: RootState) => state.colorMode.value
+  )
+
 
   return (
     <div>
