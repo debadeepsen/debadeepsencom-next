@@ -14,13 +14,13 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Certifications heading='Certifications' />
-      <Divider />
       <Skills heading='Skills' />
       <Divider />
       <ProjectList heading='Featured Projects' />
       <Divider />
       <ArticleList heading='Featured Articles' />
+      <Divider />
+      <Certifications heading='Certifications' />
       <Divider />
       <Socials />
       <section className='flex align-center justify-center mt-[-80px]'>
