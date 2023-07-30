@@ -6,6 +6,9 @@ import Bg from '../Bg'
 import { RootState } from '@/store'
 import { ColorModes } from '@/lib/constants/colorModeConstants'
 import LoadingOverlay from '../LoadingOverlay'
+import Menu from '../menu/Menu'
+import PageBottom from '../PageBottom'
+import ColorModeChanger from '../helpers/ColorModeChanger'
 
 const Main = ({ children }: { children: React.ReactNode }) => {
   const colorModeValue = useAppSelector(
@@ -22,8 +25,11 @@ const Main = ({ children }: { children: React.ReactNode }) => {
       style={{ color: ColorModes[colorModeValue].color }}
     >
       {!!!colorModeLoaded && <LoadingOverlay />}
+      <Menu />
       <Bg />
       {children}
+      <PageBottom />
+      <ColorModeChanger />
     </main>
   )
 }

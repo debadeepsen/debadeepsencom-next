@@ -9,9 +9,9 @@
 - [x] Find better bullet than #
 - [x] Make better divider
 - [x] Page bottom SVG
-- [ ] Get system color mode
+- [x] Get system color mode
 - [ ] SVG colors to update with color mode
-- [ ] Persist color mode
+- [x] Persist color mode
 - [ ] Fix Lighthouse warnings
 - [ ] Responsive menu
 - [ ] New 4k design

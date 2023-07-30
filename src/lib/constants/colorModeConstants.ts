@@ -1,3 +1,5 @@
+import { THEME_COLOR, THEME_COLOR_DARK } from "./commonConstants"
+
 export const LIGHT = 'light'
 export const DARK = 'dark'
 
@@ -10,7 +12,8 @@ export type ColorModeState = {
   h2?: string
   sectionBg?: string
   cardBg?: string
-  icon?: string
+  icon?: string,
+  menu?: string
 }
 
 const LightMode: ColorModeState = {
@@ -18,7 +21,8 @@ const LightMode: ColorModeState = {
   color: '#333',
   sectionBg: '#fff',
   cardBg: '#fff',
-  icon: '#333'
+  icon: '#333',
+  menu: THEME_COLOR_DARK
 }
 
 const DarkMode: ColorModeState = {
@@ -26,7 +30,8 @@ const DarkMode: ColorModeState = {
   color: '#ffe',
   sectionBg: 'rgb(32, 28, 38)',
   cardBg: 'rgb(42, 38, 50)',
-  icon: '#ccc'
+  icon: '#ccc',
+  menu: '#fff'
 }
 
 export const ColorModes = {

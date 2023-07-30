@@ -27,8 +27,6 @@ export default function Home() {
       <section className='flex align-center justify-center mt-[-80px]'>
         <GuitarSVG />
       </section>
-      <PageBottom />
-      <ColorModeChanger />
     </Main>
   )
 }
