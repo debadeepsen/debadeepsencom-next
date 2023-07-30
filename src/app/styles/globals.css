@@ -30,7 +30,7 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Julee&family=Rubik:wght@300;600&display=swap');
 @import url('./color-mode.css');
-@import url('./common.css');
+/* @import url('./common.css'); */
 @import url('./page-bottom.css');
 
 body {
@@ -51,9 +51,20 @@ body {
     font-size: 18px;
   }
 }
+a {
+  text-decoration: none;
+  color: #039be5;
+}
+a:hover {
+  text-decoration: underline;
+}
 
 h1 {
   color: #555;
+}
+
+h2 {
+  font-weight: 400;
 }
 
 .subtitle {
