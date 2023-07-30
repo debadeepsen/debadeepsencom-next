@@ -14,9 +14,6 @@ const Hero = () => {
       <div className='p-0 md:pl-12 text-center md:text-left'>
         <Title />
         <SubTitle />
-        {/* <div className='flex justify-end'>
-          <CatSVG />
-        </div> */}
       </div>
     </div>
   )

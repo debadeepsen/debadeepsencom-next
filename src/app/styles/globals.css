@@ -46,6 +46,12 @@ body {
   }
 }
 
+@media screen and (min-width: 1900px) {
+  body {
+    font-size: 18px;
+  }
+}
+
 h1 {
   color: #555;
 }

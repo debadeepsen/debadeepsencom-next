@@ -13,7 +13,7 @@ const MenuItem = ({ href, text }: { href: string; text: string }) => {
   return (
     <Link
       href={href}
-      className='flex justify-center items-center text-white transition-all rounded-sm m-1 px-4 py-2 w-[80px] bg-white/10 hover:bg-white/30 hover:no-underline'
+      className='text-[16px] flex justify-center items-center text-white transition-all rounded-sm m-1 px-4 py-2 w-[80px] bg-white/10 hover:bg-white/30 hover:no-underline'
       style={{ color: ColorModes[colorModeValue].menu }}
     >
       {text}
