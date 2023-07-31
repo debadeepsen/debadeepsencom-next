@@ -1,6 +1,8 @@
 import { H1 } from '@/components/Title'
 import Card from '@/components/containers/Card'
+import BlogBlurb from '@/components/fragments/BlogBlurb'
 import { DevToArticle } from '@/types/types'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 const Blog = async () => {
@@ -13,25 +15,27 @@ const Blog = async () => {
     return res.json()
   }
 
-  const articles = await fetchDevArticles()
+  const articles = (await fetchDevArticles()) as DevToArticle[]
+  articles.sort((a, b) => {
+    return b.public_reactions_count - a.public_reactions_count
+  })
 
   return (
     <div className='w-full lg:w-[800px] xl:w-[1024px] mx-auto'>
       <H1>Blog</H1>
-      <p>
-        I mostly write on{' '}
-        <a target='_blank' href='https://dev.to/debadeepsen'>
-          Dev.to
-        </a>
-        , but now that this website is ready, I might switch over or have a
-        healthy mix. I&apos;m planning on setting up a newsletter some time
-        soon, but until then, keep an eye on this page for new articles.
-      </p>
+      <BlogBlurb />
+
       {articles.map((article: DevToArticle) => (
-        <Card key={article.id} classList='w-[92%] sm:w-full'>
+        <Card
+          key={article.id}
+          classList='w-[92%] sm:w-[95%] md:w-[98%] lg:w-full'
+        >
           <div className='relative top-[-6px]'>
-            <h2>{article.title}</h2>
-            <p>{article.description}</p>
+            <Link href={'/blog/' + article.slug}>
+              <h2>{article.title}</h2>
+            </Link>
+
+            <p className='mt-2 mb-4 p-2 bg-gray-50/10'>{article.description}</p>
 
             <div className='flex'>
               <div className='rounded-full bg-lime-200/30 p-3 text-xs text-bold mr-2'>
@@ -43,7 +47,7 @@ const Blog = async () => {
             </div>
 
             {article.public_reactions_count > 50 && (
-              <div className='absolute top-[-8px] right-[2px] bg-red-200/50 text-red-900 rounded-md text-sm p-3'>
+              <div className='absolute top-[-8px] right-[2px] bg-red-500/40 rounded-md text-xs md:text-sm p-3'>
                 POPULAR
               </div>
             )}
