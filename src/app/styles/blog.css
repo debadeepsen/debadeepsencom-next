@@ -31,11 +31,15 @@ iframe {
 }
 
 .kd {
-  color: #275;
+  color: #783055;
 }
 
 .nb {
   color: #158;
+}
+
+.c1 {
+  color: #398;
 }
 
 .highlight-action,
