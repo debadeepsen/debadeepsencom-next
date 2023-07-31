@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 
 import './styles/globals.css'
@@ -6,6 +7,8 @@ import { ReactNode } from 'react'
 import { Provider } from 'react-redux'
 import { store } from '@/store'
 import Main from '@/components/containers/Main'
+import { useAppDispatch } from '@/store/hooks'
+import { setOpen } from '@/store/slices/menuSlice'
 
 const metadata = {
   title: 'Debadeep Sen',
@@ -13,6 +16,7 @@ const metadata = {
 }
 
 const Html = ({ children }: { children: ReactNode }) => {
+  
   return (
     <html lang='en'>
       <Script
@@ -34,6 +38,7 @@ const Html = ({ children }: { children: ReactNode }) => {
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+
   return (
     <Provider store={store}>
       <Html>{children}</Html>

@@ -28,7 +28,7 @@ const Blog = async () => {
         soon, but until then, keep an eye on this page for new articles.
       </p>
       {articles.map((article: DevToArticle) => (
-        <Card key={article.id} fullWidth>
+        <Card key={article.id} classList='w-[92%] sm:w-full'>
           <div className='relative top-[-6px]'>
             <h2>{article.title}</h2>
             <p>{article.description}</p>

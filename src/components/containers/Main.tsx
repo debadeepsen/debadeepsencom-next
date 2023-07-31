@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 
-import { useAppSelector } from '@/store/hooks'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import Bg from '../Bg'
 import { RootState } from '@/store'
 import { ColorModes } from '@/lib/constants/colorModeConstants'
@@ -9,6 +9,8 @@ import LoadingOverlay from '../LoadingOverlay'
 import Menu from '../menu/Menu'
 import PageBottom from '../PageBottom'
 import ColorModeChanger from '../helpers/ColorModeChanger'
+import { useEffect } from 'react'
+import { setOpen } from '@/store/slices/menuSlice'
 
 const Main = ({ children }: { children: React.ReactNode }) => {
   const colorModeValue = useAppSelector(
@@ -18,6 +20,10 @@ const Main = ({ children }: { children: React.ReactNode }) => {
   const colorModeLoaded = useAppSelector(
     (state: RootState) => state.colorMode.loaded
   )
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(setOpen(false))
+  })
 
   return (
     <main

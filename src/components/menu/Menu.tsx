@@ -1,7 +1,8 @@
 import { ColorModes } from '@/lib/constants/colorModeConstants'
 import { THEME_COLOR } from '@/lib/constants/commonConstants'
 import { RootState } from '@/store'
-import { useAppSelector } from '@/store/hooks'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { toggleOpen } from '@/store/slices/menuSlice'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
@@ -13,7 +14,7 @@ const MenuItem = ({ href, text }: { href: string; text: string }) => {
     <Link
       href={href}
       className={
-        'text-[16px] flex justify-center items-center text-white transition-all rounded-xs md:rounded-md m-1 px-4 py-2 w-[80px] bg-white/20 hover:bg-white/40 hover:no-underline' +
+        'text-[16px] flex justify-center items-center text-white transition-all rounded-xs md:rounded-md m-1 px-4 py-2 w-[80px] bg-white/0 sm:bg-white/20 hover:bg-white/40 hover:no-underline' +
         (colorModeValue === 'light' ? ' bg-white/50 hover:bg-white/80' : '')
       }
       style={{ color: ColorModes[colorModeValue].menu }}
@@ -36,10 +37,12 @@ const Menu = () => {
     (state: RootState) => state.colorMode.value
   )
 
-  const [menuOpacity, setMenuOpacity] = useState(0)
+  const menuOpen = useAppSelector((state: RootState) => state.menu.open)
+
+  const dispatch = useAppDispatch()
+
   const toggleMenu = () => {
-    const newValue = menuOpacity === 0 ? 1 : 0
-    setMenuOpacity(newValue)
+    dispatch(toggleOpen())
   }
 
   return (
@@ -59,8 +62,12 @@ const Menu = () => {
         </button>
         <div
           className={
-            'absolute top-[24px] right-0 transition-all opacity-' + menuOpacity
+            'absolute top-[24px] right-0 transition-all p-2 shadow-xl opacity-' +
+            Number(menuOpen)
           }
+          style={{
+            background: ColorModes[colorModeValue].cardBg
+          }}
         >
           <MenuList />
         </div>

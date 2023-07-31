@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import colorModeReducer from './slices/colorModeSlice'
+import menuReducer from './slices/menuSlice'
 
 export const store = configureStore({
   reducer: {
-    colorMode: colorModeReducer
+    colorMode: colorModeReducer,
+    menu: menuReducer
   }
 })
 
