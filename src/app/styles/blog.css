@@ -27,6 +27,15 @@ blockquote {
 
 iframe {
   margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.kd {
+  color: #1755;
+}
+
+.nb {
+  color: #1255;
 }
 
 .highlight-action,
