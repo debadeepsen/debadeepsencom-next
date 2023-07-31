@@ -1,5 +1,7 @@
 import { H1 } from '@/components/Title'
+import Card from '@/components/containers/Card'
 import { DevToArticle } from '@/types/types'
+import Link from 'next/link'
 import React from 'react'
 
 const BlogArticle = async ({ params }: { params: { slug: string } }) => {
@@ -18,13 +20,22 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
   const article = (await fetchDevArticle()) as DevToArticle
 
   return (
-    <div>
-      <H1 leftAligned>{article.title}</H1>
-      <p>
-        (Originally posted on{' '}
-        <a href={article.canonical_url}>{article.canonical_url}</a>)
-      </p>
-      <div dangerouslySetInnerHTML={{ __html: article.body_html ?? '' }}></div>
+    <div className='w-full lg:w-[800px] xl:w-[1200px] mx-auto'>
+      <div className='mt-20 mb-6 z-20'>
+        <Link href='/blog'>Articles</Link>
+        <i className="fas fa-caret-right inline-block mx-3"></i>
+        {article.title}
+      </div>
+      <Card>
+        <H1 leftAligned>{article.title}</H1>
+        <p>
+          (Originally posted on{' '}
+          <a href={article.canonical_url}>{article.canonical_url}</a>)
+        </p>
+        <div
+          dangerouslySetInnerHTML={{ __html: article.body_html ?? '' }}
+        ></div>
+      </Card>
     </div>
   )
 }

@@ -10,10 +10,10 @@
 - [x] Make better divider
 - [x] Page bottom SVG
 - [x] Get system color mode
-- [ ] SVG colors to update with color mode
+- [x] SVG colors to update with color mode
 - [x] Persist color mode
 - [ ] Fix Lighthouse warnings
 - [ ] Responsive menu
 - [ ] New 4k design
-- [ ] Blogs from Dev.to
+- [x] Blogs from Dev.to
 - [ ] Blog with PostgreSQL

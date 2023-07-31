@@ -32,6 +32,7 @@ body {
 @import url('./color-mode.css');
 /* @import url('./common.css'); */
 @import url('./page-bottom.css');
+@import url('./blog.css');
 
 body {
   margin: 0;
@@ -116,8 +117,4 @@ section h2::before {
   #projects_svg {
     height: 300px;
   }
-}
-
-.crayons-icon {
-  display: none;
 }

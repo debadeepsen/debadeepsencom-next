@@ -1,0 +1,37 @@
+pre {
+  background-color: #7773;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+code {
+  background-color: #7772;
+  font-style: italic;
+  padding: 0 3px;
+  border-radius: 2px;
+  font-size: 0.95rem;
+}
+
+pre code {
+  background-color: transparent;
+  font-style: normal;
+  padding: 0;
+  border-radius: 0;
+}
+
+blockquote {
+  background-color: #00b3ff11;
+  margin: 0;
+  padding: 20px;
+  padding-left: 30px;
+  border-left: 3px solid #179cd5;
+}
+
+iframe {
+  margin-top: 20px;
+}
+
+.highlight-action,
+.crayons-icon {
+  display: none;
+}

@@ -10,7 +10,7 @@ export const H1 = ({
 }) => (
   <h1
     className={
-      'font-extralight text-5xl sm:text-6xl lg:text-8xl ' +
+      'font-extralight text-5xl sm:text-6xl lg:text-7xl ' +
       (leftAligned ? 'text-left' : 'text-center')
     }
     style={{ color: THEME_COLOR }}

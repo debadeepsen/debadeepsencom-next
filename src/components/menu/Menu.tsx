@@ -14,8 +14,8 @@ const MenuItem = ({ href, text }: { href: string; text: string }) => {
     <Link
       href={href}
       className={
-        'text-[16px] flex justify-center items-center text-white transition-all rounded-xs md:rounded-md m-1 px-4 py-2 w-[80px] bg-white/0 sm:bg-white/20 hover:bg-white/40 hover:no-underline' +
-        (colorModeValue === 'light' ? ' bg-white/50 hover:bg-white/80' : '')
+        'text-[16px] flex justify-center items-center text-white transition-all rounded-xs md:rounded-md m-1 px-4 py-2 w-[80px] hover:no-underline' +
+        (colorModeValue === 'light' ? ' bg-white/50 hover:bg-white/80' : ' bg-white/0 sm:bg-white/20 hover:bg-white/40')
       }
       style={{ color: ColorModes[colorModeValue].menu }}
     >
