@@ -25,7 +25,7 @@ const Certifications = ({ heading, bg }: PageSectionType) => {
         <div className='shadow-xs p-4'>
           <h3>Scrum Alliance</h3>
           <div
-            className='block p-4 my-4 shadow-md w-fit text-center'
+            className='block p-4 my-4 shadow-md w-full md:w-fit text-center'
             style={{ background: ColorModes[colorModeValue].cardBg }}
           >
             <a target='_blank' href='https://bcert.me/sofciruoh'>

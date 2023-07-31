@@ -10,7 +10,7 @@ const CertBox = ({
   skill: string
   text: string
 }) => (
-  <Card>
+  <Card classList='w-full md:w-fit'>
     <center>
       <a target='_blank' href={href} data-skill={skill}>
         {/* TODO: make this a prop */}
