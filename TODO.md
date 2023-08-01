@@ -12,8 +12,10 @@
 - [x] Get system color mode
 - [x] SVG colors to update with color mode
 - [x] Persist color mode
+- [ ] CSS-only color mode
 - [ ] Fix Lighthouse warnings
 - [ ] Responsive menu
+- [ ] Click outside
 - [ ] New 4k design
 - [x] Blogs from Dev.to
 - [ ] Blog with PostgreSQL
