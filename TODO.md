@@ -23,3 +23,5 @@
 - [ ] New 4k design
 - [x] Blogs from Dev.to
 - [ ] Blog with PostgreSQL
+- [ ] Blog search
+- [ ] Photography page
