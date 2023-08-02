@@ -1,15 +1,19 @@
+@import url('./crayons.css');
+
 pre {
   background-color: #7773;
   padding: 10px;
   border-radius: 3px;
   overflow-x: auto;
+  line-height: 1.5rem;
 }
 
 code {
+  font-family: 'Fira Mono', 'Courier New', Courier, monospace;
   background-color: #7772;
   padding: 0 3px;
   border-radius: 2px;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
 }
 
 pre code {
@@ -31,7 +35,7 @@ iframe {
   margin-bottom: 20px;
 }
 
-.kd {
+/* .kd {
   color: #783055;
 }
 
@@ -41,7 +45,7 @@ iframe {
 
 .c1 {
   color: #398;
-}
+} */
 
 .highlight-action,
 .crayons-icon {

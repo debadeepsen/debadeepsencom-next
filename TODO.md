@@ -13,7 +13,8 @@
 - [x] SVG colors to update with color mode
 - [x] Persist color mode
 - [ ] CSS-only color mode
-- [ ] Code syntax highlighting
+- [x] Code syntax highlighting
+- [ ] Color mode based syntax highlighting
 - [ ] Fix Lighthouse warnings
 - [x] Responsive menu
 - [ ] Center certifications section on mobile
