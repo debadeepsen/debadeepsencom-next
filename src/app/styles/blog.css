@@ -1,5 +1,9 @@
 @import url('./crayons.css');
 
+.blog-article {
+  line-height: 1.25rem;
+}
+
 pre {
   background-color: #7773;
   padding: 10px;
@@ -13,7 +17,7 @@ code {
   background-color: #7772;
   padding: 0 3px;
   border-radius: 2px;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 pre code {
