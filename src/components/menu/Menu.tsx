@@ -38,6 +38,7 @@ const Menu = () => {
   )
 
   const menuOpen = useAppSelector((state: RootState) => state.menu.open)
+  console.log({menuOpen})
 
   const dispatch = useAppDispatch()
 
@@ -62,11 +63,11 @@ const Menu = () => {
         </button>
         <div
           className={
-            'absolute top-[24px] right-0 transition-all p-2 shadow-xl opacity-' +
-            Number(menuOpen)
+            'absolute top-[24px] right-0 transition-all p-2 shadow-xl'
           }
           style={{
-            background: ColorModes[colorModeValue].cardBg
+            background: ColorModes[colorModeValue].cardBg,
+            opacity: Number(menuOpen)
           }}
         >
           <MenuList />
