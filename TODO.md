@@ -22,6 +22,7 @@
 - [ ] Click outside
 - [ ] New 4k design
 - [x] Blogs from Dev.to
+- [ ] Multiple column blog list on `lg+`
 - [ ] Blog with PostgreSQL
 - [ ] Blog search
 - [ ] Photography page
