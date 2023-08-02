@@ -2,6 +2,7 @@ pre {
   background-color: #7773;
   padding: 10px;
   border-radius: 3px;
+  overflow-x: auto;
 }
 
 code {
