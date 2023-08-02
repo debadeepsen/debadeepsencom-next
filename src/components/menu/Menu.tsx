@@ -38,8 +38,6 @@ const Menu = () => {
   )
 
   const menuOpen = useAppSelector((state: RootState) => state.menu.open)
-  console.log({menuOpen})
-
   const dispatch = useAppDispatch()
 
   const toggleMenu = () => {
