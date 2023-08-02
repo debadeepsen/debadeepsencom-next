@@ -13,8 +13,11 @@
 - [x] SVG colors to update with color mode
 - [x] Persist color mode
 - [ ] CSS-only color mode
+- [ ] Code syntax highlighting
 - [ ] Fix Lighthouse warnings
-- [ ] Responsive menu
+- [x] Responsive menu
+- [ ] Center certifications section on mobile
+- [ ] Add more width to project cards on mobile
 - [ ] Click outside
 - [ ] New 4k design
 - [x] Blogs from Dev.to
