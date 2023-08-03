@@ -13,7 +13,7 @@ const About = () => {
         <div className='flex flex-col lg:flex-row p-10'>
           <div className='flex justify-center'>
             <img
-              src='https://scontent.fccu20-1.fna.fbcdn.net/v/t39.30808-6/318581062_10160012150610169_5609406085622197679_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=5icC1EnZEegAX-SBvqd&_nc_ht=scontent.fccu20-1.fna&oh=00_AfBHuStyZ-lDxNTdkhlYyJUTuOdyYcjdjqn5t6bgrGIAYQ&oe=64CACA47'
+              src='/img/dsen1.jpg'
               alt='profile picture'
               className='w-[180px] h-[180px] md:w-[360px] md:h-[360px] object-cover rounded-full shadow-xl'
               style={{ filter: 'sepia(.3) saturate(.8) contrast(1.2)' }}
