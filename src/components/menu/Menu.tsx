@@ -76,7 +76,8 @@ const Menu = () => {
           }
           style={{
             background: ColorModes[colorModeValue].cardBg,
-            opacity: Number(menuOpen)
+            opacity: Number(menuOpen),
+            pointerEvents: menuOpen ? 'all' : 'none'
           }}
         >
           <MenuList />
