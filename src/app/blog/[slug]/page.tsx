@@ -26,7 +26,7 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
         <i className="fas fa-caret-right inline-block mx-3"></i>
         {article.title}
       </div>
-      <Card>
+      <Card classList='blog-article sm:mr-0 w-[95%] md:w-[97%]'>
         <H1 leftAligned>{article.title}</H1>
         <p>
           (Originally posted on{' '}

@@ -12,8 +12,19 @@
 - [x] Get system color mode
 - [x] SVG colors to update with color mode
 - [x] Persist color mode
+- [ ] CSS-only color mode
+- [x] Code syntax highlighting
+- [ ] Color mode based syntax highlighting
 - [ ] Fix Lighthouse warnings
-- [ ] Responsive menu
+- [x] Responsive menu
+- [ ] ---CSS responsive menu ([https://blog.logrocket.com/create-responsive-mobile-menu-with-css-no-javascript] or [https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav])---
+- [ ] Center certifications section on mobile
+- [ ] Add more width to project cards on mobile
+- [ ] Click outside
 - [ ] New 4k design
 - [x] Blogs from Dev.to
+- [ ] Blog search
+- [ ] Multiple column blog list on `lg+`
 - [ ] Blog with PostgreSQL
+- [ ] Blog search
+- [ ] Photography page

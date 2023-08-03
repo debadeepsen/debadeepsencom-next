@@ -10,7 +10,6 @@ const Article = ({ caption, url }: { caption: string; url: string }) => {
       <div>
         <a href={url} target='_blank'>
           {url}
-          <i className='fas fa-external-link-alt'></i>
         </a>
       </div>
     </div>
@@ -27,32 +26,32 @@ const ArticleList = ({ heading }: PageSectionType) => {
     >
       <Article
         caption='Page scroll progress bars'
-        url='https://dev.to/debadeepsen/page-scroll-progress-bars-fjl'
+        url='https://debadeepsen.com/page-scroll-progress-bars-fjl'
       />
 
       <Article
         caption='Animated underline on hover (pure CSS)'
-        url='https://dev.to/debadeepsen/animated-underline-on-hover-pure-css-4bm6'
+        url='https://debadeepsen.com/animated-underline-on-hover-pure-css-4bm6'
       />
 
       <Article
         caption='Vintage photo effect with CSS'
-        url='https://dev.to/debadeepsen/vintage-photo-effect-with-css-16oj'
+        url='https://debadeepsen.com/vintage-photo-effect-with-css-16oj'
       />
 
       <Article
         caption='A table with a fixed (sticky) header'
-        url='https://dev.to/debadeepsen/a-table-with-a-fixed-sticky-header-54gm'
+        url='https://debadeepsen.com/a-table-with-a-fixed-sticky-header-54gm'
       />
 
       <Article
         caption='Drawer navigation menu using CSS and Vue JS'
-        url='https://dev.to/debadeepsen/drawer-navigation-menu-using-css-and-vue-js-hho'
+        url='https://debadeepsen.com/drawer-navigation-menu-using-css-and-vue-js-hho'
       />
 
       <Article
         caption='Making a sliding tab in React Native'
-        url='https://dev.to/debadeepsen/making-a-sliding-tab-bar-in-react-native-1ah0'
+        url='https://debadeepsen.com/making-a-sliding-tab-bar-in-react-native-1ah0'
       />
     </PageSection>
   )

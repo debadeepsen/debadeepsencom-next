@@ -23,7 +23,7 @@ const Card = ({
     <div
       className={
         'block p-4 my-4 mt-0 sm:mx-8 sm:ml-0 shadow-md min-w-[120px] ' +
-        (fullWidth ? 'w-full' : 'w-fit') + ' ' + additionalClasses
+        (fullWidth ? 'w-full' : 'w-auto') + ' ' + additionalClasses
       }
       style={{ background: ColorModes[colorModeValue].cardBg }}
     >

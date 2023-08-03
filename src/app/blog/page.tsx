@@ -3,7 +3,6 @@ import Card from '@/components/containers/Card'
 import BlogBlurb from '@/components/fragments/BlogBlurb'
 import { DevToArticle } from '@/types/types'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
 
 const Blog = async () => {
   const fetchDevArticles = async () => {
