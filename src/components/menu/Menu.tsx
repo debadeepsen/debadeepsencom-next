@@ -21,7 +21,7 @@ const MenuItem = ({ href, text }: { href: string; text: string }) => {
     <Link
       href={href}
       className={
-        'text-[16px] flex justify-center items-center text-white transition-all rounded-xs md:rounded-md m-1 px-4 py-2 w-[80px] hover:no-underline ' +
+        'py-6 sm:p-0 w-full sm:w-auto text-[16px] flex justify-center items-center text-white transition-all rounded-xs md:rounded-md m-1 sm:px-4 sm:py-2 w-[80px] hover:no-underline ' +
         (isSelected ? selectedClass : '')
       }
       style={{ color: ColorModes[colorModeValue].menu }}
@@ -70,13 +70,9 @@ const Menu = () => {
             style={{ fontSize: 20, color: ColorModes[colorModeValue].menu }}
           ></i>
         </button>
-        {/* <div
-          className='fixed top-0 left-0 w-[100vw] h-[100vh] bg-gray-100/50 md:hidden'
-          onClick={() => dispatch(setOpen(false))}
-        ></div> */}
         <div
           className={
-            'absolute top-[24px] right-0 transition-all p-2 shadow-xl z-22'
+            'fixed top-[64px] left-0 w-full h-[100vh] box-border transition-all p-0 shadow-xl z-22 border-2'
           }
           style={{
             background: ColorModes[colorModeValue].cardBg,
