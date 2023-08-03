@@ -21,9 +21,7 @@ const Main = ({ children }: { children: React.ReactNode }) => {
     (state: RootState) => state.colorMode.loaded
   )
   const dispatch = useAppDispatch()
-  useEffect(() => {
-    dispatch(setOpen(false))
-  })
+  dispatch(setOpen(false))
 
   return (
     <main

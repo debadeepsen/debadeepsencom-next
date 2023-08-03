@@ -17,6 +17,7 @@
 - [ ] Color mode based syntax highlighting
 - [ ] Fix Lighthouse warnings
 - [x] Responsive menu
+- [ ] CSS responsive menu ([https://blog.logrocket.com/create-responsive-mobile-menu-with-css-no-javascript](https://blog.logrocket.com/create-responsive-mobile-menu-with-css-no-javascript/))
 - [ ] Center certifications section on mobile
 - [ ] Add more width to project cards on mobile
 - [ ] Click outside

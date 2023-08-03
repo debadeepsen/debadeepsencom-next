@@ -4,6 +4,11 @@
   line-height: 1.25rem;
 }
 
+.blog-article h2 {
+  margin-top: 40px;
+  color: #008090;
+}
+
 pre {
   background-color: #7773;
   padding: 10px;
