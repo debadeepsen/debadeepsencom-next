@@ -72,7 +72,7 @@ const Menu = () => {
         </button>
         <div
           className={
-            'fixed top-[64px] left-0 w-full h-[100vh] box-border transition-all p-0 shadow-xl z-22 border-2'
+            'fixed top-[64px] left-0 w-full h-[100vh] box-border transition-all m-0 p-0 shadow-xl z-22 border-2'
           }
           style={{
             background: ColorModes[colorModeValue].cardBg,
