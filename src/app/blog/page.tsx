@@ -24,35 +24,39 @@ const Blog = async () => {
       <H1>Blog</H1>
       <BlogBlurb />
 
-      {articles.map((article: DevToArticle) => (
-        <Card
-          key={article.id}
-          classList='w-[92%] sm:w-[95%] md:w-[98%] lg:w-full'
-        >
-          <div className='relative top-[-6px]'>
-            <Link href={'/blog/' + article.slug}>
-              <h2>{article.title}</h2>
-            </Link>
+      <div className='flex flex-wrap'>
+        {articles.map((article: DevToArticle) => (
+          <Card
+            key={article.id}
+            classList='w-[92%] sm:w-[95%] md:w-[98%] lg:w-[45%] lg:mr-4'
+          >
+            <div className='relative top-[-6px]'>
+              <Link href={'/blog/' + article.slug}>
+                <h2>{article.title}</h2>
+              </Link>
 
-            <p className='mt-2 mb-4 p-2 bg-gray-50/10'>{article.description}</p>
+              <p className='mt-2 mb-4 p-2 bg-gray-50/10'>
+                {article.description}
+              </p>
 
-            <div className='flex'>
-              <div className='rounded-full bg-lime-200/30 p-3 text-xs text-bold mr-2'>
-                {article.public_reactions_count} reactions
+              <div className='flex'>
+                <div className='rounded-full bg-lime-200/30 p-1 px-2 text-xs text-bold mr-2'>
+                  {article.public_reactions_count} reactions
+                </div>
+                <div className='rounded-full bg-blue-200/30 p-1 px-2 text-xs'>
+                  {article.comments_count} comments
+                </div>
               </div>
-              <div className='rounded-full bg-blue-200/30 p-3 text-xs'>
-                {article.comments_count} comments
-              </div>
+
+              {article.public_reactions_count > 50 && (
+                <div className='absolute top-[-8px] right-[2px] bg-red-500/40 rounded-md text-xs p-1 px-2'>
+                  POPULAR
+                </div>
+              )}
             </div>
-
-            {article.public_reactions_count > 50 && (
-              <div className='absolute top-[-8px] right-[2px] bg-red-500/40 rounded-md text-xs md:text-sm p-3'>
-                POPULAR
-              </div>
-            )}
-          </div>
-        </Card>
-      ))}
+          </Card>
+        ))}
+      </div>
     </div>
   )
 }
