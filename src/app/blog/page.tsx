@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { H1 } from '@/components/Title'
 import Card from '@/components/containers/Card'
 import BlogBlurb from '@/components/fragments/BlogBlurb'
@@ -30,6 +31,14 @@ const Blog = async () => {
             key={article.id}
             classList='w-[92%] sm:w-[95%] md:w-[98%] lg:w-[45%] lg:mr-4'
           >
+            <div
+              style={{
+                backgroundImage: article.cover_image
+                  ? `url(${article.cover_image})`
+                  : 'linear-gradient(0deg, #1117, #2223)'
+              }}
+              className='h-[200px] bg-center bg-cover'
+            />
             <div className='relative top-[-6px]'>
               <Link href={'/blog/' + article.slug}>
                 <h2>{article.title}</h2>

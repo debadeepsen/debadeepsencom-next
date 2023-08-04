@@ -129,5 +129,5 @@ section h2::before {
 }
 
 .thumb:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }

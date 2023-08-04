@@ -27,4 +27,5 @@
 - [ ] Multiple column blog list on `lg+`
 - [ ] Blog with PostgreSQL
 - [ ] Blog search
+- [ ] Easy way to get back to article list
 - [ ] Photography page

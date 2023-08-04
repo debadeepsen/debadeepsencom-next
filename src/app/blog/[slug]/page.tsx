@@ -23,10 +23,18 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
     <div className='w-full lg:w-[800px] xl:w-[1200px] mx-auto'>
       <div className='mt-20 mb-6 z-20'>
         <Link href='/blog'>Articles</Link>
-        <i className="fas fa-caret-right inline-block mx-3"></i>
+        <i className='fas fa-caret-right inline-block mx-3'></i>
         {article.title}
       </div>
       <Card classList='blog-article sm:mr-0 w-[95%] md:w-[97%]'>
+        <div
+          style={{
+            backgroundImage: article.cover_image
+              ? `url(${article.cover_image})`
+              : 'linear-gradient(0deg, #1117, #2223)'
+          }}
+          className='h-[400px] bg-center bg-cover'
+        />
         <H1 leftAligned>{article.title}</H1>
         <p>
           (Originally posted on{' '}

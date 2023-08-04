@@ -15,7 +15,7 @@ const Photography = () => {
     (state: RootState) => state.colorMode.value
   )
   const imageClasses =
-    'thumb cursor-pointer m-0 w-full h-[200px] md:w-[360px] h-[360px] xl:w-[400px] xl:h-[400px] object-cover shadow-md z-1 transition-all hover:shadow-xl hover:rounded '
+    'thumb cursor-default m-0 w-full h-[200px] md:w-[360px] h-[360px] xl:w-[400px] xl:h-[400px] object-cover shadow-md z-1 transition-all hover:shadow-xl hover:rounded '
 
   const [buttonOpacity, setButtonOpacity] = useState(0)
   const [clickedImage, setClickedImage] = useState<
@@ -86,8 +86,8 @@ const Photography = () => {
               src={photosDir + image}
               className={imageClasses}
               onClick={e => {
-                setClickedImage(e.currentTarget)
-                imageClicked()
+                // setClickedImage(e.currentTarget)
+                // imageClicked()
               }}
             />
           </Card>
