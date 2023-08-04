@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { H1 } from '@/components/Title'
 import Card from '@/components/containers/Card'
+import Image from 'next/image'
 import React from 'react'
 
 const Photography = () => {
@@ -31,7 +32,9 @@ const Photography = () => {
       <div className='flex flex-wrap justify-center'>
         {files.map(image => (
           <Card key={image} classList='sm:mr-4 mb-4 p-[8px] pb-[4px] hover:z-5 hover:border-2'>
-            <img
+            <Image
+              width='1000'
+              height='1000'
               alt={image.slice(0, -5)}
               src={dir + image}
               className={imgClasses}
