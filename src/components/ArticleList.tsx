@@ -26,32 +26,32 @@ const ArticleList = ({ heading }: PageSectionType) => {
     >
       <Article
         caption='Page scroll progress bars'
-        url='https://debadeepsen.com/page-scroll-progress-bars-fjl'
+        url='https://debadeepsen.com/blog/page-scroll-progress-bars-fjl'
       />
 
       <Article
         caption='Animated underline on hover (pure CSS)'
-        url='https://debadeepsen.com/animated-underline-on-hover-pure-css-4bm6'
+        url='https://debadeepsen.com/blog/animated-underline-on-hover-pure-css-4bm6'
       />
 
       <Article
         caption='Vintage photo effect with CSS'
-        url='https://debadeepsen.com/vintage-photo-effect-with-css-16oj'
+        url='https://debadeepsen.com/blog/vintage-photo-effect-with-css-16oj'
       />
 
       <Article
         caption='A table with a fixed (sticky) header'
-        url='https://debadeepsen.com/a-table-with-a-fixed-sticky-header-54gm'
+        url='https://debadeepsen.com/blog/a-table-with-a-fixed-sticky-header-54gm'
       />
 
       <Article
         caption='Drawer navigation menu using CSS and Vue JS'
-        url='https://debadeepsen.com/drawer-navigation-menu-using-css-and-vue-js-hho'
+        url='https://debadeepsen.com/blog/drawer-navigation-menu-using-css-and-vue-js-hho'
       />
 
       <Article
         caption='Making a sliding tab in React Native'
-        url='https://debadeepsen.com/making-a-sliding-tab-bar-in-react-native-1ah0'
+        url='https://debadeepsen.com/blog/making-a-sliding-tab-bar-in-react-native-1ah0'
       />
     </PageSection>
   )

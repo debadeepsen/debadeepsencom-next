@@ -1,11 +1,20 @@
 import { ColorModes, LIGHT } from '@/lib/constants/colorModeConstants'
+import { MENU_INFO } from '@/lib/constants/menuConstants'
 import { RootState } from '@/store'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { setOpen, toggleOpen } from '@/store/slices/menuSlice'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const MenuItem = ({ href, text }: { href: string; text: string }) => {
+const MenuItem = ({
+  href,
+  text,
+  icon
+}: {
+  href: string
+  text: string
+  icon: string
+}) => {
   const colorModeValue = useAppSelector(
     (state: RootState) => state.colorMode.value
   )
@@ -26,6 +35,7 @@ const MenuItem = ({ href, text }: { href: string; text: string }) => {
       }
       style={{ color: ColorModes[colorModeValue].menu }}
     >
+      <i className={icon + ' inline-block mr-2'}></i>
       {text}
     </Link>
   )
@@ -33,9 +43,9 @@ const MenuItem = ({ href, text }: { href: string; text: string }) => {
 
 const MenuList = () => (
   <>
-    <MenuItem href='/' text='Home' />
-    <MenuItem href='/about' text='About' />
-    <MenuItem href='/blog' text='Blog' />
+    {MENU_INFO.map(m => (
+      <MenuItem key={m.href} href={m.href} text={m.text} icon={m.icon} />
+    ))}
   </>
 )
 
