@@ -20,6 +20,7 @@
 - [x] ---CSS responsive menu ([https://blog.logrocket.com/create-responsive-mobile-menu-with-css-no-javascript] or [https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav])---
 - [ ] Center certifications section on mobile
 - [ ] Add more width to project cards on mobile
+- [ ] Responsive images
 - [x] Click outside
 - [ ] New 4k design
 - [x] Blogs from Dev.to
