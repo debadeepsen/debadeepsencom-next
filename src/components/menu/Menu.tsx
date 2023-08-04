@@ -58,7 +58,6 @@ const Menu = () => {
   const dispatch = useAppDispatch()
 
   const toggleMenu = () => {
-    console.log('toggle')
     dispatch(toggleOpen())
   }
 

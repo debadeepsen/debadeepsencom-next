@@ -14,15 +14,17 @@ export const colorModeUtil = {
       LOCAL_STORAGE_KEYS.COLOR_MODE
     ) as ColorModeValueType
   },
-  set: (value: string) => {
-    globalThis.window?.localStorage.setItem(
-      LOCAL_STORAGE_KEYS.COLOR_MODE,
-      value
-    )
-    
+  setHtmlClass(value: string) {
     const classList = globalThis.window?.document.documentElement.classList
 
     if (value === DARK) classList.add(DARK)
     else classList.remove(DARK)
+  },
+  set(value: string) {
+    globalThis.window?.localStorage.setItem(
+      LOCAL_STORAGE_KEYS.COLOR_MODE,
+      value
+    )
+    this.setHtmlClass(value)
   }
 }
