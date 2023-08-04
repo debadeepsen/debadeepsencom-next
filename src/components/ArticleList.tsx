@@ -8,7 +8,7 @@ const Article = ({ caption, url }: { caption: string; url: string }) => {
     <div className='mb-2'>
       <h3 className='mb-0'>{caption}</h3>
       <div>
-        <a href={url} target='_blank'>
+        <a href={url}>
           {url}
         </a>
       </div>
