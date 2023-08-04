@@ -127,3 +127,7 @@ section h2::before {
     height: 300px;
   }
 }
+
+.thumb:hover {
+  transform: scale(1.05);
+}
