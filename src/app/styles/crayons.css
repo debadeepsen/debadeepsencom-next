@@ -1,5 +1,17 @@
-:root {
-  --syntax-background-color: #08090abb;
+
+html {
+  --syntax-background-color: #ddd5;
+  --syntax-text-color: #303030;
+  --syntax-comment-color: #808080;
+  --syntax-declaration-color: #c9225c;
+  --syntax-literal-color: #972e97;
+  --syntax-error-color: #f9690e;
+  --syntax-name-color: #1d5c1d;
+  --syntax-string-color: #705400;
+}
+
+html.dark {
+  --syntax-background-color: #0004;
   --syntax-text-color: #f8f8f2;
   --syntax-comment-color: #808080;
   --syntax-declaration-color: #f39c12;

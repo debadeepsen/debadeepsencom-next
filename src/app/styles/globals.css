@@ -34,6 +34,14 @@ body {
 @import url('./page-bottom.css');
 @import url('./blog.css');
 
+html {
+  --linkColor: #0092dc;
+}
+
+html.dark {
+  --linkColor: #1faff7;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -55,7 +63,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: #1faff7;
+  color: var(--linkColor)
 }
 a:hover {
   text-decoration: underline;
