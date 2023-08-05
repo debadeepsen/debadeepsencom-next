@@ -14,6 +14,5 @@ export const photosToShow = [
   'pisa1.jpg',
   'raleigh1.jpg',
   'raleigh2.jpg',
-  'stonehenge1.jpg',
   'stonehenge2.jpg'
 ]

@@ -9,12 +9,16 @@ const BackToTop = () => {
     window.addEventListener('scroll', () => setScrollTop(window.scrollY))
   }, [])
 
+  const show = () => scrollTop > document?.documentElement.scrollHeight * 0.2
+
   return (
     <button
       className='fixed bottom-0 right-[8px] z-[60] p-4 px-5 border-0 rounded-t-lg bg-white dark:bg-[#201c26] shadow-sm dark:text-white cursor-pointer transition-all'
       style={{
         boxShadow: '0px 0px 3px #1114',
-        opacity: Number(scrollTop > document.documentElement.scrollHeight * 0.3)
+        opacity: Number(show()),
+        cursor: show() ? 'pointer' : 'default',
+        pointerEvents: show() ? 'all' : 'none'
       }}
       title='Back to top'
       onClick={() =>

@@ -29,7 +29,7 @@ const Blog = async () => {
         {articles.map((article: DevToArticle) => (
           <Card
             key={article.id}
-            classList='w-[92%] sm:w-[95%] md:w-[98%] lg:w-[45%] lg:mr-4'
+            classList='w-[92%] sm:w-[95%] md:w-[98%] lg:w-[45%] lg:mr-4 relative'
           >
             <div
               style={{
@@ -56,13 +56,13 @@ const Blog = async () => {
                   {article.comments_count} comments
                 </div>
               </div>
-
-              {article.public_reactions_count > 50 && (
-                <div className='absolute top-[-8px] right-[2px] bg-red-500/40 rounded-md text-xs p-1 px-2'>
-                  POPULAR
-                </div>
-              )}
             </div>
+
+            {article.public_reactions_count > 50 && (
+              <div className='absolute top-[20px] right-[20px] bg-red-600/60 rounded-md text-xs p-1 px-2 text-white'>
+                POPULAR
+              </div>
+            )}
           </Card>
         ))}
       </div>
