@@ -130,6 +130,7 @@ section h2::before {
 
 .thumb:hover {
   filter: saturate(1.2) brightness(1.1) contrast(1.1);
+  transform: scale(1.05);
 }
 
 .clicked-card {
