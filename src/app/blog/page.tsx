@@ -35,7 +35,7 @@ const Blog = async () => {
               style={{
                 backgroundImage: article.cover_image
                   ? `url(${article.cover_image})`
-                  : 'linear-gradient(0deg, #1117, #2223)'
+                  : 'url(/img/hex.png)'
               }}
               className='h-[200px] bg-center bg-cover'
             />
