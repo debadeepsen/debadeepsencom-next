@@ -63,7 +63,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: var(--linkColor)
+  color: var(--linkColor);
 }
 a:hover {
   text-decoration: underline;
@@ -129,5 +129,21 @@ section h2::before {
 }
 
 .thumb:hover {
-  /* transform: scale(1.05); */
+  filter: saturate(1.2) brightness(1.1) contrast(1.1);
+}
+
+.clicked-card {
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  z-index: 50;
+}
+
+.clicked-image {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: contain;
 }
