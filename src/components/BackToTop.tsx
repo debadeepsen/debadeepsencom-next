@@ -1,5 +1,6 @@
 'use client'
 
+import { scrollUtil } from '@/lib/commonLib'
 import React, { useState, useEffect } from 'react'
 
 const BackToTop = () => {
@@ -9,7 +10,10 @@ const BackToTop = () => {
     window.addEventListener('scroll', () => setScrollTop(window.scrollY))
   }, [])
 
-  const show = () => scrollTop > document?.documentElement.scrollHeight * 0.2
+  const show = () => {
+    const scrollPercentRounded = scrollUtil.getScrollPercent(scrollTop)
+    return scrollPercentRounded > 25
+  }
 
   return (
     <button
