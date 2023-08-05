@@ -11,6 +11,7 @@ import PageBottom from '../PageBottom'
 import ColorModeChanger from '../helpers/ColorModeChanger'
 import { useEffect } from 'react'
 import { setOpen } from '@/store/slices/menuSlice'
+import BackToTop from '../BackToTop'
 
 const Main = ({ children }: { children: React.ReactNode }) => {
   const colorModeValue = useAppSelector(
@@ -34,6 +35,7 @@ const Main = ({ children }: { children: React.ReactNode }) => {
       {children}
       <PageBottom />
       <ColorModeChanger />
+      <BackToTop />
     </main>
   )
 }

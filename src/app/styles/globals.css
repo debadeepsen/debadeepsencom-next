@@ -43,11 +43,15 @@ html.dark {
 }
 
 body {
+  font-family: 'Rubik', system-ui, sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Rubik', system-ui, sans-serif;
   line-height: 1.5rem;
   font-size: 14px;
+}
+
+button {
+  font-family: 'Rubik', system-ui, sans-serif;
 }
 
 @media screen and (min-width: 480px) {
