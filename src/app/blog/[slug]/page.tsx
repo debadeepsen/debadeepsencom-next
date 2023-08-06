@@ -50,7 +50,7 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
         </div>
         <p>
           (Originally posted on{' '}
-          <a href={article.canonical_url}>
+          <a href={article.canonical_url} target='_blank'>
             {article.canonical_url}
             <i className='fas fa-external-link-alt'></i>
           </a>
