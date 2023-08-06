@@ -26,15 +26,15 @@ const Html = ({ children }: { children: ReactNode }) => {
       <Script defer src='https://code.iconify.design/1/1.0.7/iconify.min.js' />
       <Script
         async
-        src='https://www.googletagmanager.com/gtag/js?id=G-NDJRRTCB95'
+        src='https://www.googletagmanager.com/gtag/js?id=G-H7GJ1WQ6ZP'
       ></Script>
       <Script id='google-analytics'>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
- 
-          gtag('config', 'G-NDJRRTCB95');
+        
+          gtag('config', 'G-H7GJ1WQ6ZP');
         `}
       </Script>
       <Script id='gtm'>
