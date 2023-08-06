@@ -42,7 +42,8 @@ const Html = ({ children }: { children: ReactNode }) => {
         <meta name='title' content={metadata.title}></meta>
         <meta name='description' content={metadata.description}></meta>
         <meta property='og:image' content='https://debadeepsen.com/img/dsen1.jpg' />
-        <meta name='twitter:image' content='https://debadeepsen.com/img/dsen1.jpg' />
+        <meta property='og:image:width' content='200' />
+        <meta property='og:image:height' content='200' />
         <title>{metadata.title}</title>
       </head>
       <body>
