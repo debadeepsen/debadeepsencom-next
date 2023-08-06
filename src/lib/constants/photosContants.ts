@@ -1,4 +1,4 @@
-export const photosDir = '/img/photography/Travel/'
+export const photosDir = '/img/photography/Travel/compressed/'
 export const photosToShow = [
   'beach1.jpg',
   'beach2.jpg',
