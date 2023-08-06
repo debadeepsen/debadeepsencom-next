@@ -24,7 +24,7 @@ const PageSection = ({
   )
   return (
     <section
-      className='p-8 pb-6 relative shadow-sm rounded-sm'
+      className='p-4 sm:p-8 pb-6 relative shadow-sm rounded-sm'
       style={{ background: ColorModes[colorModeValue].sectionBg }}
     >
       <h2 className={h2Class} style={{ background: THEME_COLOR }}>

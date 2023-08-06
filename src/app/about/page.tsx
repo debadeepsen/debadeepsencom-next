@@ -10,7 +10,7 @@ const About = () => {
     <div className='w-full md:w-[600px] lg:w-[900px] mx-auto'>
       <H1>About Me</H1>
       <Card>
-        <div className='flex flex-col lg:flex-row p-10'>
+        <div className='flex flex-col lg:flex-row p-4 md:p-10'>
           <div className='flex justify-center'>
             <img
               src='/img/dsen1.jpg'
