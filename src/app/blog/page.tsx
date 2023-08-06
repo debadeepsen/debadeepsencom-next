@@ -21,7 +21,7 @@ const Blog = async () => {
   })
 
   return (
-    <div className='w-full lg:w-[800px] xl:w-[1024px] mx-auto'>
+    <div className='w-full lg:w-[800px] xl:w-[1024px] min-[2000px]:w-[80%] mx-auto'>
       <H1>Blog</H1>
       <BlogBlurb />
 
@@ -29,7 +29,7 @@ const Blog = async () => {
         {articles.map((article: DevToArticle) => (
           <Card
             key={article.id}
-            classList='w-[92%] sm:w-[95%] md:w-[98%] lg:w-[45%] lg:mr-4 relative'
+            classList='w-[92%] sm:w-[95%] md:w-[98%] lg:w-[45%] min-[2000px]:w-[30%] lg:mr-4 relative'
           >
             <div
               style={{
@@ -41,7 +41,7 @@ const Blog = async () => {
             />
             <div className='relative top-[-6px]'>
               <Link href={'/blog/' + article.slug}>
-                <h2>{article.title}</h2>
+                <h2 className='leading-8'>{article.title}</h2>
               </Link>
 
               <p className='mt-2 mb-4 p-2 bg-gray-50/10'>

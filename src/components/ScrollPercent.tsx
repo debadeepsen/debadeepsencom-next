@@ -28,7 +28,7 @@ const ScrollPercent = () => {
     `conic-gradient(${THEME_COLOR} ${scrollPercentAngle}deg, #ddd ${scrollPercentAngle}deg)`
 
   return (
-    <div className='fixed left-[16%] top-[160px] w-[36px] h-[36px] sm:w-[64px] sm:h-[64px] flex justify-center items-center pointer-event-none'>
+    <div className='fixed left-[48%] md:left-[2%] min-[2400px]:left-[22%] min-[3000px]:left-[30%] top-[20px] md:top-[160px] w-[40px] h-[40px] md:w-[64px] md:h-[64px] flex justify-center items-center pointer-event-none'>
       <div
         className='rounded-full w-full h-full flex justify-center items-center'
         style={{
@@ -36,7 +36,7 @@ const ScrollPercent = () => {
         }}
       >
         <div
-          className='w-[90%] h-[90%] rounded-full flex justify-center items-center text-sm'
+          className='w-[90%] h-[90%] rounded-full flex justify-center items-center text-xs md:text-sm'
           style={{
             background: ColorModes[colorModeValue].cardBg
           }}
