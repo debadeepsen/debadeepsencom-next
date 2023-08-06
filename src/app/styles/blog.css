@@ -13,6 +13,18 @@ html.dark {
   color: var(--h2Color);
 }
 
+.blog-article h1 {
+  font-size: 1.75rem;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 1024px) {
+  .blog-article h1 {
+    font-size: auto;
+    margin-bottom: auto;
+  }
+}
+
 pre {
   background-color: #7773;
   padding: 10px;
