@@ -36,7 +36,7 @@ const ScrollPercent = () => {
         }}
       >
         <div
-          className='w-[90%] h-[90%] rounded-full flex justify-center items-center text-xs md:text-sm'
+          className='w-[90%] h-[90%] rounded-full flex justify-center items-center text-xs md:text-sm box-border'
           style={{
             background: ColorModes[colorModeValue].cardBg
           }}
