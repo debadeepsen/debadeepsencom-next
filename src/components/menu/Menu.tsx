@@ -61,6 +61,21 @@ const Menu = () => {
     dispatch(toggleOpen())
   }
 
+  const barClass = 'w-[20px] h-[2px] mb-1 box-border'
+  const barStyle = {
+    common: { background: ColorModes[colorModeValue].menu, transition: 'all 150ms' },
+    menuOpen: [
+      { transform: 'rotate(45deg)', transformOrigin: '6px 1px' },
+      { display: 'none' },
+      { transform: 'rotate(-45deg)', transformOrigin: '6px 1px' }
+    ]
+  }
+
+  const getBarStyle=(ordinalNumer:number)=>{
+    if(menuOpen) return { ...barStyle.common, ...barStyle.menuOpen[ordinalNumer] }
+    return barStyle.common
+  }
+
   return (
     <div className='fixed top-[20px] right-[20px] z-20'>
       {/* desktop menu */}
@@ -74,10 +89,18 @@ const Menu = () => {
           className='bg-transparent border-0 z-22'
           onClick={() => toggleMenu()}
         >
-          <i
-            className={menuOpen ? 'fas fa-times' : 'fas fa-bars'}
-            style={{ fontSize: 20, color: ColorModes[colorModeValue].menu }}
-          ></i>
+          <div
+            className={barClass}
+            style={getBarStyle(0)}
+          />
+          <div
+            className={barClass}
+            style={getBarStyle(1)}
+          />
+          <div
+            className={barClass}
+            style={getBarStyle(2)}
+          />
         </button>
         <div
           className={
