@@ -8,13 +8,9 @@ html.dark {
   --h2Color: #00b1c8;
 }
 
-.blog-article {
-  line-height: 1.25rem;
-}
-
 .blog-article h2 {
   margin-top: 40px;
-  color: var(--h2Color)
+  color: var(--h2Color);
 }
 
 pre {
@@ -26,11 +22,17 @@ pre {
 }
 
 code {
-  font-family: 'Fira Mono', 'Courier New', Courier, monospace;
-  background-color: #7772;
-  padding: 0 3px;
-  border-radius: 2px;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
+}
+
+@media screen and (min-width: 1200px) {
+  code {
+    font-family: 'Fira Mono', 'Courier New', Courier, monospace;
+    background-color: #7772;
+    padding: 0 3px;
+    border-radius: 2px;
+    font-size: 1.05rem;
+  }
 }
 
 pre code {
