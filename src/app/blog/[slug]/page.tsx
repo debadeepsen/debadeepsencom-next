@@ -1,3 +1,4 @@
+import ScrollPercent from '@/components/ScrollPercent'
 import { H1 } from '@/components/Title'
 import Card from '@/components/containers/Card'
 import { DevToArticle } from '@/types/types'
@@ -66,6 +67,7 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
           </a>
         </div>
       </Card>
+      <ScrollPercent />
     </div>
   )
 }

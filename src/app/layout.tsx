@@ -16,7 +16,6 @@ const metadata = {
 }
 
 const Html = ({ children }: { children: ReactNode }) => {
-  
   return (
     <html lang='en'>
       <Script
@@ -25,6 +24,20 @@ const Html = ({ children }: { children: ReactNode }) => {
         defer
       />
       <Script defer src='https://code.iconify.design/1/1.0.7/iconify.min.js' />
+      {/* <!-- Google tag (gtag.js) --> */}
+      <Script
+        async
+        src='https://www.googletagmanager.com/gtag/js?id=G-NDJRRTCB95'
+      ></Script>
+      <Script id='google-analytics'>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-NDJRRTCB95');
+        `}
+      </Script>
       <head>
         <meta name='title' content={metadata.title}></meta>
         <meta name='description' content={metadata.description}></meta>
@@ -38,7 +51,6 @@ const Html = ({ children }: { children: ReactNode }) => {
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-
   return (
     <Provider store={store}>
       <Html>{children}</Html>
