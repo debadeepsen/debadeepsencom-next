@@ -75,7 +75,7 @@ const Menu = () => {
           onClick={() => toggleMenu()}
         >
           <i
-            className='fas fa-bars'
+            className={menuOpen ? 'fas fa-times' : 'fas fa-bars'}
             style={{ fontSize: 20, color: ColorModes[colorModeValue].menu }}
           ></i>
         </button>
