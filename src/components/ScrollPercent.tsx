@@ -1,9 +1,49 @@
-import React from 'react'
+'use client'
+
+import { scrollUtil } from '@/lib/commonLib'
+import { ColorModes } from '@/lib/constants/colorModeConstants'
+import { THEME_COLOR } from '@/lib/constants/commonConstants'
+import { RootState } from '@/store'
+import { useAppSelector } from '@/store/hooks'
+import React, { useEffect, useState } from 'react'
 
 const ScrollPercent = () => {
+  const colorModeValue = useAppSelector(
+    (state: RootState) => state.colorMode.value
+  )
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      const scrollPercent = scrollUtil.getScrollPercent(window.scrollY)
+      const scrollPercentRounded = Math.round(scrollPercent)
+      setScrollPercentRounded(scrollPercentRounded)
+      const angle = (scrollPercentRounded * 360) / 100
+      setScrollPercentAngle(angle)
+    })
+  }, [])
+
+  const [scrollPercentRounded, setScrollPercentRounded] = useState(0)
+  const [scrollPercentAngle, setScrollPercentAngle] = useState(0)
+  const getStyle = () =>
+    `conic-gradient(${THEME_COLOR} ${scrollPercentAngle}deg, #ddd ${scrollPercentAngle}deg)`
+
   return (
-    <div className='fixed left-0 top-0 w-[100vw] h-[100vh] flex justify-start items-center'>
-        
+    <div className='fixed left-[16%] top-[160px] w-[36px] h-[36px] sm:w-[64px] sm:h-[64px] flex justify-center items-center pointer-event-none'>
+      <div
+        className='rounded-full w-full h-full flex justify-center items-center'
+        style={{
+          background: getStyle()
+        }}
+      >
+        <div
+          className='w-[90%] h-[90%] rounded-full flex justify-center items-center text-sm'
+          style={{
+            background: ColorModes[colorModeValue].cardBg
+          }}
+        >
+          {scrollPercentRounded}%
+        </div>
+      </div>
     </div>
   )
 }

@@ -22,7 +22,7 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
   const tagList = Array.isArray(article.tag_list) ? article.tag_list : (article.tag_list as string).split(',')
 
   return (
-    <div className='w-full lg:w-[800px] xl:w-[1200px] mx-auto'>
+    <div className='w-full lg:w-[800px] xl:w-[1200px] mx-auto relative'>
       <div className='mt-20 mb-6 z-20'>
         <Link href='/blog'>Blog</Link>
         <i className='fas fa-caret-right inline-block mx-3'></i>
