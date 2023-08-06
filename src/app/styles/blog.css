@@ -18,10 +18,17 @@ html.dark {
   margin-bottom: 30px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 600px) {
   .blog-article h1 {
     font-size: auto;
-    margin-bottom: auto;
+    margin-bottom: inherit;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .blog-article h1 {
+    font-size: 3rem;
+    margin-bottom: inherit;
   }
 }
 
