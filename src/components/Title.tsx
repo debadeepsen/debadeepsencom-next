@@ -3,15 +3,18 @@ import React, { ReactNode } from 'react'
 
 export const H1 = ({
   leftAligned,
-  children
+  children,
+  classList
 }: {
   leftAligned?: boolean
   children: ReactNode
+  classList?: string
 }) => (
   <h1
     className={
       'font-extralight text-5xl sm:text-6xl lg:text-7xl ' +
-      (leftAligned ? 'text-left' : 'text-center')
+      (leftAligned ? 'text-left' : 'text-center') +
+      (classList ? classList : '')
     }
     style={{ color: THEME_COLOR }}
   >
@@ -20,7 +23,7 @@ export const H1 = ({
 )
 
 const Title = () => {
-  return <H1 leftAligned>Debadeep Sen</H1>
+  return <H1 classList='text-center md:text-left'>Debadeep Sen</H1>
 }
 
 export default Title
