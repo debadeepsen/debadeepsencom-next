@@ -3,6 +3,7 @@ import { H1 } from '@/components/Title'
 import Card from '@/components/containers/Card'
 import { DevToArticle } from '@/types/types'
 import Link from 'next/link'
+import Script from 'next/script'
 import React from 'react'
 
 const BlogArticle = async ({ params }: { params: { slug: string } }) => {
@@ -17,12 +18,29 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
 
     return res.json()
   }
-
+  
   const article = (await fetchDevArticle()) as DevToArticle
   const tagList = Array.isArray(article.tag_list) ? article.tag_list : (article.tag_list as string).split(',')
 
   return (
     <div className='w-full lg:w-[800px] xl:w-[1200px] mx-auto relative'>
+      <Script defer id='cc'>
+        {`  document.body.querySelectorAll('pre').forEach(pre=>{
+            const content = pre.textContent
+            const btn = document.createElement('button')
+            btn.className = 'far fa-copy'
+            btn.title = 'Copy to clipboard'
+            btn.addEventListener('click', () => {
+              navigator.clipboard.writeText(content)
+              btn.title = 'Copied!'
+              setTimeout(() => {
+                btn.title = 'Copy to clipboard'
+              }, 2000)
+            })
+
+            pre.append(btn)
+        })`}
+      </Script>
       <div className='mt-20 mb-6 z-20'>
         <Link href='/blog'>Blog</Link>
         <i className='fas fa-caret-right inline-block mx-3'></i>
