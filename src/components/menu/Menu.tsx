@@ -63,7 +63,10 @@ const Menu = () => {
 
   const barClass = 'w-[20px] h-[2px] mb-1 box-border'
   const barStyle = {
-    common: { background: ColorModes[colorModeValue].menu, transition: 'all 150ms' },
+    common: {
+      background: ColorModes[colorModeValue].menu,
+      transition: 'all 150ms'
+    },
     menuOpen: [
       { transform: 'rotate(45deg)', transformOrigin: '6px 1px' },
       { display: 'none' },
@@ -71,8 +74,9 @@ const Menu = () => {
     ]
   }
 
-  const getBarStyle=(ordinalNumer:number)=>{
-    if(menuOpen) return { ...barStyle.common, ...barStyle.menuOpen[ordinalNumer] }
+  const getBarStyle = (ordinalNumer: number) => {
+    if (menuOpen)
+      return { ...barStyle.common, ...barStyle.menuOpen[ordinalNumer] }
     return barStyle.common
   }
 
@@ -89,26 +93,18 @@ const Menu = () => {
           className='bg-transparent border-0 z-22'
           onClick={() => toggleMenu()}
         >
-          <div
-            className={barClass}
-            style={getBarStyle(0)}
-          />
-          <div
-            className={barClass}
-            style={getBarStyle(1)}
-          />
-          <div
-            className={barClass}
-            style={getBarStyle(2)}
-          />
+          <div className={barClass} style={getBarStyle(0)} />
+          <div className={barClass} style={getBarStyle(1)} />
+          <div className={barClass} style={getBarStyle(2)} />
         </button>
         <div
           className={
-            'fixed top-[64px] left-0 w-full h-[100vh] box-border transition-all m-0 p-0 shadow-xl z-22 border-2'
+            'fixed top-[64px] w-screen h-[100vh] box-border transition-all m-0 p-0 shadow-xl z-22 border-2'
           }
           style={{
             background: ColorModes[colorModeValue].cardBg,
-            opacity: Number(menuOpen),
+            position: 'fixed',
+            left: menuOpen ? 0 : '110vw',
             pointerEvents: menuOpen ? 'all' : 'none'
           }}
         >
