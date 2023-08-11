@@ -7,6 +7,7 @@ import Script from 'next/script'
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import AddCopyButton from '@/components/helpers/AddCopyButton'
+import Head from 'next/head'
 
 const BlogArticle = async ({ params }: { params: { slug: string } }) => {
   // `https://dev.to/api/articles/debadeepsen/${params.slug}`
@@ -27,54 +28,65 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
     : (article.tag_list as string).split(',')
 
   return (
-    <div className='w-full lg:w-[800px] xl:w-[1200px] mx-auto relative'>
-      <div className='mt-20 mb-6 z-20'>
-        <Link href='/blog'>Blog</Link>
-        <i className='fas fa-caret-right inline-block mx-3'></i>
-        {article.title}
-      </div>
-      <Card classList='blog-article sm:mr-0 w-[95%] md:w-[97%]'>
-        <div
-          style={{
-            backgroundImage: article.cover_image
-              ? `url(${article.cover_image})`
-              : 'url(/img/hex.png)'
-          }}
-          className='h-[400px] bg-center bg-cover'
+    <>
+      <Head>
+        <meta name='title' content={article.title}></meta>
+        <meta name='description' content={article.description}></meta>
+        <meta
+          property='og:image'
+          content={article.cover_image ?? '/img/hex.png'}
         />
-        <H1 leftAligned>{article.title}</H1>
-        <div className='flex'>
-          {tagList.map((tag, i) => (
-            <span
-              className='rounded-full p-2 px-4 mr-2 uppercase text-sm tracking-wide bg-gray-600/20 dark:bg-black/25'
-              key={i}
-            >
-              {tag}
-            </span>
-          ))}
+      </Head>
+      <div className='w-full lg:w-[800px] xl:w-[1200px] mx-auto relative'>
+        <div className='mt-20 mb-6 z-20'>
+          <Link href='/blog'>Blog</Link>
+          <i className='fas fa-caret-right inline-block mx-3'></i>
+          {article.title}
         </div>
-        <p>
-          (Originally posted on{' '}
-          <a href={article.canonical_url} target='_blank'>
-            {article.canonical_url}
-            <i className='fas fa-external-link-alt'></i>
-          </a>
-          )
-        </p>
-        <div
-          dangerouslySetInnerHTML={{ __html: article.body_html ?? '' }}
-        ></div>
-        <div className='mt-4 pt-3 text-sm border-solid border-0 border-t-[1px] border-gray-500/10 dark:border-gray-600/30'>
-          {article.comments_count} comments. To {article.comments_count > 0 && 'view or '}add your own, go to{' '}
-          <a href={article.canonical_url}>
-            {article.canonical_url}
-            <i className='fas fa-external-link-alt'></i>
-          </a>
-        </div>
-      </Card>
-      <ScrollPercent />
-      <AddCopyButton />
-    </div>
+        <Card classList='blog-article sm:mr-0 w-[95%] md:w-[97%]'>
+          <div
+            style={{
+              backgroundImage: article.cover_image
+                ? `url(${article.cover_image})`
+                : 'url(/img/hex.png)'
+            }}
+            className='h-[400px] bg-center bg-cover'
+          />
+          <H1 leftAligned>{article.title}</H1>
+          <div className='flex'>
+            {tagList.map((tag, i) => (
+              <span
+                className='rounded-full p-2 px-4 mr-2 uppercase text-sm tracking-wide bg-gray-600/20 dark:bg-black/25'
+                key={i}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <p>
+            (Originally posted on{' '}
+            <a href={article.canonical_url} target='_blank'>
+              {article.canonical_url}
+              <i className='fas fa-external-link-alt'></i>
+            </a>
+            )
+          </p>
+          <div
+            dangerouslySetInnerHTML={{ __html: article.body_html ?? '' }}
+          ></div>
+          <div className='mt-4 pt-3 text-sm border-solid border-0 border-t-[1px] border-gray-500/10 dark:border-gray-600/30'>
+            {article.comments_count} comments. To{' '}
+            {article.comments_count > 0 && 'view or '}add your own, go to{' '}
+            <a href={article.canonical_url}>
+              {article.canonical_url}
+              <i className='fas fa-external-link-alt'></i>
+            </a>
+          </div>
+        </Card>
+        <ScrollPercent />
+        <AddCopyButton />
+      </div>
+    </>
   )
 }
 
