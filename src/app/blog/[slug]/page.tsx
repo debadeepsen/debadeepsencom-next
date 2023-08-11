@@ -53,6 +53,9 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
             className='h-[400px] bg-center bg-cover'
           />
           <H1 leftAligned>{article.title}</H1>
+          <div className='my-8 ml-1 text-sm'>
+            {new Date(article.published_timestamp).toLocaleString()}
+          </div>
           <div className='flex'>
             {tagList.map((tag, i) => (
               <span
