@@ -90,6 +90,7 @@ const Menu = () => {
       {/* mobile menu */}
       <div className='md:hidden relative'>
         <button
+          aria-label='Toggle menu'
           className='bg-transparent border-0 z-22'
           onClick={() => toggleMenu()}
         >

@@ -30,6 +30,7 @@ const Photography = () => {
   return (
     <>
       <button
+        aria-label='Close image'
         className={
           'flex justify-center items-center w-[36px] h-[36px] bg-slate-800/20 rounded-full fixed top-[4px] right-[4px] border-0 z-[60] cursor-pointer transition-all'
         }
