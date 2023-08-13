@@ -44,20 +44,21 @@ const Photography = () => {
       </button>
       <H1>Photography</H1>
       <div className='flex flex-wrap justify-center'>
-        {photosToShow.map(image => (
+        {photosToShow.map(file => (
           <Card
-            key={image}
+            key={file.filename}
             classList={
-              'sm:mr-4 mb-4 p-[8px] pb-[4px] flex justify-center items-center ' +
-              getClickedCardClass(image)
+              'relative sm:mr-4 mb-4 p-[8px] pb-[4px] flex justify-center items-center ' +
+              getClickedCardClass(file.filename)
             }
           >
             <img
-              alt={image.slice(0, -5)}
-              src={photosDir + image}
-              className={imageClasses + getClickedImageClass(image)}
-              onClick={() => setClickedImage(image)}
+              alt={file.caption}
+              src={photosDir + file.filename}
+              className={imageClasses + getClickedImageClass(file.filename)}
+              onClick={() => setClickedImage(file.filename)}
             />
+            <div className='caption'>{file.caption}</div>
           </Card>
         ))}
       </div>
