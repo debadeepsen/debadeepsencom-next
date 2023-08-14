@@ -7,7 +7,11 @@ import Link from 'next/link'
 
 const Blog = async () => {
   const fetchDevArticles = async () => {
-    const res = await fetch('https://dev.to/api/articles?username=debadeepsen')
+    const res = await fetch('https://dev.to/api/articles/me/published/', {
+      headers: {
+        'api-key': process.env.API_KEY ?? ''
+      }
+    })
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }
@@ -15,10 +19,19 @@ const Blog = async () => {
     return res.json()
   }
 
-  const articles = (await fetchDevArticles()) as DevToArticle[]
-  articles.sort((a, b) => {
-    return b.public_reactions_count - a.public_reactions_count
-  })
+  let articles = (await fetchDevArticles()) as DevToArticle[]
+
+  const sortArticles = () => {
+    const latest = articles[0]
+    articles.splice(0, 1)
+    articles.sort((a, b) => {
+      return b.public_reactions_count > a.public_reactions_count ? 1 : -1
+    })
+
+    articles.unshift(latest)
+  }
+
+  sortArticles()
 
   return (
     <div className='w-full lg:w-[800px] xl:w-[1024px] min-[2000px]:w-[80%] mx-auto'>
@@ -26,7 +39,7 @@ const Blog = async () => {
       <BlogBlurb />
 
       <div className='flex flex-wrap'>
-        {articles.map((article: DevToArticle) => (
+        {articles.map((article: DevToArticle, i: number) => (
           <Card
             key={article.id}
             classList='w-[92%] sm:w-[95%] md:w-[98%] lg:w-[45%] min-[2000px]:w-[30%] lg:mr-4 relative'
@@ -57,6 +70,12 @@ const Blog = async () => {
                 </div>
               </div>
             </div>
+
+            {i === 0 && (
+              <div className='absolute top-[20px] right-[20px] bg-emerald-600/80 rounded-md text-xs p-1 px-2 text-white'>
+                NEW
+              </div>
+            )}
 
             {article.public_reactions_count > 50 && (
               <div className='absolute top-[20px] right-[20px] bg-red-600/60 rounded-md text-xs p-1 px-2 text-white'>

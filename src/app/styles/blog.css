@@ -38,10 +38,38 @@ pre {
   border-radius: 3px;
   overflow-x: auto;
   line-height: 1.5rem;
+  position: relative;
 }
 
 code {
   font-size: 0.85rem;
+}
+
+.fa-copy {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 8px;
+  font-size: 16px;
+  background: #ccc5;
+  border: 0;
+  border-radius: 2px;
+  color: #3338;
+}
+
+.dark .fa-copy {
+  background: #0004;
+  color: #ddd5;
+}
+
+.fa-copy:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.fa-copy:active {
+  top: 5px;
+  right: 5px;
 }
 
 @media screen and (min-width: 1200px) {

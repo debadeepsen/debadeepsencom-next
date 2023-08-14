@@ -39,6 +39,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
             <a
               target='_blank'
               href={project.website}
+              aria-label={'Link to demo of ' + project.title}
               className='hidden sm:inline break-all'
             >
               {project.website}
@@ -47,6 +48,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
             <a
               target='_blank'
               href={project.website}
+              aria-label={'Link to demo of ' + project.title}
               className='inline sm:hidden'
             >
               Demo
@@ -63,6 +65,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
             <a
               target='_blank'
               href={project.code}
+              aria-label={'Link to code of ' + project.title}
               className='hidden sm:inline break-all'
             >
               {project.code}
@@ -71,6 +74,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
             <a
               target='_blank'
               href={project.website}
+              aria-label={'Link to code of ' + project.title}
               className='inline sm:hidden'
             >
               Code

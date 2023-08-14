@@ -30,3 +30,4 @@
 - [ ] Blog search
 - [ ] Easy way to get back to article list
 - [x] Photography page
+- [x] Copy to clipboard

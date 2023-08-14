@@ -137,6 +137,29 @@ section h2::before {
   transform: scale(1.05);
 }
 
+.caption {
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  padding: 36px;
+  padding-top: 240px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(0deg, #0008, transparent),
+    linear-gradient(0deg, #0006, transparent);
+  box-sizing: border-box;
+  opacity: 0;
+  transition: all 0.15s;
+}
+
+.thumb:hover + .caption {
+  opacity: 1;
+  width: 101%;
+  bottom: -6px;
+}
+
 .clicked-card {
   left: 0;
   top: 0;
