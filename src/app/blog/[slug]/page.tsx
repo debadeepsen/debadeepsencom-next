@@ -34,7 +34,7 @@ export async function generateMetadata({
     openGraph: {
       title: article.title + ' | Debadeep Sen',
       description: article.description,
-      images: [article.cover_image]
+      images: [{url: article.cover_image ?? 'https://debadeepsen.com/img/hex.png'}]
     }
   }
 
