@@ -1,9 +1,11 @@
 import PhotoGridWrapper from '@/components/containers/PhotoGridWrapper'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Photography | Debadeep Sen',
   openGraph: {
-    title: 'Photography | Debadeep Sen'
+    title: 'Photography | Debadeep Sen',
+    description: 'Photography by Debadeep Sen'
   }
 }
 

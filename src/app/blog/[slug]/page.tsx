@@ -6,8 +6,9 @@ import Link from 'next/link'
 import React from 'react'
 import AddCopyButton from '@/components/helpers/AddCopyButton'
 import Head from 'next/head'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Blog | Debadeep Sen',
   openGraph: {
     title: 'Blog | Debadeep Sen'

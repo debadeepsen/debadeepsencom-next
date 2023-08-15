@@ -6,6 +6,15 @@ import Divider from '@/components/Divider'
 import ArticleList from '@/components/ArticleList'
 import Socials from '@/components/Socials'
 import GuitarSVG from '@/components/SVGs/GuitarSVG'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Debadeep Sen',
+  openGraph: {
+    title: 'Debadeep Sen',
+    description: 'Personal website of Debadeep Sen'
+  }
+}
 
 export default function Home() {
   return (

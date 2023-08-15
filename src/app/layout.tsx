@@ -36,7 +36,6 @@ const Html = ({ children }: { children: ReactNode }) => {
             type='image/webp'
           />
         ))}
-        <title>{metadata.title}</title>
       </head>
       <body>
         <noscript>

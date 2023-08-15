@@ -3,12 +3,14 @@ import { H1 } from '@/components/Title'
 import Card from '@/components/containers/Card'
 import BlogBlurb from '@/components/fragments/BlogBlurb'
 import { DevToArticle } from '@/types/types'
+import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Blog | Debadeep Sen',
   openGraph: {
     title: 'Blog | Debadeep Sen',
+    description: 'Blog articles by Debadeep Sen'
   },
 }
 

@@ -3,7 +3,16 @@ import Divider from '@/components/Divider'
 import Socials from '@/components/Socials'
 import { H1 } from '@/components/Title'
 import Card from '@/components/containers/Card'
+import { Metadata } from 'next'
 import React from 'react'
+
+export const metadata: Metadata = {
+  title: 'About | Debadeep Sen',
+  openGraph: {
+    title: 'About | Debadeep Sen',
+    description: 'About Debadeep Sen'
+  }
+}
 
 const About = () => {
   return (
