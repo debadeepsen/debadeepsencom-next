@@ -21,10 +21,6 @@ const Html = ({ children }: { children: ReactNode }) => {
       <head>
         <meta name='title' content={metadata.title}></meta>
         <meta name='description' content={metadata.description}></meta>
-        <meta
-          property='og:image'
-          content='https://debadeepsen.com/img/dsen1.jpg'
-        />
         <meta property='og:image:width' content='200' />
         <meta property='og:image:height' content='200' />
         <meta name="google-site-verification" content="Nfs7yrT9a_cUhmdDxr8u6WQ2NYTAE3yb-a5B1II4u5M" />

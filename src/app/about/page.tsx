@@ -10,7 +10,12 @@ export const metadata: Metadata = {
   title: 'About | Debadeep Sen',
   openGraph: {
     title: 'About | Debadeep Sen',
-    description: 'About Debadeep Sen'
+    description: 'About Debadeep Sen',
+    images: [
+      {
+        url: 'https://debadeepsen.com/img/dsen1.jpg'
+      }
+    ]
   }
 }
 
