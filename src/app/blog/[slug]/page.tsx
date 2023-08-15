@@ -8,43 +8,47 @@ import AddCopyButton from '@/components/helpers/AddCopyButton'
 import Head from 'next/head'
 import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Blog | Debadeep Sen',
-  openGraph: {
-    title: 'Blog | Debadeep Sen'
+// `https://dev.to/api/articles/debadeepsen/${params.slug}`
+const fetchDevArticle = async (slug: string) => {
+  const res = await fetch(`https://dev.to/api/articles/debadeepsen/${slug}`)
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
   }
+
+  return res.json()
 }
 
+export async function generateMetadata({
+  params
+}: {
+  params: { slug: string }
+}) {
+  // read route params
+  const id = params.slug
 
-const BlogArticle = async ({ params }: { params: { slug: string } }) => {
-  // `https://dev.to/api/articles/debadeepsen/${params.slug}`
-  const fetchDevArticle = async () => {
-    const res = await fetch(
-      `https://dev.to/api/articles/debadeepsen/${params.slug}`
-    )
-    if (!res.ok) {
-      throw new Error('Failed to fetch data')
+  // fetch data
+  const article = (await fetchDevArticle(params.slug)) as DevToArticle
+
+  const metaData: Metadata = {
+    title: article.title + ' | Debadeep Sen',
+    openGraph: {
+      title: article.title + ' | Debadeep Sen',
+      description: article.description,
+      images: [article.cover_image]
     }
-
-    return res.json()
   }
 
-  const article = (await fetchDevArticle()) as DevToArticle
+  return metaData
+}
+
+const BlogArticle = async ({ params }: { params: { slug: string } }) => {
+  const article = (await fetchDevArticle(params.slug)) as DevToArticle
   const tagList = Array.isArray(article.tag_list)
     ? article.tag_list
     : (article.tag_list as string).split(',')
 
   return (
     <>
-      <Head>
-        <title>{article.title} | Debadeep Sen</title>
-        <meta name='title' content={article.title}></meta>
-        <meta name='description' content={article.description}></meta>
-        <meta
-          property='og:image'
-          content={article.cover_image ?? '/img/hex.png'}
-        />
-      </Head>
       <div className='w-full lg:w-[800px] xl:w-[1200px] mx-auto relative'>
         <div className='mt-20 mb-6 z-20'>
           <Link href='/blog'>Blog</Link>
