@@ -27,6 +27,7 @@ const Html = ({ children }: { children: ReactNode }) => {
         />
         <meta property='og:image:width' content='200' />
         <meta property='og:image:height' content='200' />
+        <meta name="google-site-verification" content="Nfs7yrT9a_cUhmdDxr8u6WQ2NYTAE3yb-a5B1II4u5M" />
         {photosToShow.map(file => (
           <link
             key={file.filename}
@@ -35,7 +36,6 @@ const Html = ({ children }: { children: ReactNode }) => {
             type='image/webp'
           />
         ))}
-        <meta name="google-site-verification" content="Nfs7yrT9a_cUhmdDxr8u6WQ2NYTAE3yb-a5B1II4u5M" />
         <title>{metadata.title}</title>
       </head>
       <body>
