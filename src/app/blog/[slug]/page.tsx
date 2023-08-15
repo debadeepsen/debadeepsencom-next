@@ -92,8 +92,8 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
           <div className='mt-4 pt-3 text-sm border-solid border-0 border-t-[1px] border-gray-500/10 dark:border-gray-600/30'>
             {article.comments_count} comments and{' '}
             {article.public_reactions_count} reactions. To{' '}
-            {article.comments_count &&
-              article.public_reactions_count &&
+            {!!article.comments_count &&
+              !!article.public_reactions_count &&
               'view or '}
             add your own, go to{' '}
             <a href={article.canonical_url}>
