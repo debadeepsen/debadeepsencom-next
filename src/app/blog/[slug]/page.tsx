@@ -3,11 +3,17 @@ import { H1 } from '@/components/Title'
 import Card from '@/components/containers/Card'
 import { DevToArticle } from '@/types/types'
 import Link from 'next/link'
-import Script from 'next/script'
 import React from 'react'
-import { useRouter } from 'next/navigation'
 import AddCopyButton from '@/components/helpers/AddCopyButton'
 import Head from 'next/head'
+
+export const metadata = {
+  title: 'Blog | Debadeep Sen',
+  openGraph: {
+    title: 'Blog | Debadeep Sen'
+  }
+}
+
 
 const BlogArticle = async ({ params }: { params: { slug: string } }) => {
   // `https://dev.to/api/articles/debadeepsen/${params.slug}`

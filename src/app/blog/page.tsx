@@ -5,6 +5,13 @@ import BlogBlurb from '@/components/fragments/BlogBlurb'
 import { DevToArticle } from '@/types/types'
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Blog | Debadeep Sen',
+  openGraph: {
+    title: 'Blog | Debadeep Sen',
+  },
+}
+
 const Blog = async () => {
   const fetchDevArticles = async () => {
     const res = await fetch('https://dev.to/api/articles/me/published/', {
