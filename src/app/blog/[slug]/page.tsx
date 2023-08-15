@@ -30,6 +30,7 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
   return (
     <>
       <Head>
+        <title>{article.title} | Debadeep Sen</title>
         <meta name='title' content={article.title}></meta>
         <meta name='description' content={article.description}></meta>
         <meta
@@ -78,8 +79,12 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
             dangerouslySetInnerHTML={{ __html: article.body_html ?? '' }}
           ></div>
           <div className='mt-4 pt-3 text-sm border-solid border-0 border-t-[1px] border-gray-500/10 dark:border-gray-600/30'>
-            {article.comments_count} comments. To{' '}
-            {article.comments_count > 0 && 'view or '}add your own, go to{' '}
+            {article.comments_count} comments and{' '}
+            {article.public_reactions_count} reactions. To{' '}
+            {article.comments_count &&
+              article.public_reactions_count &&
+              'view or '}
+            add your own, go to{' '}
             <a href={article.canonical_url}>
               {article.canonical_url}
               <i className='fas fa-external-link-alt'></i>
