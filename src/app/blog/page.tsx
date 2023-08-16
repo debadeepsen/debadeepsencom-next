@@ -2,6 +2,7 @@
 import { H1 } from '@/components/Title'
 import Card from '@/components/containers/Card'
 import BlogBlurb from '@/components/fragments/BlogBlurb'
+import ErrorFragment from '@/components/fragments/Error'
 import { DevToArticle } from '@/types/types'
 import { Metadata } from 'next'
 import Link from 'next/link'
@@ -101,10 +102,7 @@ const Blog = async () => {
       </div>
     )
   } catch {
-    return <div className='mt-20 w-full lg:w-[800px] xl:w-[1024px] min-[2000px]:w-[80%] mx-auto flex flex-col justify-center items-center'>
-      <h1 className='text-red-500'>Error</h1>
-      <div>Unable to fetch articles</div>
-    </div>
+    return <ErrorFragment text='Unable to fetch the list of articles' />
   }
 }
 
