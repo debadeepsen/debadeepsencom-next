@@ -31,3 +31,5 @@
 - [ ] Easy way to get back to article list
 - [x] Photography page
 - [x] Copy to clipboard
+- [ ] Make layout server-rendered
+- [ ] Export common metadata from layout
