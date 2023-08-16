@@ -33,3 +33,4 @@
 - [x] Copy to clipboard
 - [ ] Make layout server-rendered
 - [ ] Export common metadata from layout
+- [ ] Add constants for URL fragments

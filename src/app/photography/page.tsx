@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Photography | Debadeep Sen',
     description: 'Photography by Debadeep Sen'
+  },
+  alternates: {
+    canonical: 'https://debadeepsen.com/photography'
   }
 }
 

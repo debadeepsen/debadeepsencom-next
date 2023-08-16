@@ -23,11 +23,9 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }) {
-  // read route params
-  const id = params.slug
-
+  const { slug } = params
   // fetch data
-  const article = (await fetchDevArticle(params.slug)) as DevToArticle
+  const article = (await fetchDevArticle(slug)) as DevToArticle
 
   const metaData: Metadata = {
     title: article.title + ' | Debadeep Sen',
@@ -37,6 +35,9 @@ export async function generateMetadata({
       images: [
         { url: article.cover_image ?? 'https://debadeepsen.com/img/hex.png' }
       ]
+    },
+    alternates: {
+      canonical: 'https://debadeepsen.com/' + slug
     }
   }
 

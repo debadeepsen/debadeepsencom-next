@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     title: 'Blog | Debadeep Sen',
     description: 'Blog articles by Debadeep Sen'
   },
+  alternates: {
+    canonical: 'https://debadeepsen.com/blog'
+  }
 }
 
 const Blog = async () => {

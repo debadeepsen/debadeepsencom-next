@@ -18,6 +18,9 @@ export const metadata: Metadata = {
         url: 'https://debadeepsen.com/img/dsen1.jpg'
       }
     ]
+  },
+  alternates: {
+    canonical: 'https://debadeepsen.com'
   }
 }
 
