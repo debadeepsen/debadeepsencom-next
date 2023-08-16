@@ -1,8 +1,20 @@
 import { H1 } from '@/components/Title'
 import Card from '@/components/containers/Card'
 import { GAME_LIST } from '@/lib/constants/gameConstants'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import React, { ReactNode } from 'react'
+
+export const metadata: Metadata = {
+  title: 'Games | Debadeep Sen',
+  openGraph: {
+    title: 'Games | Debadeep Sen',
+    description: 'Games by Debadeep Sen'
+  },
+  alternates: {
+    canonical: 'https://debadeepsen.com/games'
+  }
+}
 
 const Games = () => {
   return (

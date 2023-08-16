@@ -1,7 +1,10 @@
 import { H1 } from '@/components/Title'
-import WordGame from '@/components/games/WordGame'
+import WordGame from '@/components/games/word-game/WordGame'
 import { GAME_LIST, GAME_SLUGS } from '@/lib/constants/gameConstants'
+import { Metadata } from 'next'
 import React from 'react'
+
+// TODO: export metadata
 
 const Game = ({ params }: { params: { slug: string } }) => {
   const { slug } = params
