@@ -22,7 +22,7 @@ const WordGame = () => {
     (progress / currentWord.length) * 100
   )
   const degrees: number = Math.round((progress / currentWord.length) * 360)
-  const puzzleSolved: boolean = progress === currentWord.length
+  const puzzleSolved = () => progress === currentWord.length
 
   const reset = () => {
     setCurrentWord('')
@@ -62,12 +62,6 @@ const WordGame = () => {
       .split('')
       .filter(e => e === letter).length
     setProgress(progress + correctGuesses)
-
-    if (puzzleSolved) {
-      setMessage(
-        `Congratulations! You found the word ${currentWord} in ${tries} tries! Click on the button below to begin a new game.`
-      )
-    }
   }
 
   useEffect(() => {
@@ -76,8 +70,8 @@ const WordGame = () => {
 
   return (
     <Card classList='p-6 relative'>
-      <h1>Guess the {currentWord.length}-letter word</h1>
-      <h3 style={{ marginBottom: '40px' }}>Choose from the letters below</h3>
+      <h2>Guess the {currentWord.length}-letter word</h2>
+      <p className='mb-4'>Choose from the letters below</p>
 
       {/* <div className='progress-circle'>
         <div className='pc-overlay'>{progressPercent}%</div>
@@ -89,7 +83,7 @@ const WordGame = () => {
         ></div>
       </div> */}
 
-      <div className='text-teal-400 dark:text-teal-200 bg-teal-100/20 py-2 px-6 text-sm absolute top-[6px] right-[6px] rounded-full'>
+      <div className='text-teal-600 dark:text-teal-200 bg-teal-400/10 dark:bg-teal-100/10 py-2 px-6 text-sm absolute top-[6px] right-[6px] rounded-full'>
         {tries} tries
       </div>
 
@@ -98,8 +92,7 @@ const WordGame = () => {
           <input
             key={i}
             readOnly
-            className='outline-0 border-0 border-b-2 w-[2vw] md:w-[40px] xl:w-[60px] h-[2vh] md:h-[40px] lg:h-[60px] mx-2 bg-transparent font-bold text-center text-lg'
-            style={{ color: THEME_COLOR }}
+            className='outline-0 border-0 border-b-2 w-[3vw] md:w-[40px] xl:w-[60px] h-[3vw] md:h-[40px] lg:h-[60px] mx-2 bg-transparent text-center text-xs md:text-lg text-slate-600 dark:text-slate-200'
             value={getGuessedLetter(i)}
           />
         ))}
@@ -109,7 +102,7 @@ const WordGame = () => {
         <div
           className='absolute w-full h-full'
           style={{
-            pointerEvents: puzzleSolved ? 'all' : 'none'
+            pointerEvents: puzzleSolved() ? 'all' : 'none'
           }}
         ></div>
         {alphabets.map(l => (
@@ -126,16 +119,18 @@ const WordGame = () => {
           </button>
         ))}
       </div>
-      <div id='msg'>{message}</div>
-      <div className='my-2 flex justify-center items-center'>
+      {puzzleSolved() && (
+        <div className='my-4 text-center'>
+          Congratulations! You found the word <code className='text-bold'>{currentWord}</code> in {tries} tries!
+          Click on the button below to begin a new game.
+          <button className="fas fa-flag ml-2 rounded-full bg-red-200/40 dark:bg-red-200/20 text-red-400 border-0 p-2" title='Report word as inappropriate'></button>
+        </div>
+      )}
+      <div className='my-4 flex justify-center items-center'>
         <button
           className={
-            'm-2 py-2 px-8 border-0 rounded-xs shadow-lg cursor-pointer'
+            'my-4 py-3 px-8 border-0 rounded-xs shadow-lg cursor-pointer bg-teal-600 text-white'
           }
-          style={{
-            background: THEME_COLOR,
-            color: '#fff'
-          }}
           onClick={loadGame}
         >
           New Game

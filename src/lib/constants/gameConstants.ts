@@ -1,3 +1,4 @@
+import WordGameSVG from '@/components/SVGs/WordGameSVG'
 import { ReactNode } from 'react'
 
 export type GameInfo = {
@@ -13,8 +14,9 @@ export const GAME_SLUGS = Object.freeze({
 
 export const GAME_LIST: GameInfo[] = [
   {
-    icon: undefined,
+    icon: WordGameSVG(),
     title: 'Word-guessing game',
+    description: 'A Hangman-like guessing game',
     slug: GAME_SLUGS.WORD_GAME
   }
 ]
