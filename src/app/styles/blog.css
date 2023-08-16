@@ -1,0 +1,119 @@
+@import url('./crayons.css');
+
+html {
+  --h2Color: #008090;
+}
+
+html.dark {
+  --h2Color: #00b1c8;
+}
+
+.blog-article h2 {
+  margin-top: 40px;
+  color: var(--h2Color);
+}
+
+.blog-article h1 {
+  font-size: 1.75rem;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 600px) {
+  .blog-article h1 {
+    font-size: auto;
+    margin-bottom: inherit;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .blog-article h1 {
+    font-size: 3rem;
+    margin-bottom: inherit;
+  }
+}
+
+pre {
+  background-color: #7773;
+  padding: 10px;
+  border-radius: 3px;
+  overflow-x: auto;
+  line-height: 1.5rem;
+  position: relative;
+}
+
+code {
+  font-size: 0.85rem;
+}
+
+.fa-copy {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 8px;
+  font-size: 16px;
+  background: #ccc5;
+  border: 0;
+  border-radius: 2px;
+  color: #3338;
+}
+
+.dark .fa-copy {
+  background: #0004;
+  color: #ddd5;
+}
+
+.fa-copy:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.fa-copy:active {
+  top: 5px;
+  right: 5px;
+}
+
+@media screen and (min-width: 1200px) {
+  code {
+    font-family: 'Fira Mono', 'Courier New', Courier, monospace;
+    background-color: #7772;
+    padding: 0 3px;
+    border-radius: 2px;
+    font-size: 1.05rem;
+  }
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+blockquote {
+  background-color: #00b3ff11;
+  margin: 0;
+  padding: 20px;
+  padding-left: 30px;
+  border-left: 3px solid #179cd5;
+}
+
+iframe {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* .kd {
+  color: #783055;
+}
+
+.nb {
+  color: #158;
+}
+
+.c1 {
+  color: #398;
+} */
+
+.highlight-action,
+.crayons-icon {
+  display: none;
+}

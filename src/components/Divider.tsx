@@ -3,19 +3,9 @@ import React from 'react'
 
 const Divider = () => {
   return (
-    <div className='flex justify-center items-center'>
-      <svg width='300px' height='100px' viewBox='0 0 300 200'>
-        <line
-          x1='40'
-          x2='260'
-          y1='80'
-          y2='80'
-          stroke={THEME_COLOR}
-          stroke-width='20'
-          stroke-linecap='round'
-          stroke-dasharray='1, 30'
-        />
-      </svg>
+    <div className='flex flex-col justify-center items-center my-8 sm:my-16'>
+      <div className='w-[50px] sm:w-[100px] lg:w-[120px] h-[2px] opacity-20' style={{background: THEME_COLOR}}></div>
+      <div className='ml-10 mt-1 w-[50px] sm:w-[100px] lg:w-[120px] h-[2px] opacity-30' style={{background: THEME_COLOR}}></div>
     </div>
   )
 }

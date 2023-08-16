@@ -1,0 +1,36 @@
+# TODO
+
+- [x] Transparent top SVG
+- [x] Double overlaid top SVG
+- [x] Remove mobile height for SVG
+- [x] Certifications section to be horizontal on `lg+`
+- [x] Squeeze skills section vertically on `md+`
+- [x] Store and dark mode
+- [x] Find better bullet than #
+- [x] Make better divider
+- [x] Page bottom SVG
+- [x] Get system color mode
+- [x] SVG colors to update with color mode
+- [x] Persist color mode
+- [x] CSS-only color mode
+- [x] Code syntax highlighting
+- [x] Color mode based syntax highlighting
+- [ ] Fix Lighthouse warnings
+- [x] Responsive menu
+- [x] ---CSS responsive menu ([https://blog.logrocket.com/create-responsive-mobile-menu-with-css-no-javascript] or [https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav])---
+- [ ] Center certifications section on mobile
+- [x] Add more width to project cards on mobile
+- [ ] Responsive images
+- [x] Click outside
+- [ ] New 4k design
+- [x] Blogs from Dev.to
+- [ ] Blog search
+- [x] Multiple column blog list on `lg+`
+- [ ] Blog with PostgreSQL
+- [ ] Blog search
+- [ ] Easy way to get back to article list
+- [x] Photography page
+- [x] Copy to clipboard
+- [ ] Make layout server-rendered
+- [ ] Export common metadata from layout
+- [ ] Add constants for URL fragments

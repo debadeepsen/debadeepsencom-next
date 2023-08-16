@@ -28,15 +28,30 @@ body {
 }
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Julee&family=Rubik:wght@300;600&display=swap');
-@import url('./common.css');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Rubik:wght@300;600&display=swap');
+@import url('./color-mode.css');
+/* @import url('./common.css'); */
 @import url('./page-bottom.css');
+@import url('./blog.css');
+
+html {
+  --linkColor: #0092dc;
+}
+
+html.dark {
+  --linkColor: #1faff7;
+}
 
 body {
+  font-family: 'Rubik', system-ui, sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Rubik', system-ui, sans-serif;
+  line-height: 1.5rem;
   font-size: 14px;
+}
+
+button {
+  font-family: 'Rubik', system-ui, sans-serif;
 }
 
 @media screen and (min-width: 480px) {
@@ -45,23 +60,33 @@ body {
   }
 }
 
+@media screen and (min-width: 1900px) {
+  body {
+    font-size: 18px;
+  }
+}
+a {
+  text-decoration: none;
+  color: var(--linkColor);
+}
+a:hover {
+  text-decoration: underline;
+}
+
 h1 {
   color: #555;
 }
 
-.subtitle {
-  color: #777;
+h2 {
+  font-weight: 400;
 }
 
-/* h1 {
-  font-family: 'Julee';
-} */
+h3 {
+  font-weight: 600;
+}
 
-.separator {
-  margin-top: 40px;
-  height: 1px;
-  /* background-color: #7772; */
-  border-top: 1px solid #9995;
+.subtitle {
+  color: #777;
 }
 
 .icons i {
@@ -91,12 +116,62 @@ h1 {
   color: #555;
 }
 
-.svg-icon {
-  height: 60%;
+section h2::before {
+  transform: translateZ(-3px);
 }
 
-@media screen and (max-width: 1200px) {
-  .svg-icon {
-    width: 60%;
+.fa-external-link-alt {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  #projects_svg {
+    height: 300px;
   }
+}
+
+.thumb:hover {
+  filter: saturate(1.2) brightness(1.1) contrast(1.1);
+  transform: scale(1.05);
+}
+
+.caption {
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  padding: 36px;
+  padding-top: 240px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(0deg, #0008, transparent),
+    linear-gradient(0deg, #0006, transparent);
+  box-sizing: border-box;
+  opacity: 0;
+  transition: all 0.15s;
+}
+
+.thumb:hover + .caption {
+  opacity: 1;
+  width: 101%;
+  bottom: -6px;
+}
+
+.clicked-card {
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  z-index: 50;
+}
+
+.clicked-image {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: contain;
 }
