@@ -56,6 +56,7 @@ const PhotoGrid = () => {
               src={photosDir + file.filename}
               className={imageClasses + getClickedImageClass(file.filename)}
               onClick={() => setClickedImage(file.filename)}
+              loading='lazy'
             />
             <div className='caption'>{file.caption}</div>
           </Card>
