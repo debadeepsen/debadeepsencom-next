@@ -75,7 +75,8 @@ const Blog = async () => {
 
               <div className='flex'>
                 <div className='rounded-full bg-lime-200/30 p-1 px-2 text-xs text-bold mr-2'>
-                  {article.public_reactions_count} reactions
+                  {article.public_reactions_count} reaction
+                  {article.public_reactions_count == 1 ? '' : 's'}
                 </div>
                 <div className='rounded-full bg-blue-200/30 p-1 px-2 text-xs'>
                   {article.comments_count} comments
