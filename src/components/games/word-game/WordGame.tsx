@@ -10,10 +10,11 @@ import { sendReport } from '@/lib/utils/mailer'
 const { WORD_LIST, ALPHABETS } = WORD_CONSTANTS
 
 const WordGame = () => {
-  const [currentWord, setCurrentWord] = useState<string>('')
+  const [currentWord, setCurrentWord] = useState('')
   const [currentGuess, setCurrentGuess] = useState<string[]>([])
-  const [tries, setTries] = useState<number>(0)
-  const [progress, setProgress] = useState<number>(0)
+  const [tries, setTries] = useState(0)
+  const [progress, setProgress] = useState(0)
+  const [reported, setReported] = useState(false)
 
   const words: string[] = WORD_LIST.split(',')
   const alphabets: string[] = ALPHABETS.split('')
@@ -30,6 +31,7 @@ const WordGame = () => {
     setCurrentGuess([])
     setTries(0)
     setProgress(0)
+    setReported(false)
   }
 
   const loadGame = () => {
@@ -124,14 +126,17 @@ const WordGame = () => {
           Congratulations! You found the word{' '}
           <code className='text-bold'>{currentWord}</code> in {tries}{' '}
           {triesWord()}! Click on the button below to begin a new game.
-          <button
-            className='fas fa-flag ml-2 rounded-full bg-red-200/40 dark:bg-red-200/20 text-red-400 border-0 p-2'
-            title='Report word as inappropriate'
-            onClick={async () => {
-              const report = await sendReport(currentWord)
-              alert(report)
-            }}
-          ></button>
+          {!reported && (
+            <button
+              className='fas fa-flag ml-2 rounded-full bg-red-200/40 dark:bg-red-200/20 text-red-400 border-0 p-2'
+              title='Report word as inappropriate'
+              onClick={async () => {
+                setReported(true)
+                const report = await sendReport(currentWord)
+                alert(report)
+              }}
+            ></button>
+          )}
         </div>
       )}
       <div className='my-4 flex justify-center items-center'>
