@@ -6,6 +6,7 @@ import Card from '../../containers/Card'
 import './word-game.css'
 import { THEME_COLOR } from '@/lib/constants/commonConstants'
 import { sendReport } from '@/lib/utils/mailer'
+import { getWordDetails } from '@/lib/utils/api'
 
 const { WORD_LIST, ALPHABETS } = WORD_CONSTANTS
 
@@ -35,10 +36,16 @@ const WordGame = () => {
   }
 
   const loadGame = () => {
-    reset()
+    ;(async () => {
+      reset()
 
-    const rnd: number = Math.floor(Math.random() * words.length)
-    setCurrentWord(words[rnd].toUpperCase())
+      const rnd: number = Math.floor(Math.random() * words.length)
+      const word = words[rnd]
+      const dictionaryEntry = await getWordDetails(word)
+      console.log(dictionaryEntry)
+
+      setCurrentWord(word.toUpperCase())
+    })()
   }
 
   const getGuessedLetter = (index: number): string => {

@@ -2,12 +2,7 @@
 
 import { IPDetails } from '@/types/types'
 import * as sgMail from '@sendgrid/mail'
-
-const getIp = async () => {
-  const res = await fetch(process.env.IP_API || '')
-  const json = await res.json()
-  return json as IPDetails
-}
+import { getIp } from './api'
 
 export const sendReport = async (word: string) => {
   // using Twilio SendGrid's v3 Node.js Library
