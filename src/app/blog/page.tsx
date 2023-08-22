@@ -2,6 +2,7 @@
 import { H1 } from '@/components/Title'
 import Card from '@/components/containers/Card'
 import BlogBlurb from '@/components/fragments/BlogBlurb'
+import ErrorFragment from '@/components/fragments/Error'
 import { DevToArticle } from '@/types/types'
 import { Metadata } from 'next'
 import Link from 'next/link'
@@ -31,47 +32,48 @@ const Blog = async () => {
     return res.json()
   }
 
-  let articles = (await fetchDevArticles()) as DevToArticle[]
+  try {
+    let articles = (await fetchDevArticles()) as DevToArticle[]
 
-  const sortArticles = () => {
-    const latest = articles[0]
-    articles.splice(0, 1)
-    articles.sort((a, b) => {
-      return b.public_reactions_count > a.public_reactions_count ? 1 : -1
-    })
+    const sortArticles = () => {
+      const latest = articles[0]
+      articles.splice(0, 1)
+      articles.sort((a, b) => {
+        return b.public_reactions_count > a.public_reactions_count ? 1 : -1
+      })
 
-    articles.unshift(latest)
-  }
+      articles.unshift(latest)
+    }
 
-  sortArticles()
+    sortArticles()
 
-  return (
-    <div className='w-full lg:w-[800px] xl:w-[1024px] min-[2000px]:w-[80%] mx-auto'>
-      <H1>Blog</H1>
-      <BlogBlurb />
+    return (
+      <div className='w-full lg:w-[800px] xl:w-[1024px] min-[2000px]:w-[80%] mx-auto'>
+        <H1>Blog</H1>
+        <BlogBlurb />
 
-      <div className='flex flex-wrap'>
-        {articles.map((article: DevToArticle, i: number) => (
-          <Card
-            key={article.id}
-            classList='w-[92%] sm:w-[95%] md:w-[98%] lg:w-[45%] min-[2000px]:w-[30%] lg:mr-4 relative'
-          >
-            <div
-              style={{
-                backgroundImage: article.cover_image
-                  ? `url(${article.cover_image})`
-                  : 'url(/img/hex.png)'
-              }}
-              className='h-[200px] bg-center bg-cover'
-            />
-            <div className='relative top-[-6px]'>
-              <Link href={'/blog/' + article.slug}>
-                <h2 className='leading-8'>{article.title}</h2>
-              </Link>
+        <div className='flex flex-wrap'>
+          {articles.map((article: DevToArticle, i: number) => (
+            <Card
+              key={article.id}
+              classList='w-[92%] sm:w-[95%] md:w-[98%] lg:w-[45%] min-[2000px]:w-[30%] lg:mr-4 relative'
+            >
+              <div
+                style={{
+                  backgroundImage: article.cover_image
+                    ? `url(${article.cover_image})`
+                    : 'url(/img/hex.png)'
+                }}
+                className='h-[200px] bg-center bg-cover'
+              />
+              <div className='relative top-[-6px]'>
+                <Link href={'/blog/' + article.slug}>
+                  <h2 className='leading-8'>{article.title}</h2>
+                </Link>
 
-              <p className='mt-2 mb-4 p-2 bg-gray-50/10'>
-                {article.description}
-              </p>
+                <p className='mt-2 mb-4 p-2 bg-gray-50/10'>
+                  {article.description}
+                </p>
 
               <div className='flex'>
                 <div className='rounded-full bg-lime-200/30 p-1 px-2 text-xs text-bold mr-2'>
@@ -84,22 +86,25 @@ const Blog = async () => {
               </div>
             </div>
 
-            {i === 0 && (
-              <div className='absolute top-[20px] right-[20px] bg-emerald-600/80 rounded-md text-xs p-1 px-2 text-white'>
-                NEW
-              </div>
-            )}
+              {i === 0 && (
+                <div className='absolute top-[20px] right-[20px] bg-emerald-600/80 rounded-md text-xs p-1 px-2 text-white'>
+                  NEW
+                </div>
+              )}
 
-            {article.public_reactions_count > 50 && (
-              <div className='absolute top-[20px] right-[20px] bg-red-600/60 rounded-md text-xs p-1 px-2 text-white'>
-                POPULAR
-              </div>
-            )}
-          </Card>
-        ))}
+              {article.public_reactions_count > 50 && (
+                <div className='absolute top-[20px] right-[20px] bg-red-600/60 rounded-md text-xs p-1 px-2 text-white'>
+                  POPULAR
+                </div>
+              )}
+            </Card>
+          ))}
+        </div>
       </div>
-    </div>
-  )
+    )
+  } catch {
+    return <ErrorFragment text='Unable to fetch the list of articles' />
+  }
 }
 
 export default Blog

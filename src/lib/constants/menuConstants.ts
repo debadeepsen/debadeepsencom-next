@@ -23,6 +23,11 @@ export const MENU_INFO: MenuType[] = [
     icon: 'fas fa-blog'
   },
   {
+    href: '/games',
+    text: 'Games',
+    icon: 'fas fa-gamepad'
+  },
+  {
     href: '/about',
     text: 'About',
     icon: 'fas fa-address-card'

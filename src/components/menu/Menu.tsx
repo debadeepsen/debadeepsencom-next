@@ -74,9 +74,9 @@ const Menu = () => {
     ]
   }
 
-  const getBarStyle = (ordinalNumer: number) => {
+  const getBarStyle = (ordinalNumber: number) => {
     if (menuOpen)
-      return { ...barStyle.common, ...barStyle.menuOpen[ordinalNumer] }
+      return { ...barStyle.common, ...barStyle.menuOpen[ordinalNumber] }
     return barStyle.common
   }
 
