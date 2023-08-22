@@ -80,7 +80,7 @@ const BlogArticle = async ({ params }: { params: { slug: string } }) => {
             <div className='flex flex-wrap'>
               {tagList.map((tag, i) => (
                 <span
-                  className='rounded-full p-2 px-4 mr-2 uppercase text-xs sm:text-sm tracking-wide bg-gray-600/20 dark:bg-black/25'
+                  className='rounded-full p-2 px-4 mr-2 mb-2 uppercase text-xs sm:text-sm tracking-wide bg-gray-600/20 dark:bg-black/25'
                   key={i}
                 >
                   {tag}
