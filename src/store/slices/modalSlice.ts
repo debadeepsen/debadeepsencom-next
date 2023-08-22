@@ -2,28 +2,28 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '..'
 
-export type MenuState = {
+export type ModalState = {
   open: boolean
 }
 
-const initialState: MenuState = {
+const initialState: ModalState = {
   open: false
 }
 
-export const menuSlice = createSlice({
-  name: 'menu',
+export const modalSlice = createSlice({
+  name: 'modal',
   initialState,
   reducers: {
-    toggleMenuOpen: (state) => {
+    toggleOpen: (state) => {
         const wasOpen = state.open
         state.open = !wasOpen
     },
-    setMenuOpen: (state,action: PayloadAction<boolean>) => {
+    setOpen: (state,action: PayloadAction<boolean>) => {
         state.open = action.payload
     }
   }
 })
 
-export const { toggleMenuOpen, setMenuOpen } = menuSlice.actions
+export const { toggleOpen, setOpen } = modalSlice.actions
 
-export default menuSlice.reducer
+export default modalSlice.reducer

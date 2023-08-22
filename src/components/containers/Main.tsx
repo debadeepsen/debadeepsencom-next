@@ -10,7 +10,7 @@ import Menu from '../menu/Menu'
 import PageBottom from '../PageBottom'
 import ColorModeChanger from '../helpers/ColorModeChanger'
 import { Suspense } from 'react'
-import { setOpen } from '@/store/slices/menuSlice'
+import { setMenuOpen } from '@/store/slices/menuSlice'
 import BackToTop from '../BackToTop'
 import LoadingSVG from '../SVGs/LoadingSVG'
 import ModalDialog from '../helpers/ModalDialog'
@@ -24,7 +24,7 @@ const Main = ({ children }: { children: React.ReactNode }) => {
     (state: RootState) => state.colorMode.loaded
   )
   const dispatch = useAppDispatch()
-  dispatch(setOpen(false))
+  dispatch(setMenuOpen(false))
 
   return (
     <Suspense

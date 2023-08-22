@@ -2,7 +2,7 @@ import { ColorModes, LIGHT } from '@/lib/constants/colorModeConstants'
 import { MENU_INFO } from '@/lib/constants/menuConstants'
 import { RootState } from '@/store'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
-import { setOpen, toggleOpen } from '@/store/slices/menuSlice'
+import { toggleMenuOpen } from '@/store/slices/menuSlice'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -58,7 +58,7 @@ const Menu = () => {
   const dispatch = useAppDispatch()
 
   const toggleMenu = () => {
-    dispatch(toggleOpen())
+    dispatch(toggleMenuOpen())
   }
 
   const barClass = 'w-[20px] h-[2px] mb-1 box-border'
