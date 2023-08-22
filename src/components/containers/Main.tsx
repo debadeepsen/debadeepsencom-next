@@ -14,6 +14,7 @@ import { setMenuOpen } from '@/store/slices/menuSlice'
 import BackToTop from '../BackToTop'
 import LoadingSVG from '../SVGs/LoadingSVG'
 import ModalDialog from '../helpers/ModalDialog'
+import { setModalOpen } from '@/store/slices/modalSlice'
 
 const Main = ({ children }: { children: React.ReactNode }) => {
   const colorModeValue = useAppSelector(
@@ -23,6 +24,11 @@ const Main = ({ children }: { children: React.ReactNode }) => {
   const colorModeLoaded = useAppSelector(
     (state: RootState) => state.colorMode.loaded
   )
+
+  const { open: modalOpen, text: modalText } = useAppSelector(
+    (state: RootState) => state.modal
+  )
+
   const dispatch = useAppDispatch()
   dispatch(setMenuOpen(false))
 
@@ -46,8 +52,13 @@ const Main = ({ children }: { children: React.ReactNode }) => {
         <ColorModeChanger />
         <BackToTop />
         {false && (
-          <ModalDialog open onClose={() => {}}>
-            HELLO
+          <ModalDialog
+            open={modalOpen}
+            onClose={() => {
+              dispatch(setModalOpen(false))
+            }}
+          >
+            {modalText}
           </ModalDialog>
         )}
       </main>

@@ -1,29 +1,33 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { RootState } from '..'
 
 export type ModalState = {
   open: boolean
+  text?: string
 }
 
 const initialState: ModalState = {
-  open: false
+  open: false,
+  text: 'Sorry, an unexpected error occurred. Please try to refresh the page.'
 }
 
 export const modalSlice = createSlice({
   name: 'modal',
   initialState,
   reducers: {
-    toggleOpen: (state) => {
-        const wasOpen = state.open
-        state.open = !wasOpen
+    toggleModalOpen: state => {
+      const wasOpen = state.open
+      state.open = !wasOpen
     },
-    setOpen: (state,action: PayloadAction<boolean>) => {
-        state.open = action.payload
+    setModalOpen: (state, action: PayloadAction<boolean>) => {
+      state.open = action.payload
+    },
+    setText: (state, action: PayloadAction<string>) => {
+      state.text = action.payload
     }
   }
 })
 
-export const { toggleOpen, setOpen } = modalSlice.actions
+export const { toggleModalOpen, setModalOpen } = modalSlice.actions
 
 export default modalSlice.reducer
