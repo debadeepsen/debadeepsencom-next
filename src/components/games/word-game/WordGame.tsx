@@ -16,6 +16,10 @@ const { WORD_LIST, ALPHABETS } = WORD_CONSTANTS
 const WordGame = () => {
   const [currentWord, setCurrentWord] = useState('')
   const [currentWordExamples, setCurrentWordExamples] = useState<string[]>([])
+  const [examplesToolTip, setExamplesToolTip] = useState<
+    | 'Need help? Click here for an example sentence using this word.'
+    | 'Unable to load examples.'
+  >('Need help? Click here for an example sentence using this word.')
   const [ei, setEi] = useState(0)
   const [currentGuess, setCurrentGuess] = useState<string[]>([])
   const [tries, setTries] = useState(0)
@@ -36,6 +40,7 @@ const WordGame = () => {
   const reset = () => {
     setCurrentWord('')
     setCurrentWordExamples([])
+    setExamplesToolTip('Need help? Click here for an example sentence using this word.')
     setEi(0)
     setCurrentGuess([])
     setTries(0)
@@ -49,8 +54,13 @@ const WordGame = () => {
 
       const rnd: number = Math.floor(Math.random() * words.length)
       const word = words[rnd]
-      const examples = await getExamples(word)
-      setCurrentWordExamples(examples)
+
+      try {
+        const examples = await getExamples(word)
+        setCurrentWordExamples(examples)
+      } catch {
+        setExamplesToolTip('Unable to load examples.')
+      }
 
       setCurrentWord(word.toUpperCase())
     })()
@@ -117,7 +127,7 @@ const WordGame = () => {
         {!puzzleSolved() && (
           <button
             className='bg-transparent border-0'
-            title='Need help? Click here for an example sentence using this word.'
+            title={examplesToolTip}
             onClick={() => {
               const example = currentWordExamples[ei]
               const nextEi = ei === currentWordExamples.length - 1 ? 0 : ei + 1
