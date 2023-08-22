@@ -10,6 +10,7 @@ import { getWordDetails } from '@/lib/utils/api'
 import { getExamples } from '@/lib/utils/commonUtils'
 import ProjectsSVG from '@/components/SVGs/ProjectsSVG'
 import LoadingSVG from '@/components/SVGs/LoadingSVG'
+import { modalAlert } from '@/lib/utils/modal'
 
 const { WORD_LIST, ALPHABETS } = WORD_CONSTANTS
 
@@ -40,7 +41,9 @@ const WordGame = () => {
   const reset = () => {
     setCurrentWord('')
     setCurrentWordExamples([])
-    setExamplesToolTip('Need help? Click here for an example sentence using this word.')
+    setExamplesToolTip(
+      'Need help? Click here for an example sentence using this word.'
+    )
     setEi(0)
     setCurrentGuess([])
     setTries(0)
@@ -114,7 +117,7 @@ const WordGame = () => {
         {tries} tries
       </div>
 
-      <div className='flex justify-center items-center mb-8'>
+      <div className='flex justify-center items-center mb-6 sm:mb-8'>
         {!currentWord?.length && <LoadingSVG />}
         {currentWord.split('').map((l, i) => (
           <input
@@ -129,10 +132,17 @@ const WordGame = () => {
             className='bg-transparent border-0'
             title={examplesToolTip}
             onClick={() => {
+              if (!!!currentWordExamples?.length) {
+                modalAlert(
+                  'Sorry, no examples could be retrieved for this word.'
+                )
+                return
+              }
+
               const example = currentWordExamples[ei]
               const nextEi = ei === currentWordExamples.length - 1 ? 0 : ei + 1
               setEi(nextEi)
-              alert(example)
+              modalAlert(example)
             }}
           >
             <i
@@ -176,7 +186,7 @@ const WordGame = () => {
               onClick={async () => {
                 setReported(true)
                 const report = await sendReport(currentWord)
-                alert(report)
+                modalAlert(report)
               }}
             ></button>
           )}

@@ -20,7 +20,7 @@ const ModalDialog = ({
   if (!open) return <></>
 
   return (
-    <div className='fixed left-0 top-0 w-screen h-screen bg-[#3337] dark:bg-[#aaa5] flex justify-center items-center z-[200]'>
+    <div className='fixed left-0 top-0 w-screen h-screen bg-[#3337] dark:bg-[#aaa5] flex justify-center items-center z-[200] transition-all'>
       <div
         className='w-full md:w-3/4 lg:w-auto lg:min-w-[400px] shadow-lg rounded-md'
         style={{
@@ -28,9 +28,9 @@ const ModalDialog = ({
         }}
       >
         <div className='w-full flex justify-end'>
-          <CloseButton />
+          <CloseButton onClose={onClose} />
         </div>
-        <div className='p-3 mb-2 flex flex-wrap justify-center items-center'>{children}</div>
+        <div className='-mt-5 p-4 mb-2 flex flex-wrap justify-center items-center'>{children}</div>
       </div>
     </div>
   )

@@ -51,16 +51,14 @@ const Main = ({ children }: { children: React.ReactNode }) => {
         <PageBottom />
         <ColorModeChanger />
         <BackToTop />
-        {false && (
-          <ModalDialog
-            open={modalOpen}
-            onClose={() => {
-              dispatch(setModalOpen(false))
-            }}
-          >
-            {modalText}
-          </ModalDialog>
-        )}
+        <ModalDialog
+          open={modalOpen}
+          onClose={() => {
+            dispatch(setModalOpen(false))
+          }}
+        >
+          {modalText}
+        </ModalDialog>
       </main>
     </Suspense>
   )

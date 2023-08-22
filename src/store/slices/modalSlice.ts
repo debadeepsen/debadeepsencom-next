@@ -22,12 +22,12 @@ export const modalSlice = createSlice({
     setModalOpen: (state, action: PayloadAction<boolean>) => {
       state.open = action.payload
     },
-    setText: (state, action: PayloadAction<string>) => {
+    setModalText: (state, action: PayloadAction<string>) => {
       state.text = action.payload
     }
   }
 })
 
-export const { toggleModalOpen, setModalOpen, setText } = modalSlice.actions
+export const { toggleModalOpen, setModalOpen, setModalText } = modalSlice.actions
 
 export default modalSlice.reducer
