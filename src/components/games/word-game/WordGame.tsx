@@ -129,7 +129,7 @@ const WordGame = () => {
           {!reported && (
             <button
               className='fas fa-flag ml-2 rounded-full bg-red-200/40 dark:bg-red-200/20 text-red-400 border-0 p-2'
-              title='Report word as inappropriate'
+              title='Report word as inappropriate (Note: this will record your IP address, for security reasons)'
               onClick={async () => {
                 setReported(true)
                 const report = await sendReport(currentWord)
