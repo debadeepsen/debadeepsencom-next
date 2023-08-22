@@ -3,7 +3,6 @@ import Card from '@/components/containers/Card'
 import { GAME_LIST } from '@/lib/constants/gameConstants'
 import { Metadata } from 'next'
 import Link from 'next/link'
-import React, { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: 'Games | Debadeep Sen',
@@ -21,7 +20,7 @@ const Games = () => {
     <div className='w-full lg:w-[800px] xl:w-[1024px] min-[2000px]:w-[80%] mx-auto'>
       <H1>Games</H1>
       <p>
-        Enjoy a few cool games written by me (with help from
+        Enjoy a few simple games written by me (with help from
         JavaScript/TypeScript, and associated libraries)
       </p>
       <div>

@@ -13,7 +13,6 @@ const WordGame = () => {
   const [currentGuess, setCurrentGuess] = useState<string[]>([])
   const [tries, setTries] = useState<number>(0)
   const [progress, setProgress] = useState<number>(0)
-  const [message, setMessage] = useState<string>('')
 
   const words: string[] = WORD_LIST.split(',')
   const alphabets: string[] = ALPHABETS.split('')
@@ -23,13 +22,13 @@ const WordGame = () => {
   )
   const degrees: number = Math.round((progress / currentWord.length) * 360)
   const puzzleSolved = () => progress === currentWord.length
+  const triesWord = () => (tries == 1 ? 'try' : 'tries')
 
   const reset = () => {
     setCurrentWord('')
     setCurrentGuess([])
     setTries(0)
     setProgress(0)
-    setMessage('')
   }
 
   const loadGame = () => {
@@ -121,18 +120,24 @@ const WordGame = () => {
       </div>
       {puzzleSolved() && (
         <div className='my-4 text-center'>
-          Congratulations! You found the word <code className='text-bold'>{currentWord}</code> in {tries} tries!
-          Click on the button below to begin a new game.
-          <button className="fas fa-flag ml-2 rounded-full bg-red-200/40 dark:bg-red-200/20 text-red-400 border-0 p-2" title='Report word as inappropriate'></button>
+          Congratulations! You found the word{' '}
+          <code className='text-bold'>{currentWord}</code> in {tries}{' '}
+          {triesWord()}! Click on the button below to begin a new game.
+          <button
+            className='fas fa-flag ml-2 rounded-full bg-red-200/40 dark:bg-red-200/20 text-red-400 border-0 p-2'
+            title='Report word as inappropriate'
+          ></button>
         </div>
       )}
       <div className='my-4 flex justify-center items-center'>
         <button
           className={
-            'my-4 py-3 px-8 border-0 rounded-xs shadow-lg cursor-pointer bg-teal-600 text-white'
+            'my-4 py-3 px-8 border-0 rounded-sm shadow-lg cursor-pointer text-white text-md'
           }
+          style={{ background: 'var(--linkColor)' }}
           onClick={loadGame}
         >
+          <i className='fas fa-redo mr-2'></i>
           New Game
         </button>
       </div>
