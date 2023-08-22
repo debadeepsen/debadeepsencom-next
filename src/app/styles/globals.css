@@ -29,6 +29,11 @@ body {
 button {
   font-family: 'Rubik', system-ui, sans-serif;
   cursor: pointer;
+  transition: all 0.15s;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 @media screen and (min-width: 480px) {
