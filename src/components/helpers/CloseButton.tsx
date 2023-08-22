@@ -8,7 +8,7 @@ const CloseButton = ({ onClose }: { onClose?: () => void }) => {
     (state: RootState) => state.colorMode.value
   )
   return (
-    <button className='bg-transparent border-0 rounded-full flex justify-center items-center w-[36px] h-[36px] text-lg' style={{
+    <button className='bg-transparent border-0 rounded-full flex justify-center items-center w-[36px] h-[36px] text-xl' style={{
         color: ColorModes[colorModeValue].menu
     }}>
       &times;
