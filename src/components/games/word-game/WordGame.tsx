@@ -7,11 +7,16 @@ import './word-game.css'
 import { THEME_COLOR } from '@/lib/constants/commonConstants'
 import { sendReport } from '@/lib/utils/mailer'
 import { getWordDetails } from '@/lib/utils/api'
+import { getExamples } from '@/lib/utils/commonUtils'
+import ProjectsSVG from '@/components/SVGs/ProjectsSVG'
+import LoadingSVG from '@/components/SVGs/LoadingSVG'
 
 const { WORD_LIST, ALPHABETS } = WORD_CONSTANTS
 
 const WordGame = () => {
   const [currentWord, setCurrentWord] = useState('')
+  const [currentWordExamples, setCurrentWordExamples] = useState<string[]>([])
+  const [ei, setEi] = useState(0)
   const [currentGuess, setCurrentGuess] = useState<string[]>([])
   const [tries, setTries] = useState(0)
   const [progress, setProgress] = useState(0)
@@ -24,11 +29,14 @@ const WordGame = () => {
     (progress / currentWord.length) * 100
   )
   const degrees: number = Math.round((progress / currentWord.length) * 360)
-  const puzzleSolved = () => progress === currentWord.length
+  const puzzleSolved = () =>
+    !!currentWord?.length && progress === currentWord.length
   const triesWord = () => (tries == 1 ? 'try' : 'tries')
 
   const reset = () => {
     setCurrentWord('')
+    setCurrentWordExamples([])
+    setEi(0)
     setCurrentGuess([])
     setTries(0)
     setProgress(0)
@@ -41,8 +49,8 @@ const WordGame = () => {
 
       const rnd: number = Math.floor(Math.random() * words.length)
       const word = words[rnd]
-      const dictionaryEntry = await getWordDetails(word)
-      console.log(dictionaryEntry)
+      const examples = await getExamples(word)
+      setCurrentWordExamples(examples)
 
       setCurrentWord(word.toUpperCase())
     })()
@@ -96,7 +104,8 @@ const WordGame = () => {
         {tries} tries
       </div>
 
-      <div className='flex justify-center items-center mb-4'>
+      <div className='flex justify-center items-center mb-8'>
+        {!currentWord?.length && <LoadingSVG />}
         {currentWord.split('').map((l, i) => (
           <input
             key={i}
@@ -105,6 +114,23 @@ const WordGame = () => {
             value={getGuessedLetter(i)}
           />
         ))}
+        {!puzzleSolved() && (
+          <button
+            className='bg-transparent border-0'
+            title='Need help? Click here for an example sentence using this word.'
+            onClick={() => {
+              const example = currentWordExamples[ei]
+              const nextEi = ei === currentWordExamples.length - 1 ? 0 : ei + 1
+              setEi(nextEi)
+              alert(example)
+            }}
+          >
+            <i
+              className='fas fa-question-circle'
+              style={{ color: 'var(--linkColor)', fontSize: 18 }}
+            ></i>
+          </button>
+        )}
       </div>
 
       <div className='button-container'>
