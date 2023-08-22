@@ -13,6 +13,7 @@ import { Suspense } from 'react'
 import { setOpen } from '@/store/slices/menuSlice'
 import BackToTop from '../BackToTop'
 import LoadingSVG from '../SVGs/LoadingSVG'
+import ModalDialog from '../helpers/ModalDialog'
 
 const Main = ({ children }: { children: React.ReactNode }) => {
   const colorModeValue = useAppSelector(
@@ -44,6 +45,11 @@ const Main = ({ children }: { children: React.ReactNode }) => {
         <PageBottom />
         <ColorModeChanger />
         <BackToTop />
+        {false && (
+          <ModalDialog open onClose={() => {}}>
+            HELLO
+          </ModalDialog>
+        )}
       </main>
     </Suspense>
   )
