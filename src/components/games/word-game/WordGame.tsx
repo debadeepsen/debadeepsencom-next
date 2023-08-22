@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react'
 import Card from '../../containers/Card'
 import './word-game.css'
 import { THEME_COLOR } from '@/lib/constants/commonConstants'
+import { sendReport } from '@/lib/utils/mailer'
 
 const { WORD_LIST, ALPHABETS } = WORD_CONSTANTS
 
@@ -126,6 +127,10 @@ const WordGame = () => {
           <button
             className='fas fa-flag ml-2 rounded-full bg-red-200/40 dark:bg-red-200/20 text-red-400 border-0 p-2'
             title='Report word as inappropriate'
+            onClick={async () => {
+              const report = await sendReport(currentWord)
+              alert(report)
+            }}
           ></button>
         </div>
       )}

@@ -4,7 +4,11 @@ import { GAME_LIST, GAME_SLUGS } from '@/lib/constants/gameConstants'
 import { Metadata } from 'next'
 import React from 'react'
 
-// TODO: export metadata
+export const metadata:Metadata = {
+  title: 'Guess the word | Debadeep Sen',
+  description: 'A word-guessing game',
+  keywords: 'words,game,wordgame,hangman,javascript,typescript,javascriptgame,typescriptgame'
+}
 
 const Game = ({ params }: { params: { slug: string } }) => {
   const { slug } = params

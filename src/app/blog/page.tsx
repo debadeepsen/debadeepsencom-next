@@ -22,7 +22,7 @@ const Blog = async () => {
   const fetchDevArticles = async () => {
     const res = await fetch('https://dev.to/api/articles/me/published/', {
       headers: {
-        'api-key': process.env.API_KEY ?? ''
+        'api-key': process.env.DEV_TO_API_KEY ?? ''
       }
     })
     if (!res.ok) {
