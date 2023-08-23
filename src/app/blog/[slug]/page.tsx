@@ -8,10 +8,11 @@ import AddCopyButton from '@/components/helpers/AddCopyButton'
 import Head from 'next/head'
 import { Metadata } from 'next'
 import ErrorFragment from '@/components/fragments/Error'
+import { reValidationObject } from '@/lib/constants/commonConstants'
 
 // `https://dev.to/api/articles/debadeepsen/${params.slug}`
 const fetchDevArticle = async (slug: string) => {
-  const res = await fetch(`https://dev.to/api/articles/debadeepsen/${slug}`)
+  const res = await fetch(`https://dev.to/api/articles/debadeepsen/${slug}`, reValidationObject)
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }

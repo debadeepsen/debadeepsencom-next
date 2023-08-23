@@ -10,3 +10,9 @@ export const LOCAL_STORAGE_KEYS = Object.freeze({
     return this.MAIN + 'color_mode'
   }
 })
+
+export const reValidationObject = Object.freeze({
+  next: {
+    revalidate: Number(process.env.REVALIDATE_FREQUENCY) || false
+  }
+} as RequestInit)

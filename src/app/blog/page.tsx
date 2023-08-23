@@ -3,6 +3,7 @@ import { H1 } from '@/components/Title'
 import Card from '@/components/containers/Card'
 import BlogBlurb from '@/components/fragments/BlogBlurb'
 import ErrorFragment from '@/components/fragments/Error'
+import { reValidationObject } from '@/lib/constants/commonConstants'
 import { DevToArticle } from '@/types/types'
 import { Metadata } from 'next'
 import Link from 'next/link'
@@ -23,7 +24,8 @@ const Blog = async () => {
     const res = await fetch('https://dev.to/api/articles/me/published/', {
       headers: {
         'api-key': process.env.DEV_TO_API_KEY ?? ''
-      }
+      },
+      ...reValidationObject
     })
     if (!res.ok) {
       throw new Error('Failed to fetch data')
