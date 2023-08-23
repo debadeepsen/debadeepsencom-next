@@ -1,6 +1,6 @@
 'use client'
 
-import { scrollUtil } from '@/lib/commonLib'
+import scrollUtils from '@/lib/utils/scrollUtils'
 import { ColorModes } from '@/lib/constants/colorModeConstants'
 import { THEME_COLOR } from '@/lib/constants/commonConstants'
 import { RootState } from '@/store'
@@ -14,7 +14,7 @@ const ScrollPercent = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      const scrollPercent = scrollUtil.getScrollPercent(window.scrollY)
+      const scrollPercent = scrollUtils.getScrollPercent(window.scrollY)
       const scrollPercentRounded = Math.round(scrollPercent)
       setScrollPercentRounded(scrollPercentRounded)
       const angle = (scrollPercentRounded * 360) / 100

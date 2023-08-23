@@ -1,6 +1,6 @@
 'use client'
 
-import { scrollUtil } from '@/lib/commonLib'
+import scrollUtils from '@/lib/utils/scrollUtils'
 import React, { useState, useEffect } from 'react'
 
 const BackToTop = () => {
@@ -11,7 +11,7 @@ const BackToTop = () => {
   }, [])
 
   const show = () => {
-    const scrollPercentRounded = scrollUtil.getScrollPercent(scrollTop)
+    const scrollPercentRounded = scrollUtils.getScrollPercent(scrollTop)
     return scrollPercentRounded > 25
   }
 

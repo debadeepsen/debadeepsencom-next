@@ -1,9 +1,9 @@
 'use client'
 
-import { ColorModeValueType, DARK } from './constants/colorModeConstants'
-import { LOCAL_STORAGE_KEYS } from './constants/commonConstants'
+import { ColorModeValueType, DARK } from '../constants/colorModeConstants'
+import { LOCAL_STORAGE_KEYS } from '../constants/commonConstants'
 
-export const colorModeUtil = {
+const colorModeUtils = {
   get manualPreferenceSet() {
     return !!globalThis.window?.localStorage.getItem(
       LOCAL_STORAGE_KEYS.COLOR_MODE
@@ -29,13 +29,4 @@ export const colorModeUtil = {
   }
 }
 
-export const scrollUtil = {
-  getScrollPercent: (scrollTop: number) => {
-    const docHeight = globalThis.document?.body.offsetHeight
-    const winHeight = globalThis.window?.innerHeight
-    const scrollPercent = scrollTop / (docHeight - winHeight)
-    const scrollPercentRounded = Math.round(scrollPercent * 100)
-
-    return scrollPercentRounded
-  }
-}
+export default colorModeUtils

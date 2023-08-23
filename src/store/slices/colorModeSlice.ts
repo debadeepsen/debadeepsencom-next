@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '..'
 import { ColorModeValueType, LIGHT } from '@/lib/constants/colorModeConstants'
-import { colorModeUtil } from '@/lib/commonLib'
+import  colorModeUtils from '@/lib/utils/colorModeUtils'
 
 export type ModeState = {
   value: ColorModeValueType
@@ -20,7 +20,7 @@ export const colorModeSlice = createSlice({
   reducers: {
     updateColorMode: (state, action: PayloadAction<ModeState>) => {
       state.value = action.payload.value
-      colorModeUtil.setHtmlClass(action.payload.value)
+      colorModeUtils.setHtmlClass(action.payload.value)
     },
     setLoadComplete: state => {
       state.loaded = true

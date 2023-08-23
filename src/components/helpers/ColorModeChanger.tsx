@@ -11,7 +11,7 @@ import {
   LIGHT
 } from '@/lib/constants/colorModeConstants'
 import { RootState } from '@/store'
-import { colorModeUtil } from '@/lib/commonLib'
+import colorModeUtils from '@/lib/utils/colorModeUtils'
 import { useEffect } from 'react'
 
 const LeftElement = () => (
@@ -30,15 +30,15 @@ const ColorModeChanger = () => {
 
   const setColorMode = (mode: string) => {
     dispatch(updateColorMode({ value: mode as ColorModeValueType }))
-    colorModeUtil.set(mode)
+    colorModeUtils.set(mode)
   }
 
   useEffect(() => {
     // if an entry is found in localStorage, set it as the current color mode
-    if (colorModeUtil.manualPreferenceSet) {
+    if (colorModeUtils.manualPreferenceSet) {
       dispatch(
         updateColorMode({
-          value: colorModeUtil.value
+          value: colorModeUtils.value
         })
       )
     } else {
@@ -57,7 +57,6 @@ const ColorModeChanger = () => {
   const colorModeValue = useAppSelector(
     (state: RootState) => state.colorMode.value
   )
-
 
   return (
     <div>
