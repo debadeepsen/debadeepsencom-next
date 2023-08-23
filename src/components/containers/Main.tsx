@@ -59,7 +59,6 @@ const Main = ({ children }: { children: React.ReactNode }) => {
         >
           {modalText}
         </ModalDialog>
-        {/* deploy */}
       </main>
     </Suspense>
   )
