@@ -5,7 +5,8 @@ export type ProjectType = {
   code?: string
   note?: string
   tech?: string[]
-  icon?: string
+  icon: string
+  color?: string
 }
 
 const projects:ProjectType[] = [
@@ -16,7 +17,7 @@ const projects:ProjectType[] = [
     website: 'https://debadeepsen.com/',
     code: 'https://github.com/debadeepsen/debadeepsencom-next/',
     tech: ['nextjs', 'html5'],
-    icon: 'fas fa-globe'
+    icon: 'flat-color-icons:globe'
   },
   {
     title: 'Word guessing game',
@@ -26,23 +27,23 @@ const projects:ProjectType[] = [
     code: 'https://github.com/debadeepsen/vuewordgame/',
     note: 'Listed on the official VueJS Github',
     tech: ['vuejs', 'html5'],
-    icon: 'fas fa-book'
+    icon: 'streamline-emojis:green-book'
   },
   {
-    title: 'Demo job portal',
+    title: 'Cricket Stats Visualization',
     description:
-      'A replication of some of the features offered by popular job search websites like Indeed, Monster, and others.',
-    website: 'https://skillpeek.softwarecradle.com/',
-    tech: ['react', 'html5', 'nodejs'],
-    icon: 'fas fa-briefcase'
+      'A visualization of cricket stats for a T20 match.',
+    website: 'https://cric-stats-ds.vercel.app/',
+    tech: ['react', 'html5', 'nextjs'],
+    icon: 'noto-v1:cricket-game'
   },
   {
-    title: 'A food ordering app',
+    title: 'Durga Puja Map',
     description:
-      'A mobile app that imitates features found in popular food delivery apps.',
-    code: 'https://github.com/debadeepsen/foodorder',
-    tech: ['vuejs', 'html5'],
-    icon: 'fa-pizza-slice'
+      'An interactive map of Kolkata Durga Pujas.',
+    website: 'https://durga-pujo-map.vercel.app/',
+    tech: ['react', 'html5', 'nextjs'],
+    icon: 'streamline-kameleon-color:map-pin'
   },
   {
     title: 'Vue Chess Game',
@@ -50,7 +51,8 @@ const projects:ProjectType[] = [
     website: 'https://chess.softwarecradle.com/',
     code: 'https://github.com/debadeepsen/vue-chess/',
     tech: ['vuejs', 'html5'],
-    icon: 'fa-chess'
+    icon: 'fa-solid:chess',
+    color: '#03a2ab'
   },
   {
     title: 'Internationalized E-commerce Site',
@@ -58,7 +60,7 @@ const projects:ProjectType[] = [
       'An e-commerce portal that allows the user to switch languages between English and French. Uses the nuxt-i18n package.',
     website: 'https://github.com/debadeepsen/nuxt-i18n-ecommerce-demo/',
     tech: ['nuxtjs', 'html5'],
-    icon: 'fa-shopping-cart'
+    icon: 'material-icon-theme:folder-cart'
   }
 ]
 
