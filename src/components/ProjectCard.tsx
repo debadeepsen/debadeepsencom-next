@@ -5,7 +5,7 @@ import { getSvg } from '@/lib/constants/skillConstants'
 import { RootState } from '@/store'
 import { useAppSelector } from '@/store/hooks'
 import Image from 'next/image'
-import React from 'react'
+import { Icon } from '@iconify-icon/react'
 
 const ProjectCard = ({ project }: { project: ProjectType }) => {
   const colorModeValue = useAppSelector(
@@ -18,13 +18,19 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
       style={{ background: ColorModes[colorModeValue].cardBg }}
     >
       <div className='flex-none overflow-hidden w-0 sm:w-[60px] lg:w-[75px] pt-2 flex justify-center'>
-        <i
-          className={`fas ${project.icon} text-md sm:text-2xl lg:text-4xl lg:ml-[-8px]`}
-        ></i>
+        <Icon
+          icon={project.icon}
+          className='text-md sm:text-2xl lg:text-4xl lg:ml-[-8px]'
+          style={{
+            color: project.color
+              ? project.color
+              : ColorModes[colorModeValue].icon
+          }}
+        />
       </div>
       <div>
         <span className='sm:hidden'>
-          <i className={`fas ${project.icon} text-xl sm:text-2xl mr-2`}></i>
+          <Icon icon={project.icon} className='text-xl sm:text-2xl mr-2' />
         </span>
         <h3 className='inline-block sm:block mb-2 mt-0 text-xl sm:text-2xl font-semibold'>
           {project.title}
@@ -32,10 +38,13 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
         <div className='mb-2'>{project.description}</div>
         {project.website && (
           <div className='mb-0 sm:mb-2 mr-2 sm:mr-0 inline-block sm:block'>
-            <i
-              className='fas fa-globe-americas inline-block mr-2'
-              style={{ color: ColorModes[colorModeValue].icon }}
-            ></i>
+            <Icon
+              icon='lets-icons:globe-light'
+              className='inline-block mr-2'
+              style={{
+                color: ColorModes[colorModeValue].icon
+              }}
+            />
             <a
               target='_blank'
               href={project.website}
@@ -43,7 +52,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
               className='hidden sm:inline break-all'
             >
               {project.website}
-              <i className='fas fa-external-link-alt'></i>
+              <i className='mingcute:external-link-line'></i>
             </a>
             <a
               target='_blank'
@@ -52,16 +61,19 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
               className='inline sm:hidden'
             >
               Demo
-              <i className='fas fa-external-link-alt'></i>
+              <i className='mingcute:external-link-line'></i>
             </a>
           </div>
         )}
         {project.code && (
           <div className='inline-block sm:block'>
-            <i
-              className='fas fa-code inline-block mr-2'
-              style={{ color: ColorModes[colorModeValue].icon }}
-            ></i>
+            <Icon
+              icon='mingcute:code-line'
+              className='inline-block mr-2'
+              style={{
+                color: ColorModes[colorModeValue].icon
+              }}
+            />
             <a
               target='_blank'
               href={project.code}
@@ -69,7 +81,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
               className='hidden sm:inline break-all'
             >
               {project.code}
-              <i className='fas fa-external-link-alt'></i>
+              <i className='mingcute:external-link-line'></i>
             </a>
             <a
               target='_blank'
@@ -78,7 +90,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
               className='inline sm:hidden'
             >
               Code
-              <i className='fas fa-external-link-alt'></i>
+              <i className='mingcute:external-link-line'></i>
             </a>
           </div>
         )}
