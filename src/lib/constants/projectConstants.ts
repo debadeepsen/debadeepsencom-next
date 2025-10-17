@@ -34,6 +34,7 @@ const projects:ProjectType[] = [
     description:
       'A visualization of cricket stats for a T20 match.',
     website: 'https://cric-stats-ds.vercel.app/',
+    code: 'https://github.com/debadeepsen/cric-stats/',
     tech: ['react', 'html5', 'nextjs'],
     icon: 'noto-v1:cricket-game'
   },
@@ -42,6 +43,7 @@ const projects:ProjectType[] = [
     description:
       'An interactive map of Kolkata Durga Pujas.',
     website: 'https://durga-pujo-map.vercel.app/',
+    code: 'https://github.com/debadeepsen/durga-pujo-map/',
     tech: ['react', 'html5', 'nextjs'],
     icon: 'streamline-kameleon-color:map-pin'
   },
