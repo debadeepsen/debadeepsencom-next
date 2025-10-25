@@ -1,7 +1,7 @@
-//      import React from 'react'
 import timelineData from '@/data/timeline_data.json'
 import { formatDate } from '@/lib/utils/utils'
 import { TimelineItemType, JobEntry, GapEntry } from '@/types/types'
+import DownloadWorkHistory from './DownloadWorkHistory'
 
 interface TimelineItemProps {
   data: TimelineItemType
@@ -96,6 +96,7 @@ const TimelineItem = ({ data, isOdd }: TimelineItemProps) => {
 const Timeline = () => {
   return (
     <div className='px-4 md:px-6'>
+      <DownloadWorkHistory />
       <div className='grid grid-cols-1 md:grid-cols-11 relative'>
         {(timelineData as TimelineItemType[]).map((item, index) => (
           <TimelineItem key={index} data={item} isOdd={index % 2 !== 0} />
