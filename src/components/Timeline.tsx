@@ -95,7 +95,7 @@ const TimelineItem = ({ data, isOdd }: TimelineItemProps) => {
 
 const Timeline = () => {
   return (
-    <div className='py-8 px-4 md:px-6'>
+    <div className='px-4 md:px-6'>
       <div className='grid grid-cols-1 md:grid-cols-11 relative'>
         {(timelineData as TimelineItemType[]).map((item, index) => (
           <TimelineItem key={index} data={item} isOdd={index % 2 !== 0} />
