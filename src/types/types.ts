@@ -67,3 +67,50 @@ export type IPDetails = {
   as: string
   query: string
 }
+
+/** Defines the structure for a regular employment entry. */
+export type JobEntry = {
+  employer: {
+    name: string
+    address: string
+  }
+  duration_period_years: number
+  last_position_held_designation: string
+  nature_of_duties: string
+  period: {
+    from_dd_mm_yy: string
+    to_dd_mm_yy: string
+  }
+  immediate_superior: {
+    name: string
+    designation: string
+  }
+  gross_emoluments_rs_per_month: {
+    at_the_time_of_joining: number
+    last_drawn: number
+  }
+  details_of_current_emoluments?: {
+    // Optional for older jobs
+    basic_pm: string
+    fixed_pa: string
+    variable_pa: number
+    gross_pa: string
+  }
+  type?: 'job_experience' // Explicitly setting type for clarity
+}
+
+/** Defines the structure for a gap entry. */
+export type GapEntry = {
+  type: 'gap_in_experience'
+  period: {
+    from_dd_mm_yy: string
+    to_dd_mm_yy: string
+  }
+  duration_days: number
+  duration_string: string
+  description: string
+  reason: string
+}
+
+/** The timeline item can be either a JobEntry or a GapEntry. */
+export type TimelineItemType = JobEntry | GapEntry

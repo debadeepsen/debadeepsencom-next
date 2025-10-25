@@ -1,0 +1,285 @@
+[
+    {
+        "employer": {
+            "name": "12th Floor Solutions",
+            "address": "700 Third Line, Oakville, ON L6L 4B1, Canada"
+        },
+        "duration_period_years": 0.75,
+        "last_position_held_designation": "Fullstack Developer",
+        "nature_of_duties": "Frontend coding with React",
+        "period": {
+            "from_dd_mm_yy": "02/12/2024",
+            "to_dd_mm_yy": "31/07/2025"
+        },
+        "immediate_superior": {
+            "name": "Anthony Whitwell",
+            "designation": "Lead Developer"
+        },
+        "gross_emoluments_rs_per_month": {
+            "at_the_time_of_joining": 281000,
+            "last_drawn": 281000
+        },
+        "details_of_current_emoluments": {
+            "basic_pm": "N/A",
+            "fixed_pa": "N/A",
+            "variable_pa": 0,
+            "gross_pa": "34 L"
+        }
+    },
+    {
+        "type": "gap_in_experience",
+        "period": {
+            "from_dd_mm_yy": "01/11/2024",
+            "to_dd_mm_yy": "01/12/2024"
+        },
+        "duration_days": 31,
+        "duration_string": "1 month, 1 day",
+        "description": "Gap in employment (1 month, 1 day).",
+        "reason": "Job search"
+    },
+    {
+        "employer": {
+            "name": "Streatek Technology",
+            "address": "#CM 210,211,212 iLabs, Oval Bldg, Plot18 Hyderabad Tech Park, Inorbit Mall Rd , Hyderabad, Telangana, India - 500081"
+        },
+        "duration_period_years": 0.8,
+        "last_position_held_designation": "Senior Fullstack Developer",
+        "nature_of_duties": "Frontend coding with React/Next, API creation with Spring Boot",
+        "period": {
+            "from_dd_mm_yy": "07/02/2024",
+            "to_dd_mm_yy": "31/10/2024"
+        },
+        "immediate_superior": {
+            "name": "Sumana Annapareddy",
+            "designation": "Product Manager"
+        },
+        "gross_emoluments_rs_per_month": {
+            "at_the_time_of_joining": 275000,
+            "last_drawn": 275000
+        }
+    },
+    {
+        "type": "gap_in_experience",
+        "period": {
+            "from_dd_mm_yy": "24/11/2023",
+            "to_dd_mm_yy": "06/02/2024"
+        },
+        "duration_days": 75,
+        "duration_string": "2 months, 15 days",
+        "description": "Gap in employment (2 months, 15 days).",
+        "reason": "Job search"
+    },
+    {
+        "employer": {
+            "name": "ProStart Me Technology",
+            "address": "C-501, ITC Building, Ring Rd Majura Gate, Surat, Gujarat 395002"
+        },
+        "duration_period_years": 0.1,
+        "last_position_held_designation": "Senior Frontend Developer",
+        "nature_of_duties": "Frontend coding with Svelte",
+        "period": {
+            "from_dd_mm_yy": "09/10/2023",
+            "to_dd_mm_yy": "23/11/2023"
+        },
+        "immediate_superior": {
+            "name": "Dinesh Agarwal",
+            "designation": "CTO/CEO"
+        },
+        "gross_emoluments_rs_per_month": {
+            "at_the_time_of_joining": 250000,
+            "last_drawn": 250000
+        }
+    },
+    {
+        "type": "gap_in_experience",
+        "period": {
+            "from_dd_mm_yy": "07/10/2023",
+            "to_dd_mm_yy": "08/10/2023"
+        },
+        "duration_days": 2,
+        "duration_string": "2 days",
+        "description": "Gap in employment (2 days).",
+        "reason": "Weekend"
+    },
+    {
+        "employer": {
+            "name": "Streatek Technology",
+            "address": "#CM 210,211,212 iLabs, Oval Bldg, Plot18 Hyderabad Tech Park, Inorbit Mall Rd , Hyderabad, Telangana, India - 500081"
+        },
+        "duration_period_years": 1,
+        "last_position_held_designation": "Frontend Developer",
+        "nature_of_duties": "Frontend coding with React and Next",
+        "period": {
+            "from_dd_mm_yy": "11/10/2022",
+            "to_dd_mm_yy": "06/10/2023"
+        },
+        "immediate_superior": {
+            "name": "Eric Wilson",
+            "designation": "Product Lead"
+        },
+        "gross_emoluments_rs_per_month": {
+            "at_the_time_of_joining": 208000,
+            "last_drawn": 208000
+        }
+    },
+    {
+        "type": "gap_in_experience",
+        "period": {
+            "from_dd_mm_yy": "10/09/2022",
+            "to_dd_mm_yy": "10/10/2022"
+        },
+        "duration_days": 31,
+        "duration_string": "1 month, 1 day",
+        "description": "Gap in employment (1 month, 1 day).",
+        "reason": "Job search"
+    },
+    {
+        "employer": {
+            "name": "Canada Drives",
+            "address": "Suite 600, Two Bentall Centre\n555 Burrard Street,\nVancouver, BC V7X 1M8\nCanada"
+        },
+        "duration_period_years": 0.75,
+        "last_position_held_designation": "Frontend Developer",
+        "nature_of_duties": "Frontend coding with Vue and Nuxt",
+        "period": {
+            "from_dd_mm_yy": "15/11/2021",
+            "to_dd_mm_yy": "09/09/2022"
+        },
+        "immediate_superior": {
+            "name": "Bhanu Munjal",
+            "designation": "Engineering Manager"
+        },
+        "gross_emoluments_rs_per_month": {
+            "at_the_time_of_joining": 418000,
+            "last_drawn": 418000
+        }
+    },
+    {
+        "type": "gap_in_experience",
+        "period": {
+            "from_dd_mm_yy": "14/11/2021",
+            "to_dd_mm_yy": "14/11/2021"
+        },
+        "duration_days": 1,
+        "duration_string": "1 day",
+        "description": "Gap in employment (1 day).",
+        "reason": "Weekend"
+    },
+    {
+        "employer": {
+            "name": "Bandhan Konnagar",
+            "address": "DN 34, Salt Lake, Kolkata 700091"
+        },
+        "duration_period_years": 2,
+        "last_position_held_designation": "Solution Architect",
+        "nature_of_duties": "Lead teams to develop applications based on business needs, with Vue, React, and NodeJS",
+        "period": {
+            "from_dd_mm_yy": "10/06/2019",
+            "to_dd_mm_yy": "13/11/2021"
+        },
+        "immediate_superior": {
+            "name": "Satyakee Roychowdhury",
+            "designation": "Director of IT"
+        },
+        "gross_emoluments_rs_per_month": {
+            "at_the_time_of_joining": 71600,
+            "last_drawn": 108300
+        }
+    },
+    {
+        "type": "gap_in_experience",
+        "period": {
+            "from_dd_mm_yy": "31/05/2019",
+            "to_dd_mm_yy": "09/06/2019"
+        },
+        "duration_days": 10,
+        "duration_string": "10 days",
+        "description": "Gap in employment (10 days).",
+        "reason": "Job search"
+    },
+    {
+        "employer": {
+            "name": "SeenIt",
+            "address": "2 Palm Avenue, Kolkata 700019"
+        },
+        "duration_period_years": 0.5,
+        "last_position_held_designation": "Fullstack Developer",
+        "nature_of_duties": "Write JavaScript and PHP code to develop an app for fashion retail",
+        "period": {
+            "from_dd_mm_yy": "12/11/2018",
+            "to_dd_mm_yy": "30/05/2019"
+        },
+        "immediate_superior": {
+            "name": "Akash Popat",
+            "designation": "Manager"
+        },
+        "gross_emoluments_rs_per_month": {
+            "at_the_time_of_joining": 45600,
+            "last_drawn": 45600
+        }
+    },
+    {
+        "type": "gap_in_experience",
+        "period": {
+            "from_dd_mm_yy": "01/08/2015",
+            "to_dd_mm_yy": "11/11/2018"
+        },
+        "duration_days": 1199,
+        "duration_string": "3 years, 3 months, 14 days",
+        "description": "Gap in employment (3 years, 3 months, 14 days).",
+        "reason": "Post-graduate education (PhD, unfinished)"
+    },
+    {
+        "employer": {
+            "name": "Measurement Incorporated",
+            "address": "215 Morris Street\nDurham, NC 27701"
+        },
+        "duration_period_years": 2,
+        "last_position_held_designation": "Programmer",
+        "nature_of_duties": "Update and enhance a test questions bank application for a US government based client",
+        "period": {
+            "from_dd_mm_yy": "01/04/2013",
+            "to_dd_mm_yy": "31/07/2015"
+        },
+        "immediate_superior": {
+            "name": "Jose Biggers",
+            "designation": "Manager"
+        },
+        "gross_emoluments_rs_per_month": {
+            "at_the_time_of_joining": 364000,
+            "last_drawn": 427895
+        }
+    },
+    {
+        "type": "gap_in_experience",
+        "period": {
+            "from_dd_mm_yy": "01/07/2009",
+            "to_dd_mm_yy": "31/03/2013"
+        },
+        "duration_days": 1370,
+        "duration_string": "3 years, 9 months, 5 days",
+        "description": "Gap in employment (3 years, 9 months, 5 days).",
+        "reason": "Post-graduate education (Master's degree, completed)"
+    },
+    {
+        "employer": {
+            "name": "PwC",
+            "address": "DN 57, Sector 5, Salt Lake, Kolkata 700091"
+        },
+        "duration_period_years": 2,
+        "last_position_held_designation": "Consultant",
+        "nature_of_duties": "Deliver web applications, windows applications, and PDF reports with .NET code",
+        "period": {
+            "from_dd_mm_yy": "30/07/2007",
+            "to_dd_mm_yy": "30/06/2009"
+        },
+        "immediate_superior": {
+            "name": "Arijit Sarbagna",
+            "designation": "Senior Consultant"
+        },
+        "gross_emoluments_rs_per_month": {
+            "at_the_time_of_joining": 37500,
+            "last_drawn": 37500
+        }
+    }
+]
