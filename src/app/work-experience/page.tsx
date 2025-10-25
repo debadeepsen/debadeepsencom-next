@@ -1,4 +1,15 @@
+import { Metadata } from 'next'
 import Timeline from '@/components/Timeline'
+
+export const metadata: Metadata = {
+  title: 'Work Experience | Debadeep Sen',
+  description: 'Professional work experience and career history of Debadeep Sen',
+  openGraph: {
+    title: 'Work Experience | Debadeep Sen',
+    description: 'Professional work experience and career history of Debadeep Sen',
+    type: 'profile',
+  },
+}
 
 const TimelinePage = () => {
   return (
