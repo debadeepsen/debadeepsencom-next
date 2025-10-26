@@ -221,13 +221,34 @@
     {
         "type": "gap_in_experience",
         "period": {
-            "from_dd_mm_yy": "01/08/2015",
+            "from_dd_mm_yy": "01/08/2016",
             "to_dd_mm_yy": "11/11/2018"
         },
-        "duration_days": 1199,
-        "duration_string": "3 years, 3 months, 14 days",
-        "description": "Gap in employment (3 years, 3 months, 14 days).",
+        "duration_days": 833,
+        "duration_string": "2 years, 3 months, 11 days",
+        "description": "Gap in employment (2 years, 3 months, 11 days).",
         "reason": "Post-graduate education (PhD, unfinished)"
+    },
+    {
+        "employer": {
+            "name": "Mobi Magic",
+            "address": "2622 East Lake Sammarish Pkwy"
+        },
+        "duration_period_years": 1,
+        "last_position_held_designation": "Frontend Developer",
+        "nature_of_duties": "Work on the web front end for a ride-sharing app",
+        "period": {
+            "from_dd_mm_yy": "01/09/2015",
+            "to_dd_mm_yy": "31/07/2016"
+        },
+        "immediate_superior": {
+            "name": "Somak Chattopadhyay",
+            "designation": "Manager"
+        },
+        "gross_emoluments_rs_per_month": {
+            "at_the_time_of_joining": 19960,
+            "last_drawn": 19960
+        }
     },
     {
         "employer": {

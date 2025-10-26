@@ -21,93 +21,91 @@ import { TimelineItemType } from '@/types/types'
 
 const styles = StyleSheet.create({
   page: {
-    padding: 40,
+    padding: 39,
     fontFamily: 'Helvetica',
     lineHeight: 1.4,
     color: '#333'
   },
   header: {
-    marginBottom: 20,
-    paddingBottom: 10,
+    marginBottom: 19,
+    paddingBottom: 9,
     borderBottom: '1px solid #e0e0e0'
   },
   title: {
-    fontSize: 23,
+    fontSize: 21,
     fontWeight: 'bold',
-    marginBottom: 5,
+    marginBottom: 4,
     color: '#2c3e50'
   },
   subtitle: {
-    fontSize: 11,
+    fontSize: 9,
     color: '#7f8c8d'
   },
   section: {
-    marginBottom: 30
+    marginBottom: 29
   },
   jobHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 5
+    marginBottom: 4
   },
   jobTitle: {
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: 'bold',
     color: '#2c3e50'
   },
   company: {
-    fontSize: 13,
+    fontSize: 11,
     fontWeight: 'bold',
     color: '#3498db',
-    marginBottom: 1
+    marginBottom: 0
   },
   date: {
-    fontSize: 11,
-    color: '#7f8c8d',
-    fontStyle: 'italic'
+    fontSize: 9,
+    color: '#7f8c8d'
   },
   location: {
-    fontSize: 10,
+    fontSize: 8,
     color: '#7f8c8d',
-    marginBottom: 5
+    marginBottom: 4
   },
   description: {
-    fontSize: 11,
-    marginTop: 5,
+    fontSize: 9,
+    marginTop: 4,
     textAlign: 'justify'
   },
   gap: {
     backgroundColor: '#f8f9fa',
-    padding: 15,
+    padding: 14,
     borderRadius: 4,
-    marginBottom: 15,
+    marginBottom: 14,
     borderLeft: '4px solid #e74c3c'
   },
   job: {
     backgroundColor: '#f8fafc',
-    padding: 15,
+    padding: 14,
     borderRadius: 4,
-    marginBottom: 15,
+    marginBottom: 14,
     borderLeft: '4px solid #3498db'
   },
   gapText: {
-    fontSize: 11,
+    fontSize: 9,
     color: '#7f8c8d'
   },
   gapTitle: {
-    fontSize: 13,
+    fontSize: 11,
     fontWeight: 'bold',
     color: '#e74c3c',
-    marginBottom: 5
-  },
-
-
+    marginBottom: 4
+  }
 })
 
 const formatDate = (dateString: string): string => {
   const [day, month, year] = dateString.split('/')
   return new Date(`${year}-${month}-${day}`).toLocaleDateString('en-US', {
     year: 'numeric',
-    month: 'short'
+    month: 'short',
+    day: 'numeric'
   })
 }
 
@@ -126,7 +124,7 @@ const WorkHistoryPDF = ({ data }: WorkHistoryPDFProps) => {
         {data.map((item, index) => {
           if ('type' in item && item.type === 'gap_in_experience') {
             return (
-              <View key={`gap-${index}`} style={styles.gap}>
+              <View key={`gap-${index}`} style={styles.gap} wrap={false}>
                 <Text style={styles.gapTitle}>
                   Gap in Employment ({item.duration_string})
                 </Text>
@@ -145,7 +143,7 @@ const WorkHistoryPDF = ({ data }: WorkHistoryPDFProps) => {
           if ('employer' in item) {
             const job = item
             return (
-              <View key={`job-${index}`} style={styles.job}>
+              <View key={`job-${index}`} style={styles.job} wrap={false}>
                 <View style={styles.jobHeader}>
                   <View>
                     <Text style={styles.jobTitle}>
@@ -153,18 +151,27 @@ const WorkHistoryPDF = ({ data }: WorkHistoryPDFProps) => {
                     </Text>
                     <Text style={styles.company}>{job.employer.name}</Text>
                   </View>
-                  <Text style={styles.date}>
+                  {/* <Text style={styles.date}>
                     {formatDate(job.period.from_dd_mm_yy)} -{' '}
                     {formatDate(job.period.to_dd_mm_yy)}
                     {' • '}
                     {job.duration_period_years}{' '}
                     {job.duration_period_years === 1 ? 'Year' : 'Years'}
+                  </Text> */}
+                </View>
+
+                {/* <Text style={styles.location}>{job.employer.address}</Text> */}
+
+                <View>
+                  <Text style={styles.date}>
+                    {formatDate(job.period.from_dd_mm_yy)} -{' '}
+                    {formatDate(job.period.to_dd_mm_yy)}{' '}
+                    ({job.duration_period_years}{' '}
+                    {job.duration_period_years === 1 ? 'Year' : 'Years'})
                   </Text>
                 </View>
 
-                <Text style={styles.location}>{job.employer.address}</Text>
-
-                {job.immediate_superior && (
+                {/* {job.immediate_superior && (
                   <Text
                     style={{ fontSize: 11, color: '#7f8c8d', marginBottom: 8 }}
                   >
@@ -172,9 +179,9 @@ const WorkHistoryPDF = ({ data }: WorkHistoryPDFProps) => {
                     {job.immediate_superior.name} (
                     {job.immediate_superior.designation})
                   </Text>
-                )}
+                )} */}
 
-                <View style={{ marginTop: 5 }}>
+                {/* <View style={{ marginTop: 5 }}>
                   <Text
                     style={{
                       fontSize: 12,
@@ -185,14 +192,12 @@ const WorkHistoryPDF = ({ data }: WorkHistoryPDFProps) => {
                     Responsibilities:
                   </Text>
                   <Text style={styles.description}>{job.nature_of_duties}</Text>
-                </View>
+                </View> */}
               </View>
             )
           }
           return null
         })}
-
-
       </Page>
     </Document>
   )

@@ -1,20 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import dynamic from 'next/dynamic'
+import { PDFDownloadLink } from '@react-pdf/renderer'
 import { TimelineItemType } from '@/types/types'
 import timelineData from '@/data/timeline_data.json'
-
-// Dynamically import the PDF components with SSR disabled
-const PDFDownloadLink = dynamic(
-  () => import('@react-pdf/renderer').then((mod) => mod.PDFDownloadLink),
-  { ssr: false }
-)
-
-const WorkHistoryPDF = dynamic(
-  () => import('./WorkHistoryPDF'),
-  { ssr: false }
-)
+import WorkHistoryPDF from './WorkHistoryPDF'
 
 const DownloadWorkHistory = () => {
   const [isGenerating, setIsGenerating] = useState(false)
@@ -24,7 +14,7 @@ const DownloadWorkHistory = () => {
       <PDFDownloadLink
         document={<WorkHistoryPDF data={timelineData as TimelineItemType[]} />}
         fileName={`work_history_${new Date().toISOString().split('T')[0]}.pdf`}
-        className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+        className='inline-block px-4 rounded-md transition-colors duration-200 text-sm font-medium shadow-sm'
         onClick={() => setIsGenerating(true)}
       >
         {({ loading }) => (
