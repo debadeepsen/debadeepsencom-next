@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WordGameSVG = () => {
+export const WordGameSVG = () => {
   return (
     <svg
       height='200px'
@@ -11,11 +11,11 @@ const WordGameSVG = () => {
       viewBox='0 0 512 512'
       fill='#000000'
     >
-      <g id='SVGRepo_bgCarrier' stroke-width='0'></g>
+      <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
       <g
         id='SVGRepo_tracerCarrier'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       ></g>
       <g id='SVGRepo_iconCarrier'>
         {' '}
@@ -49,5 +49,3 @@ const WordGameSVG = () => {
     </svg>
   )
 }
-
-export default WordGameSVG

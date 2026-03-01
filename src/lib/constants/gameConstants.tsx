@@ -1,4 +1,5 @@
-import WordGameSVG from '@/components/SVGs/WordGameSVG'
+import {WordGameSVG} from '@/components/SVGs/WordGameSVG'
+import MemoryGameSVG from '@/components/SVGs/MemoryGameSVG'
 import { ReactNode } from 'react'
 
 export type GameInfo = {
@@ -9,15 +10,22 @@ export type GameInfo = {
 }
 
 export const GAME_SLUGS = Object.freeze({
-  WORD_GAME: 'word-game'
+  WORD_GAME: 'word-game',
+  MEMORY_GAME: 'memory-game'
 })
 
 export const GAME_LIST: GameInfo[] = [
   {
-    icon: WordGameSVG(),
+    icon: <WordGameSVG />,
     title: 'Word-guessing game',
     description: 'A Hangman-like guessing game',
     slug: GAME_SLUGS.WORD_GAME
+  },
+  {
+    icon: <MemoryGameSVG />,
+    title: 'Memory match game',
+    description: 'Flip cards and find all matching pairs',
+    slug: GAME_SLUGS.MEMORY_GAME
   }
 ]
 
