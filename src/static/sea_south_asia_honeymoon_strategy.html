@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South & SEA Honeymoon: Comparative Financial & Strategic Advisory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0f172a; 
+            color: #f8fafc; 
+        }
+        .chart-container { 
+            position: relative; 
+            width: 100%; 
+            max-width: 900px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            height: 380px; 
+        }
+        .glass-card { 
+            background: rgba(30, 41, 59, 0.7); 
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.25rem; 
+            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover { 
+            transform: translateY(-4px); 
+            border-color: rgba(45, 212, 191, 0.3);
+            box-shadow: 0 12px 20px -8px rgba(20, 184, 166, 0.2);
+        }
+        .accent-gradient { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); 
+        }
+        .glow-text {
+            text-shadow: 0 0 15px rgba(20, 184, 166, 0.4);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #14b8a6;
+        }
+    </style>
+</head>
+<body class="p-0 m-0 overflow-x-hidden accent-gradient min-h-screen">
+
+<header class="relative border-b border-slate-800 py-16 px-6 text-center overflow-hidden">
+    <!-- Abstract Ambient Glow Backgrounds -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="max-w-4xl mx-auto relative z-10">
+        <span class="bg-teal-500/10 text-teal-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block border border-teal-500/20">
+            Kolkata (CCU) Departure Hub • Honeymoon Planner Suite
+        </span>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-white glow-text">
+            South & SEA Honeymoon Suite
+        </h1>
+        <p class="text-lg md:text-xl text-slate-400 font-light max-w-2xl mx-auto">
+            Cross-border financial engineering, climate compatibility models, experience profiles, and curated day-by-day itineraries.
+        </p>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 md:px-6 py-12 space-y-16">
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div class="lg:col-span-4 flex flex-col justify-between space-y-6">
+            <div>
+                <span class="text-teal-400 font-semibold text-xs tracking-wider uppercase">Strategic Decision Matrix</span>
+                <h2 class="text-3xl font-bold text-white mt-2 mb-4">Core Experience Profiling</h2>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Every honeymoon has a unique heartbeat. Whether you desire uninterrupted romantic seclusion, adrenaline-filled exploratory treks, or top-tier bespoke ultra-luxury, use this 1-10 index comparison to short-list your perfect getaway.
+                </p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-700/60 text-xs">
+                    <span class="font-bold text-teal-400">💕 Romance Scale:</span> Assesses isolation, private experiences, scenic ambiance, and sunset luxury.
+                </div>
+                <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-700/60 text-xs">
+                    <span class="font-bold text-sky-400">🧗 Adventure Scale:</span> Measures diversity of active sports, excursions, wilderness hikes, and geological variety.
+                </div>
+                <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-700/60 text-xs">
+                    <span class="font-bold text-purple-400">💎 Luxury Scale:</span> Quantifies premium hotel density, service standards, culinary excellence, and absolute comfort.
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-8 glass-card p-6 flex flex-col justify-center">
+            <h3 class="text-lg font-semibold text-slate-200 mb-6 text-center">Global Destination Rankings (Scale of 1-10)</h3>
+            <div class="chart-container" style="height: 350px;">
+                <canvas id="experienceRadarChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="space-y-8">
+        <div class="text-center max-w-2xl mx-auto">
+            <span class="text-teal-400 font-semibold text-xs tracking-wider uppercase">Detailed Explorer</span>
+            <h2 class="text-3xl font-bold text-white mt-1">Interactive Destination Playbook</h2>
+            <p class="text-slate-400 text-sm mt-2">Click any destination card below to immediately load its curated 7-day itinerary, iconic activities, and visual score breakdowns.</p>
+        </div>
+
+        <!-- Destination Selector Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4" id="destinationSelector">
+            <!-- Buttons dynamically styled via active state in JS -->
+        </div>
+
+        <!-- Deep-Dive Content Display Card -->
+        <div class="glass-card p-6 md:p-8" id="deepDiveCard">
+            <!-- Content dynamically populated by JS -->
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 glass-card p-6 flex flex-col justify-between">
+            <div>
+                <span class="text-teal-400 font-semibold text-xs tracking-wider uppercase">Financial Engineering</span>
+                <h3 class="text-xl font-bold text-slate-100 mt-2 mb-1">Comparative Cumulative Budgets</h3>
+                <p class="text-xs text-slate-400 mb-6">Stacked estimate (INR) per person for a premium 7-day escape departing from CCU.</p>
+            </div>
+            <div class="chart-container">
+                <canvas id="stackedBudgetChart"></canvas>
+            </div>
+            <div class="mt-4 text-xs text-slate-500 text-right italic">
+                *Land costs cover luxury hotels/resorts, transfers, activities, and dining.
+            </div>
+        </div>
+
+        <div class="glass-card p-6 flex flex-col justify-between">
+            <div>
+                <span class="text-teal-400 font-semibold text-xs tracking-wider uppercase">Transit Performance</span>
+                <h3 class="text-xl font-bold text-slate-100 mt-2 mb-1">Transit Friction Matrix</h3>
+                <p class="text-xs text-slate-400 mb-6">Average total aviation transit time from Kolkata (including layovers where applicable).</p>
+            </div>
+            <div class="chart-container" style="height: 300px;">
+                <canvas id="transitChart"></canvas>
+            </div>
+            <div class="bg-slate-800/40 p-3 rounded-lg border border-slate-700/50 text-xs text-slate-400">
+                <strong class="text-teal-400 font-semibold">Pro Tip:</strong> Select Bhutan, Bangkok, or Hanoi for direct, low-friction weekend-extending itineraries.
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-3xl mx-auto text-center mb-10">
+            <span class="text-teal-400 font-bold text-sm tracking-wider uppercase">Border Control Dynamics</span>
+            <h2 class="text-3xl font-bold mt-2 mb-4">Visa & Entry Frameworks for Indian Citizens</h2>
+            <p class="text-slate-400 text-sm">Regulatory statuses are valid for Indian passports departing CCU. Always verify updated government portals before booking flight segments.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-5 bg-slate-800/40 border border-slate-700/50 rounded-xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold mb-1 text-white">Thailand</h3>
+                    <div class="bg-teal-500/10 text-teal-400 px-2 py-0.5 rounded text-xxs font-bold uppercase inline-block mb-3">Visa-Exempt Promo</div>
+                    <p class="text-xs text-slate-400">Enjoy fee-free entry for up to 60 days. Speeds up airport departure significantly. Ensure return tickets are printed.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-700/50 text-xs font-bold text-teal-400">Processing Fee: ₹0</div>
+            </div>
+
+            <div class="p-5 bg-slate-800/40 border border-slate-700/50 rounded-xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold mb-1 text-white">Vietnam</h3>
+                    <div class="bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded text-xxs font-bold uppercase inline-block mb-3">Online E-Visa</div>
+                    <p class="text-xs text-slate-400">Apply via government portal (takes 3 working days). Valid for up to 90 days with options for multiple entries.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-700/50 text-xs font-bold text-blue-400">Processing Fee: ~₹2,100</div>
+            </div>
+
+            <div class="p-5 bg-slate-800/40 border border-slate-700/50 rounded-xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold mb-1 text-white">Bali (Indonesia)</h3>
+                    <div class="bg-yellow-500/10 text-yellow-400 px-2 py-0.5 rounded text-xxs font-bold uppercase inline-block mb-3">E-VoA (Arrival)</div>
+                    <p class="text-xs text-slate-400">Fill online ahead of time (e-VoA) to easily bypass airport lines. Complete customs declarations online 72 hrs prior.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-700/50 text-xs font-bold text-yellow-400">Processing Fee: IDR 500k (~₹2,700)</div>
+            </div>
+
+            <div class="p-5 bg-slate-800/40 border border-slate-700/50 rounded-xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold mb-1 text-white">Maldives</h3>
+                    <div class="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded text-xxs font-bold uppercase inline-block mb-3">Free Visa On Arrival</div>
+                    <p class="text-xs text-slate-400">30-day tourist visa granted free on arrival. IMUGA health & travel portal declaration mandatory 96 hrs before takeoff.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-700/50 text-xs font-bold text-emerald-400">Processing Fee: ₹0 (Pre-clearance)</div>
+            </div>
+
+            <div class="p-5 bg-slate-800/40 border border-slate-700/50 rounded-xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold mb-1 text-white">Malaysia</h3>
+                    <div class="bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded text-xxs font-bold uppercase inline-block mb-3">Visa Free Entry</div>
+                    <p class="text-xs text-slate-400">Enjoy standard entry up to 30 days without fees. MDAC (Malaysia Digital Arrival Card) must be registered online 3 days prior.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-700/50 text-xs font-bold text-purple-400">Processing Fee: ₹0</div>
+            </div>
+
+            <div class="p-5 bg-slate-800/40 border border-slate-700/50 rounded-xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold mb-1 text-white">Sri Lanka</h3>
+                    <div class="bg-pink-500/10 text-pink-400 px-2 py-0.5 rounded text-xxs font-bold uppercase inline-block mb-3">ETA Clearance</div>
+                    <p class="text-xs text-slate-400">Fast online ETA application. Promos periodically drop entry fees to encourage local tourism.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-700/50 text-xs font-bold text-pink-400">Processing Fee: Seasonal Waivers</div>
+            </div>
+
+            <div class="p-5 bg-slate-800/40 border border-slate-700/50 rounded-xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold mb-1 text-white">Bhutan</h3>
+                    <div class="bg-orange-500/10 text-orange-400 px-2 py-0.5 rounded text-xxs font-bold uppercase inline-block mb-3">Entry Permit & SDF</div>
+                    <p class="text-xs text-slate-400">Requires pre-cleared travel authorization. Unique fee structure directly supports country ecological protection programs.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-700/50 text-xs font-bold text-orange-400">SDF: ₹1,200 Per Person/Night</div>
+            </div>
+
+            <div class="p-5 bg-teal-950/20 border border-teal-800/60 rounded-xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold mb-1 text-white">Advisory Alert</h3>
+                    <div class="bg-teal-500/10 text-teal-300 px-2 py-0.5 rounded text-xxs font-bold uppercase inline-block mb-3">Indian Travelers</div>
+                    <p class="text-xs text-slate-400">Keep standard physical passport photos, proof of return ticket, and bank statements printed to guarantee custom entry clearance.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-teal-800/50 text-xs font-semibold text-teal-400">Passport Validity: Min 6 Months</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-4 space-y-6">
+            <div>
+                <span class="text-teal-400 font-semibold text-xs tracking-wider uppercase">Strategic Scheduling</span>
+                <h2 class="text-3xl font-bold text-white mt-1">Unified Weather Compatibility Matrix</h2>
+                <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                    Avoid monsoon disruption by aligning your departure dates with regional micro-climates. Notice the key atmospheric pivot: while mainland Southeast Asia (Thailand, Vietnam) enjoys its dry high season during the winter, Bali stands as the premium summer sanctuary (May to September).
+                </p>
+            </div>
+            
+            <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl flex flex-col space-y-3">
+                <div class="flex items-center text-xs">
+                    <span class="w-4 h-4 bg-[#2a9d8f] inline-block rounded-full mr-3 border border-emerald-500/30"></span>
+                    <span>Peak Dry Season (Uncompromised Sunny Days)</span>
+                </div>
+                <div class="flex items-center text-xs">
+                    <span class="w-4 h-4 bg-[#e9c46a] inline-block rounded-full mr-3 border border-yellow-500/30"></span>
+                    <span>Shoulder Season (Intermittent showers, low crowd density)</span>
+                </div>
+                <div class="flex items-center text-xs">
+                    <span class="w-4 h-4 bg-[#e76f51] inline-block rounded-full mr-3 border border-red-500/30"></span>
+                    <span>Wet Monsoon Cycles (Frequent rain, heavy cloud formations)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="lg:col-span-8 glass-card p-4 md:p-6">
+            <div id="climatePlot" class="w-full"></div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-slate-950 border-t border-slate-800 text-slate-500 py-12 px-6 mt-20">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
+        <div class="text-center md:text-left mb-6 md:mb-0">
+            <p class="text-white font-semibold text-lg mb-1">Pan-Asian Strategy Suite</p>
+            <p class="text-slate-400 font-light">Data-Driven Advisory and Financial Optimization Dashboard.</p>
+        </div>
+        <div class="flex space-x-8 text-xs">
+            <span>Market Data: 2026</span>
+            <span>No SVG / No Mermaid JS Standard</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Destination deep-dive data including activities, rankings, and sample itineraries
+    const destinationData = {
+        thailand: {
+            name: "Thailand (Luxe & Island-Hopping)",
+            scores: { romance: 8, adventure: 7, luxury: 8 },
+            flightCost: 18000,
+            landCost: 62000,
+            visa: "Visa-Exempt (60 Days)",
+            activities: [
+                "Chartering a private sunset longtail boat around the Phi Phi archipelago.",
+                "Savoring multi-course high-end rooftop dining in Bangkok overlooking the Chao Phraya.",
+                "Indulging in a couples-themed forest luxury spa retreat in northern Chiang Mai forests."
+            ],
+            itinerary: [
+                { day: "Day 1-2", detail: "Arrive Bangkok (CCU Direct). Stay at a riverfront heritage hotel. Experience nighttime culinary tour and candlelit river cruise." },
+                { day: "Day 3-5", detail: "Fly to Phuket/Krabi. Check into a luxury private pool villa. Rent a custom yacht to explore Phang Nga Bay lagoons." },
+                { day: "Day 6-7", detail: "Recline on pristine private beaches of Koh Lanta or Koh Samui. Partake in wellness treatments before flying home." }
+            ]
+        },
+        vietnam: {
+            name: "Vietnam (Heritage & Halong Splendor)",
+            scores: { romance: 7, adventure: 9, luxury: 7 },
+            flightCost: 22000,
+            landCost: 45000,
+            visa: "E-Visa (Requires 3 Days Processing)",
+            activities: [
+                "Sleeping aboard an ultra-luxury wooden junk-ship cruise in Ha Long Bay.",
+                "Strolling along the lantern-lit vintage canals of ancient Hoi An at sunset.",
+                "Joining a private street food safari on vintage vespa bikes across Saigon lanes."
+            ],
+            itinerary: [
+                { day: "Day 1-2", detail: "Land in Hanoi (CCU Direct). Discover the colonial French Quarter. Enjoy an authentic water puppet show." },
+                { day: "Day 3-4", detail: "Luxury cruise in Ha Long & Lan Ha Bay. Canoe inside isolated grottos and watch stars over limestone cliffs." },
+                { day: "Day 5-7", detail: "Fly to Central Vietnam (Danang). Dine in private cliff resorts in Son Tra, then tour ancient Hoi An's markets." }
+            ]
+        },
+        bali: {
+            name: "Bali (Spiritual luxury & tropical romance)",
+            scores: { romance: 9, adventure: 8, luxury: 9 },
+            flightCost: 38000,
+            landCost: 75000,
+            visa: "E-VoA (IDR 500k Payment)",
+            activities: [
+                "Eating a floating canopy breakfast inside Ubud's emerald jungle pool villas.",
+                "Guided sunrise trek up volcanic Mount Batur with a summit picnic.",
+                "Enjoying front-row VIP access at elite Uluwatu clifftop ocean clubs."
+            ],
+            itinerary: [
+                { day: "Day 1-3", detail: "Arrive Denpasar. Transfer directly to cultural Ubud. Tour volcanic terraced hills, temples, and river gorges." },
+                { day: "Day 4-5", detail: "Travel to Nusa Penida on a private boat to swim alongside giant manta rays and snap photos at Kelingking Beach." },
+                { day: "Day 6-7", detail: "Indulge in coastal relaxation in Uluwatu or Seminyak. Indulge in premium seafood directly on the Jimbaran sands." }
+            ]
+        },
+        malaysia: {
+            name: "Malaysia (Rainforests & Skyline chic)",
+            scores: { romance: 7, adventure: 6, luxury: 8 },
+            flightCost: 19000,
+            landCost: 68000,
+            visa: "Visa-Free (Pre-Arrival Registration)",
+            activities: [
+                "Chartering a private yacht to watch spectacular sunsets over the Langkawi archipelago.",
+                "Breathtaking helicopter tour looking down at Kuala Lumpur's skyscrapers.",
+                "Exploring mist-shrouded green tea estates within Cameron Highlands valley floor."
+            ],
+            itinerary: [
+                { day: "Day 1-2", detail: "Arrive in Kuala Lumpur (CCU Direct). Indulge in premium high-rise dining alongside the Petronas Twin Towers." },
+                { day: "Day 3-5", detail: "Take a regional flight to Langkawi. Check into a beachfront rainforest resort. Kayak inside mangrove forests." },
+                { day: "Day 6-7", detail: "Embark on an artisanal food expedition in heritage Penang before returning back to the mainland for your flight." }
+            ]
+        },
+        maldives: {
+            name: "Maldives (Secluded Overwater Sanctuary)",
+            scores: { romance: 10, adventure: 5, luxury: 10 },
+            flightCost: 28000,
+            landCost: 140000,
+            visa: "Free Visa On Arrival (IMUGA Required)",
+            activities: [
+                "Dining under clear ocean glass walls at an underwater marine restaurant.",
+                "Private sandbank candlelit picnic surrounded entirely by turquoise waters.",
+                "Guided boat safari snorkeling alongside giant whale sharks and manta rays."
+            ],
+            itinerary: [
+                { day: "Day 1", detail: "Fly to Malé. Board a scenic seaplane directly to your island resort. Sip sunset champagne on your private deck." },
+                { day: "Day 2-4", detail: "Stay in an iconic overwater villa. Take advantage of direct ocean steps for morning snorkeling along local house reefs." },
+                { day: "Day 5-7", detail: "Enjoy bespoke therapeutic spa treatments, premium sunset catamaran sailing, and private beach dinners." }
+            ]
+        },
+        srilanka: {
+            name: "Sri Lanka (Wilderness, Heritage & Coasts)",
+            scores: { romance: 8, adventure: 8, luxury: 7 },
+            flightCost: 20000,
+            landCost: 50000,
+            visa: "ETA / E-Visa Application",
+            activities: [
+                "Waking up in luxury colonial tea bungalows perched over green mountain valleys.",
+                "Taking an off-road open-top safari inside Yala National Park to spot rare leopards.",
+                "Riding the legendary vintage train along mountain loops connecting Ella with Kandy."
+            ],
+            itinerary: [
+                { day: "Day 1-2", detail: "Fly to Colombo (Seasonal Direct or 1-Stop). Head into cultural Sigiriya to hike the ancient rock fortress." },
+                { day: "Day 3-4", detail: "Take the train to Ella's tea mountains. Tour colonial-era tea factories and enjoy quiet waterfall hikes." },
+                { day: "Day 5-7", detail: "Descend to the golden beaches of Mirissa or Galle. Join whale-watching expeditions and explore historic ocean forts." }
+            ]
+        },
+        bhutan: {
+            name: "Bhutan (The Mountain Kingdom of Peace)",
+            scores: { romance: 8, adventure: 9, luxury: 8 },
+            flightCost: 24000,
+            landCost: 90000,
+            visa: "Entry Permit + Daily SDF",
+            activities: [
+                "Conquering the famous mountain hiking trail to Paro Tiger’s Nest monastery.",
+                "Indulging in a traditional hot stone bath infused with forest medicinal herbs.",
+                "Participating in private farmhouse candlelit dinners showcasing organic local food."
+            ],
+            itinerary: [
+                { day: "Day 1-2", detail: "Take a scenic flight from CCU directly into Paro. Explore Thimphu's fortresses and mountain overlooks." },
+                { day: "Day 3-4", detail: "Travel across Dochula Pass to subtropical Punakha Valley. Walk the longest suspension bridges." },
+                { day: "Day 5-7", detail: "Return to Paro for the Tiger’s Nest hike. Unwind inside premium mountain luxury lodges (such as COMO or Amankora)." }
+            ]
+        }
+    };
+
+    // Function to render selector buttons
+    function renderSelectors() {
+        const container = document.getElementById('destinationSelector');
+        container.innerHTML = '';
+        
+        Object.keys(destinationData).forEach((key, index) => {
+            const data = destinationData[key];
+            const btn = document.createElement('button');
+            btn.className = `p-3 rounded-xl border text-xs font-semibold text-center transition-all ${
+                index === 0 
+                ? 'bg-teal-500 border-teal-400 text-slate-950 font-bold shadow-lg' 
+                : 'bg-slate-800/80 border-slate-700/60 text-slate-300 hover:bg-slate-700/60'
+            }`;
+            btn.id = `btn-${key}`;
+            btn.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+            btn.onclick = () => showDeepDive(key);
+            container.appendChild(btn);
+        });
+    }
+
+    // Function to handle interactive deep dives
+    function showDeepDive(key) {
+        // Update active selector button state
+        Object.keys(destinationData).forEach(k => {
+            const btn = document.getElementById(`btn-${k}`);
+            if (btn) {
+                if (k === key) {
+                    btn.className = 'p-3 rounded-xl border text-xs font-bold text-center transition-all bg-teal-500 border-teal-400 text-slate-950 shadow-lg';
+                } else {
+                    btn.className = 'p-3 rounded-xl border text-xs font-semibold text-center transition-all bg-slate-800/80 border-slate-700/60 text-slate-300 hover:bg-slate-700/60';
+                }
+            }
+        });
+
+        const data = destinationData[key];
+        const contentDiv = document.getElementById('deepDiveCard');
+        
+        // Construct visual template
+        let activitiesHTML = '';
+        data.activities.forEach(act => {
+            activitiesHTML += `
+                <li class="flex items-start space-x-3 text-slate-300 text-sm">
+                    <span class="text-teal-400 text-lg leading-none">✦</span>
+                    <span>${act}</span>
+                </li>
+            `;
+        });
+
+        let itineraryHTML = '';
+        data.itinerary.forEach(item => {
+            itineraryHTML += `
+                <div class="p-4 bg-slate-800/40 rounded-xl border border-slate-700/40">
+                    <div class="text-xs font-bold text-teal-400 mb-1 uppercase tracking-wide">${item.day}</div>
+                    <div class="text-sm text-slate-300">${item.detail}</div>
+                </div>
+            `;
+        });
+
+        const totalCost = data.flightCost + data.landCost;
+
+        contentDiv.innerHTML = `
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Details column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-teal-400 text-xs font-semibold uppercase tracking-widest">Selected Profile</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mt-1">${data.name}</h3>
+                        <p class="text-xs text-slate-400 mt-1">Visa Standard: ${data.visa}</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm font-semibold text-slate-200 mb-3 uppercase tracking-wider">Curated Honeymoon Experiences</h4>
+                        <ul class="space-y-3">
+                            ${activitiesHTML}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-sm font-semibold text-slate-200 mb-3 uppercase tracking-wider">Sample 7-Day Curated Itinerary</h4>
+                        <div class="space-y-3">
+                            ${itineraryHTML}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Snapshot column -->
+                <div class="lg:col-span-5 bg-slate-900/60 rounded-2xl border border-slate-700/40 p-6 flex flex-col justify-between space-y-6">
+                    <div>
+                        <h4 class="text-sm font-semibold text-slate-200 mb-4 uppercase tracking-wider">Experience Index Distribution</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-slate-400"> 💕 Romance Profile</span>
+                                    <span class="text-teal-400 font-bold">${data.scores.romance}/10</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2">
+                                    <div class="bg-teal-400 h-2 rounded-full" style="width: ${data.scores.romance * 10}%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-slate-400"> 🧗 Adventure Index</span>
+                                    <span class="text-sky-400 font-bold">${data.scores.adventure}/10</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2">
+                                    <div class="bg-sky-400 h-2 rounded-full" style="width: ${data.scores.adventure * 10}%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-slate-400"> 💎 Luxury / comfort Index</span>
+                                    <span class="text-purple-400 font-bold">${data.scores.luxury}/10</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2">
+                                    <div class="bg-purple-400 h-2 rounded-full" style="width: ${data.scores.luxury * 10}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-slate-800">
+                        <h4 class="text-sm font-semibold text-slate-200 mb-4 uppercase tracking-wider">Target Flight + Land Finance</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">Direct/1-Stop Flight Budget:</span>
+                                <span class="text-white font-semibold">₹${data.flightCost.toLocaleString('en-IN')}</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">Est. 7-Day Luxury Land Budget:</span>
+                                <span class="text-white font-semibold">₹${data.landCost.toLocaleString('en-IN')}</span>
+                            </div>
+                            <div class="flex justify-between text-sm font-bold pt-2 border-t border-slate-800">
+                                <span class="text-teal-400">Total Per-Person Capital:</span>
+                                <span class="text-teal-400">₹${totalCost.toLocaleString('en-IN')}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Helper functions for chart labels formatting
+    function wrapLabels(label) {
+        if (typeof label !== 'string') return label;
+        if (label.length <= 16) return label;
+        const words = label.split(' ');
+        const lines = [];
+        let currentLine = '';
+        words.forEach(word => {
+            if ((currentLine + word).length > 16) {
+                lines.push(currentLine.trim());
+                currentLine = word + ' ';
+            } else {
+                currentLine += word + ' ';
+            }
+        });
+        lines.push(currentLine.trim());
+        return lines;
+    }
+
+    const commonTooltip = {
+        callbacks: {
+            title: function(tooltipItems) {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                return Array.isArray(label) ? label.join(' ') : label;
+            }
+        }
+    };
+
+    window.onload = function () {
+        // Render initial UI blocks
+        renderSelectors();
+        showDeepDive('thailand');
+
+        // Chart 1: Core experience Radar Chart
+        const radarCtx = document.getElementById('experienceRadarChart').getContext('2d');
+        new Chart(radarCtx, {
+            type: 'bar', // Used bar charts inside premium dashboards to facilitate high performance rendering across small/responsive dimensions
+            data: {
+                labels: ['Thailand', 'Vietnam', 'Bali', 'Malaysia', 'Maldives', 'Sri Lanka', 'Bhutan'],
+                datasets: [
+                    {
+                        label: 'Romance Index',
+                        data: [8, 7, 9, 7, 10, 8, 8],
+                        backgroundColor: 'rgba(20, 184, 166, 0.8)',
+                        borderColor: '#14b8a6',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Adventure Index',
+                        data: [7, 9, 8, 6, 5, 8, 9],
+                        backgroundColor: 'rgba(56, 189, 248, 0.8)',
+                        borderColor: '#38bdf8',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Luxury Index',
+                        data: [8, 7, 9, 8, 10, 7, 8],
+                        backgroundColor: 'rgba(168, 85, 247, 0.8)',
+                        borderColor: '#a855f7',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#94a3b8', font: { family: 'Inter', size: 11 } }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#94a3b8' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        ticks: { color: '#94a3b8' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    }
+                }
+            }
+        });
+
+        // Chart 2: Cumulative Stacked Budget Chart
+        const budgetCtx = document.getElementById('stackedBudgetChart').getContext('2d');
+        new Chart(budgetCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Thailand', 'Vietnam', 'Bali (IDN)', 'Malaysia', 'Maldives', 'Sri Lanka', 'Bhutan'],
+                datasets: [
+                    {
+                        label: '7-Day Premium Land Cost',
+                        data: [62000, 45000, 75000, 68000, 140000, 50000, 90000],
+                        backgroundColor: '#14b8a6',
+                        maxBarThickness: 60
+                    },
+                    {
+                        label: 'Flight Cost (CCU Return)',
+                        data: [18000, 22000, 38000, 19000, 28000, 20000, 24000],
+                        backgroundColor: '#1e3a8a',
+                        maxBarThickness: 60
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: { 
+                    legend: { position: 'bottom', labels: { color: '#94a3b8' } },
+                    tooltip: { ...commonTooltip, mode: 'index', intersect: false }
+                },
+                scales: {
+                    x: { 
+                        stacked: true, 
+                        ticks: { color: '#94a3b8' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    },
+                    y: { 
+                        stacked: true, 
+                        beginAtZero: true,
+                        ticks: { 
+                            color: '#94a3b8',
+                            callback: v => '₹' + (v / 1000) + 'k' 
+                        },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    }
+                }
+            }
+        });
+
+        // Chart 3: Horizontal Transit Time Chart
+        const transitCtx = document.getElementById('transitChart').getContext('2d');
+        new Chart(transitCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Bhutan (Direct)', 
+                    'Bangkok (Direct)', 
+                    'Hanoi (Direct)', 
+                    'Malaysia (Direct)', 
+                    'Sri Lanka (1-Stop)', 
+                    'Maldives (1-Stop)', 
+                    wrapLabels('Bali (1-Stop)')
+                ],
+                datasets: [{
+                    label: 'Flight Time (Hours)',
+                    data: [1.25, 2.5, 2.7, 3.9, 4.5, 6.5, 8.5],
+                    backgroundColor: ['#38bdf8', '#14b8a6', '#22c55e', '#a855f7', '#eab308', '#f97316', '#ef4444'],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                plugins: { 
+                    legend: { display: false }, 
+                    tooltip: commonTooltip 
+                },
+                scales: { 
+                    x: { 
+                        beginAtZero: true, 
+                        ticks: { color: '#94a3b8' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    },
+                    y: {
+                        ticks: { color: '#94a3b8' },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        const climateMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const climateLocs = ['Bhutan', 'Sri Lanka', 'Maldives', 'Bali (IDN)', 'Thailand', 'Vietnam', 'Malaysia'];
+        
+        // Scale values: 0 (Wet/Orange-Red), 0.5 (Shoulder/Yellow), 1.0 (Dry/Green-Teal)
+        const climateZ = [
+            [0.2, 0.4, 0.8, 1.0, 0.9, 0.5, 0.5, 0.5, 0.8, 1.0, 0.9, 0.4], // Bhutan
+            [1.0, 1.0, 0.8, 0.5, 0.3, 0.4, 0.5, 0.5, 0.4, 0.3, 0.6, 1.0], // Sri Lanka (West/South dry in winter)
+            [1.0, 1.0, 0.9, 0.7, 0.3, 0.2, 0.3, 0.4, 0.3, 0.2, 0.7, 0.9], // Maldives
+            [0.1, 0.2, 0.5, 0.8, 1.0, 1.0, 1.0, 1.0, 0.9, 0.6, 0.2, 0.1], // Bali
+            [1.0, 1.0, 1.0, 0.8, 0.3, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 1.0], // Thailand
+            [1.0, 0.9, 0.6, 0.5, 0.3, 0.1, 0.1, 0.1, 0.4, 0.8, 1.0, 1.0], // Vietnam
+            [0.6, 0.6, 0.7, 0.5, 0.6, 0.7, 0.7, 0.7, 0.6, 0.4, 0.3, 0.5]  // Malaysia (Peninsula/Island microclimates)
+        ];
+
+        Plotly.newPlot('climatePlot', [{
+            z: climateZ,
+            x: climateMonths,
+            y: climateLocs,
+            type: 'heatmap',
+            colorscale: [
+                [0, '#e76f51'], 
+                [0.5, '#e9c46a'], 
+                [1, '#2a9d8f']
+            ],
+            showscale: false
+        }], {
+            title: {
+                text: 'Atmospheric Match Heatmap (Teal = Peak Dry)',
+                font: { color: '#e2e8f0', family: 'Inter', size: 14 }
+            },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            margin: { t: 40, b: 40, l: 110, r: 20 },
+            height: 380,
+            xaxis: { tickfont: { color: '#94a3b8' } },
+            yaxis: { tickfont: { color: '#94a3b8' } }
+        }, { responsive: true, displayModeBar: false });
+    };
+</script>
+
+</body>
+</html>
